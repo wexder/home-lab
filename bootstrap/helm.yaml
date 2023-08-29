@@ -17,6 +17,7 @@ spec:
     spec:
       project: snowy-lab
       syncPolicy:
+        applicationsSync: create-update
         syncOptions:
           - CreateNamespace=true
         automated:
