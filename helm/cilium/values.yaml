@@ -1,4 +1,6 @@
 cilium:
+  operator:
+    replicas: 1
   ipam:
     mode: kubernetes
   kubeProxyReplacement: disabled
