@@ -8,7 +8,7 @@ spec:
        repoURL: https://github.com/wexder/home-lab
        revision: HEAD
        directories:
-         - path: helm/* 
+         - path: helm/**/config.json
   template:
     metadata:
       name: '{{path.basename}}'
