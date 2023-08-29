@@ -12,7 +12,8 @@ traefik:
   #     enabled: true
 
   service:
-    loadBalancerIP: "192.168.1.55"
+    spec:
+      loadBalancerIP: "192.168.1.55"
 
   providers:
     kubernetesCRD:
