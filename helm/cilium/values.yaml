@@ -1,13 +1,26 @@
-metadata:
-  namespace: kube-system
-ipam:
-  mode: kubernetes
-kubeProxyReplacement: disabled
-securityContext:
+cilium:
+  ipam:
+    mode: kubernetes
+  kubeProxyReplacement: disabled
+  securityContext:
     capabilities:
-      ciliumAgent: "{CHOWN,KILL,NET_ADMIN,NET_RAW,IPC_LOCK,SYS_ADMIN,SYS_RESOURCE,DAC_OVERRIDE,FOWNER,SETGID,SETUID}"
-      cleanCiliumState: "{NET_ADMIN,SYS_ADMIN,SYS_RESOURCE}"
-cgoup:
-  autoMount:
-    enabled: false
-  hostRoot: /sys/fs/cgroup
+      ciliumAgent: 
+        - CHOWN
+        - KILL
+        - NET_ADMIN
+        - NET_RAW
+        - IPC_LOCK
+        - SYS_ADMIN
+        - SYS_RESOURCE
+        - DAC_OVERRIDE
+        - FOWNER
+        - SETGID
+        - SETUID
+      cleanCiliumState: 
+        - NET_ADMIN
+        - SYS_ADMIN
+        - SYS_RESOURCE
+  cgroup:
+    hostRoot: /sys/fs/cgroup
+    autoMount:
+      enabled: false

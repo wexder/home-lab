@@ -9,3 +9,4 @@ resources:
 - bootstrap.yaml
 - project.yaml
 - repository.yaml
+- namespace.yaml
