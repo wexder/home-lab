@@ -3,6 +3,8 @@ name: Cilium
 description: A Helm chart for Kubernetes
 type: application
 version: 1.0.0
+metadata:
+  namespace: kube-system
 dependencies:
 - name: cilium
   version: 1.14.0
