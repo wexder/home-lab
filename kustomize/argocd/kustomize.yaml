@@ -5,7 +5,7 @@ metadata:
 spec:
   generators:
    - git:
-       repoURL: git@github.com:wexder/DIO-infrastructure.git
+       repoURL: https://github.com/wexder/home-lab
        revision: HEAD
        directories:
          - path: kustomize/* 
@@ -23,8 +23,9 @@ spec:
           prune: true
           selfHeal: true
       source:
-        repoURL: git@github.com:wexder/DIO-infrastructure.git
+        repoURL: https://github.com/wexder/home-lab
         targetRevision: HEAD
         path: '{{path}}/overlays/talos'
       destination:
+        server: https://kubernetes.default.svc
         namespace: argocd

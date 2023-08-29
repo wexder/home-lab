@@ -9,3 +9,4 @@ resources:
 - helm.yaml
 - kustomize.yaml
 - project.yaml
+- repository.yaml
