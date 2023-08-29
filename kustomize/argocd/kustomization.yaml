@@ -10,3 +10,6 @@ resources:
 - project.yaml
 - repository.yaml
 - namespace.yaml
+
+patchesStrategicMerge:
+- argocd-cm.yaml
