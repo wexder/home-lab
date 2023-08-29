@@ -7,9 +7,9 @@ traefik:
     replicas: 1
     revisionHistoryLimit: 1
 
-  experimental:
-    plugins:
-      enabled: true
+  # experimental:
+  #   plugins:
+  #     enabled: true
 
   providers:
     kubernetesCRD:
@@ -17,8 +17,8 @@ traefik:
 
   additionalArguments:
     - "--ping"
-    - "--metrics.prometheus"
-    - "--accesslog=true"
+    # - "--metrics.prometheus"
+    # - "--accesslog=true"
     # - "--experimental.plugins.bouncer.moduleName=github.com/maxlerebourg/crowdsec-bouncer-traefik-plugin"
     # - "--experimental.plugins.bouncer.version=v1.1.11"
     # - "--entrypoints.web.http.middlewares=crowdsec-bouncer@kubernetescrd"
