@@ -17,7 +17,7 @@ spec:
     spec:
       project: snowy-lab
       syncPolicy:
-        preserveResourcesOnDeletion: false
+        preserveResourcesOnDeletion: true
         syncOptions:
           - CreateNamespace=true
         automated:
