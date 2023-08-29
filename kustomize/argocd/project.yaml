@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: snowy-lab
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  description: Snowy lab
+  sourceRepos:
+  - '*'
+  destinations:
+  - namespace: '*'
+    server: in-cluster
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
+  namespaceResourceWhitelist:
+  - group: '*'
+    kind: '*'

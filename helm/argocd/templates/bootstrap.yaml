@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: bootstrap
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/wexder/TODO.git
+    targetRevision: HEAD
+    path: bootstrap
+  destination:
+    server: talos
+    namespace: argocd
+

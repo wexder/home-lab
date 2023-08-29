@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: kustomize-apps
+spec:
+  generators:
+   - git:
+       repoURL: git@github.com:wexder/DIO-infrastructure.git
+       revision: HEAD
+       directories:
+         - path: kustomize/* 
+  template:
+    metadata:
+      name: '{{path.basename}}'
+      annotations:
+        "argocd.argoproj.io/manifest-generate-paths": "{{path}}"
+    spec:
+      project: snowy-lab
+      syncPolicy:
+        syncOptions:
+          - CreateNamespace=true
+        automated:
+          prune: true
+          selfHeal: true
+      source:
+        repoURL: git@github.com:wexder/DIO-infrastructure.git
+        targetRevision: HEAD
+        path: '{{path}}/overlays/talos'
+      destination:
+        namespace: argocd

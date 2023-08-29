@@ -1,0 +1,37 @@
+traefik:
+  ingressRoute:
+    dashboard:
+      enabled: false
+
+  deployment:
+    replicas: 1
+    revisionHistoryLimit: 1
+
+  experimental:
+    plugins:
+      enabled: true
+
+  providers:
+    kubernetesCRD:
+      allowCrossNamespace: true
+
+  additionalArguments:
+    - "--ping"
+    - "--metrics.prometheus"
+    - "--accesslog=true"
+    # - "--experimental.plugins.bouncer.moduleName=github.com/maxlerebourg/crowdsec-bouncer-traefik-plugin"
+    # - "--experimental.plugins.bouncer.version=v1.1.11"
+    # - "--entrypoints.web.http.middlewares=crowdsec-bouncer@kubernetescrd"
+    # - "--entrypoints.websecure.http.middlewares=crowdsec-bouncer@kubernetescrd"
+
+  # volumes:
+  #   - name: crowdsec-bouncer-tls
+  #     mountPath: /etc/traefik/crowdsec-certs/
+  #     type: secret
+
+  # requests:
+  #   cpu: "1000m"
+  #   memory: "350Mi"
+  # limits:
+  #   cpu: "1500m"
+  #   memory: "500Mi"

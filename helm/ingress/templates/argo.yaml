@@ -1,0 +1,25 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: argo-route
+  namespace: argo
+spec:
+  routes:
+    - kind: Rule
+      match: Host(`argo.k8s.neurobug.com`)
+      middlewares:
+        - name: argo-redirectscheme
+          namespace: argo
+      priority: 10
+      services:
+        - name: argo-ha-argocd-server
+          namespace: argo
+          port: 80
+    - kind: Rule
+      match: Host(`argo.k8s.neurobug.com`) && Headers(`Content-Type`, `application/grpc`)
+      priority: 11
+      services:
+        - name: argo-ha-argocd-server
+          namespace: argo
+          port: 80
+          scheme: h2c
