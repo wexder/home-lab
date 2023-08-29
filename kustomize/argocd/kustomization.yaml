@@ -6,7 +6,7 @@ namespace: argocd
 # additional resources like ingress rules, cluster and repository secrets.
 resources:
 - github.com/argoproj/argo-cd//manifests/cluster-install?ref=v2.8.2
-- helm.yaml
-- kustomize.yaml
+- bootstrap.yaml
 - project.yaml
 - repository.yaml
+- cluster.yaml

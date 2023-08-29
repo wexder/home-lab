@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: bootstrap
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: argocd
+    server: in-cluster
+  project: snowy-lab
+  source:
+    path: bootstrap
+    repoURL: in-cluster
+    targetRevision: HEAD
