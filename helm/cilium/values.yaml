@@ -5,6 +5,7 @@ cilium:
     mode: kubernetes
   kubeProxyReplacement: disabled
   securityContext:
+    allowPrivilegeEscalation: false
     capabilities:
       ciliumAgent: 
         - CHOWN
