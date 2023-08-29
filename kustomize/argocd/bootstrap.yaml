@@ -7,9 +7,9 @@ metadata:
 spec:
   destination:
     namespace: argocd
-    server: in-cluster
+    server: https://kubernetes.default.svc
   project: snowy-lab
   source:
     path: bootstrap
-    repoURL: in-cluster
+    repoURL: https://github.com/wexder/home-lab
     targetRevision: HEAD

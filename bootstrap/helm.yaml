@@ -31,5 +31,5 @@ spec:
           valueFiles:
             - values.yaml
       destination:
-        server: in-cluster
+        server: https://kubernetes.default.svc
         namespace: argocd
