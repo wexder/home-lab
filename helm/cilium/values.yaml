@@ -1,3 +1,5 @@
+metadata:
+  namespace: kube-system
 ipam:
   mode: kubernetes
 kubeProxyReplacement: disabled
