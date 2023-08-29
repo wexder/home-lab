@@ -1,0 +1,27 @@
+---
+appConfig:
+  layout: auto
+  iconSize: medium
+  theme: one-dark
+  language: en
+  startingView: default
+  # defaultOpeningMethod: newtab
+  statusCheck: true
+  enableFontAwesome: true
+  hideComponents:
+    hideHeading: false
+    hideNav: true
+    hideSearch: false
+    hideSettings: true
+    hideFooter: true
+pageInfo:
+  title: Snowy lab
+sections: # An array of sections
+  - name: Dashboards
+    items: # An array of items
+    - title: Argo
+      description: Argo
+      icon: favicon-local
+      url: https://argo.k8s.neurobug.com
+  - name: Media
+    items: []
