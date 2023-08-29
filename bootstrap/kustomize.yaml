@@ -25,7 +25,7 @@ spec:
       source:
         repoURL: https://github.com/wexder/home-lab
         targetRevision: HEAD
-        path: '{{path}}/overlays/talos'
+        path: '{{path}}'
       destination:
-        server: talos
+        server: in-cluster
         namespace: argocd

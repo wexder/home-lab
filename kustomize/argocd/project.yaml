@@ -10,7 +10,7 @@ spec:
   - '*'
   destinations:
   - namespace: '*'
-    server: talos
+    server: in-cluster
   clusterResourceWhitelist:
   - group: '*'
     kind: '*'

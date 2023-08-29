@@ -31,5 +31,5 @@ spec:
           valueFiles:
             - values.yaml
       destination:
-        server: talos
+        server: in-cluster
         namespace: argocd
