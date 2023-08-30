@@ -3,13 +3,13 @@ traefik:
     dashboard:
       enabled: true
 
-  # deployment:
-  #   replicas: 1
-  #   revisionHistoryLimit: 1
+  deployment:
+    replicas: 1
+    revisionHistoryLimit: 1
 
-  # experimental:
-  #   plugins:
-  #     enabled: true
+  experimental:
+    plugins:
+      enabled: true
 
   providers:
     kubernetesCRD:

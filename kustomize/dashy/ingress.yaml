@@ -8,3 +8,4 @@ spec:
       match: Host(`k8s.neurobug.com`)
       services:
         - name: dashy
+          port: 80
