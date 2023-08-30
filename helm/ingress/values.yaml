@@ -3,9 +3,9 @@ traefik:
     dashboard:
       enabled: true
 
-  deployment:
-    replicas: 1
-    revisionHistoryLimit: 1
+  # deployment:
+  #   replicas: 1
+  #   revisionHistoryLimit: 1
 
   # experimental:
   #   plugins:
