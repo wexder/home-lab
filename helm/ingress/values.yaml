@@ -21,8 +21,8 @@ traefik:
 
   additionalArguments:
     - "--ping"
+    - "--accesslog=true"
     # - "--metrics.prometheus"
-    # - "--accesslog=true"
     # - "--experimental.plugins.bouncer.moduleName=github.com/maxlerebourg/crowdsec-bouncer-traefik-plugin"
     # - "--experimental.plugins.bouncer.version=v1.1.11"
     # - "--entrypoints.web.http.middlewares=crowdsec-bouncer@kubernetescrd"
