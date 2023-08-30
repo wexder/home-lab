@@ -7,9 +7,9 @@ spec:
   routes:
     - kind: Rule
       match: Host(`argo.k8s.neurobug.com`)
-      # middlewares:
-      #   - name: argocd-redirectscheme
-      #     namespace: argocd
+      middlewares:
+        - name: argocd-redirectscheme
+          namespace: argocd
       priority: 10
       services:
         - name: argocd-server
@@ -23,3 +23,13 @@ spec:
           namespace: argocd
           port: 80
           scheme: h2c
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: argo-redirectscheme
+  namespace: argocd
+spec:
+  redirectScheme:
+    permanent: true
+    scheme: https
