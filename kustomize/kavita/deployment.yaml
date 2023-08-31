@@ -41,6 +41,7 @@ spec:
           volumeMounts:
             - mountPath: /kavita/config
               name: kavita-config
+              subPath: kavita
               readonly: false
             - mountPath: /data
               name: kavita-media
