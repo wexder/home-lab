@@ -3,10 +3,10 @@ cilium:
     replicas: 1
   hubble:
     enabled: true
-  relay:
-    enabled: true
-  ui:
-    enabled: true
+    relay:
+      enabled: true
+    ui:
+      enabled: true
   ipam:
     mode: kubernetes
   kubeProxyReplacement: disabled
