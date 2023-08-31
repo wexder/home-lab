@@ -8,7 +8,3 @@ resources:
 - service.yaml
 - namespace.yaml
 - ingress.yaml
-- pv.yaml
-- pv-config.yaml
-- pvc-config.yaml
-- pvc-media.yaml
