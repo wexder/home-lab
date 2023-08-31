@@ -1,0 +1,13 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: hubble-route
+  namespace: kube-system
+spec:
+  routes:
+    - kind: Rule
+      match: Host(`hubble.k8s.neurobug.com`)
+      priority: 10
+      services:
+        - name: hubble-ui
+          port: 80
