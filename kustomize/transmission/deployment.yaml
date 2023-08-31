@@ -41,7 +41,6 @@ spec:
           volumeMounts:
             - mountPath: /config
               name: transmission-config
-              subPath: transmission
               readonly: false
             - mountPath: /downloads
               name: transmission-downloads
