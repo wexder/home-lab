@@ -37,7 +37,7 @@ spec:
             readOnly: false
       containers:
         - name: lazylibrarian
-          image: linuxserver/lazylibrarian:latest
+          image: linuxserver/lazylibrarian:version-1152df82
           env:
             - name: TZ
               value: UTC
