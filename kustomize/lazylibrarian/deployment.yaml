@@ -15,6 +15,12 @@ spec:
       labels:
         app: lazylibrarian
     spec:
+      securityContext:
+        container:
+          runAsNonRoot: false
+          readOnlyRootFilesystem: false
+          runAsUser: 0
+          runAsGroup: 0
       volumes:
         - name: lazylibrarian-config
           nfs:
@@ -33,14 +39,7 @@ spec:
             readOnly: false
       containers:
         - name: lazylibrarian
-          image: linuxserver/lazylibrarian:version-1152df82
-          env:
-            - name: TZ
-              value: UTC
-            - name: PGID
-              value: "1001"
-            - name: PUID
-              value: "1001"
+          image: tccr.io/truecharts/lazylibrarian:latest
           resources:
             requests:
               cpu: 200m
