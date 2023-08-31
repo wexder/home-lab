@@ -14,6 +14,13 @@ spec:
       labels:
         app: kavita
     spec:
+      volumes:
+        - name: kavita-config
+          persistentVolumeClaim:
+            claimName: kavita-config
+        - name: kavita-media
+          persistentVolumeClaim:
+            claimName: kavita-media
       containers:
         - name: kavita
           image: kizaing/kavita:latest
@@ -27,7 +34,10 @@ spec:
           command:   
           ports:
             - containerPort: 5000
-          # volumeMounts:
-          #   - name: conf
-          #     mountPath: /app/public/conf.yml
-          #     subPath: conf.yml
+          volumeMounts:
+            - mountPath: /kavita/config
+              name: kavita-config
+              readonly: false
+            - mountPath: /data
+              name: kavita-media
+              readonly: false
