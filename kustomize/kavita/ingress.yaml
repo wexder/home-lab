@@ -1,0 +1,11 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: kavita-route
+spec:
+  routes:
+    - kind: Rule
+      match: Host(`kavita.k8s.neurobug.com`)
+      services:
+        - name: kavita
+          port: 5000

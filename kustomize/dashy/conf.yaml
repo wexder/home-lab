@@ -21,7 +21,7 @@ sections: # An array of sections
     items: # An array of items
     - title: Argo
       description: Argo
-      icon: favicon-local
+      icon: hl-argocd
       url: https://argo.k8s.neurobug.com
   - name: Media
     items: []
