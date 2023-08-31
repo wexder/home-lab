@@ -1,0 +1,68 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lazylibrarian
+  labels:
+    app: lazylibrarian
+spec:
+  replicas: 1
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      app: lazylibrarian
+  template:
+    metadata:
+      labels:
+        app: lazylibrarian
+    spec:
+      securityContext:
+        runAsUser: 3000
+        runAsGroup: 3000
+        fsGroup: 3000
+      volumes:
+        - name: lazylibrarian-config
+          nfs:
+            server: 192.168.1.112
+            path: /mnt/main_pool/private/metadata
+            readOnly: false
+        - name: lazylibrarian-media
+          nfs:
+            server: 192.168.1.112
+            path: /mnt/main_pool/private/media/ebooks
+            readOnly: false
+        - name: lazylibrarian-downloads
+          nfs:
+            server: 192.168.1.112
+            path: /mnt/main_pool/private/downloads
+            readOnly: false
+      containers:
+        - name: lazylibrarian
+          image: linuxserver/lazylibrarian:latest
+          envs:
+            - name: TZ
+              value: UTC
+            - name: PGID
+              value: "1001"
+            - name: PUID
+              value: "1001"
+          resources:
+            requests:
+              cpu: 200m
+              memory: 200Mi
+            limits:
+              cpu: 200m
+              memory: 200Mi
+          command:   
+          ports:
+            - containerPort: 5299
+          volumeMounts:
+            - mountPath: /config
+              name: lazylibrarian-config
+              subPath: lazylibrarian
+              readonly: false
+            - mountPath: /downloads
+              name: lazylibrarian-downloads
+              readonly: false
+            - mountPath: /books/
+              name: lazylibrarian-media
+              readonly: false

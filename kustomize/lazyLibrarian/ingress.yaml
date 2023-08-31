@@ -1,0 +1,11 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: lazylibrarian-route
+spec:
+  routes:
+    - kind: Rule
+      match: Host(`lazylibrarian.k8s.neurobug.com`)
+      services:
+        - name: lazylibrarian
+          port: 5299
