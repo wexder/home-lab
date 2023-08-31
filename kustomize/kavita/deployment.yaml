@@ -23,7 +23,7 @@ spec:
         - name: kavita-config
           nfs:
             server: 192.168.1.112
-            path: /mnt/main_pool/private/metadata/kavita
+            path: /mnt/main_pool/private/metadata
             readOnly: false
         - name: kavita-media
           nfs:

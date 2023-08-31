@@ -24,7 +24,7 @@ spec:
         - name: transmission-config
           nfs:
             server: 192.168.1.112
-            path: /mnt/main_pool/private/metadata/transmission
+            path: /mnt/main_pool/private/metadata
             readOnly: false
       containers:
         - name: transmission
@@ -33,20 +33,17 @@ spec:
             - containerPort: 9091
             - containerPort: 51413
           env:
-            - name: PUID
-              value: "1000"
-            - name: PGID
-              value: "1000"
           resources:
             requests:
               cpu: 200m
               memory: 200Mi
             limits:
-              cpu: 400m
-              memory: 400Mi
+              cpu: 200m
+              memory: 200Mi
           volumeMounts:
             - mountPath: /config
               name: transmission-config
+              subPath: transmission
               readonly: false
             - mountPath: /downloads
               name: transmission-downloads
