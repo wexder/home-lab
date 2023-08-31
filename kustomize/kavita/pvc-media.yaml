@@ -8,5 +8,5 @@ spec:
   storageClassName: ""
   resources:
     requests:
-      storage: 500Gi
+      storage: 100Gi
   volumeName: kavita-media-pv
