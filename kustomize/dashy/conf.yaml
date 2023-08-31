@@ -19,9 +19,17 @@ pageInfo:
 sections: # An array of sections
   - name: Dashboards
     items: # An array of items
-    - title: Argo
-      description: Argo
-      icon: hl-argocd
-      url: https://argo.k8s.neurobug.com
+      - title: Argo
+        description: Argo
+        icon: hl-argocd
+        url: https://argo.k8s.neurobug.com
   - name: Media
-    items: []
+    items:
+      - title: Kavita
+        description: Kavita
+        icon: hl-kavita
+        url: https://kavita.k8s.neurobug.com
+      - title: Transmission
+        description: Transmission
+        icon: hl-transmission
+        url: https://transmission.k8s.neurobug.com
