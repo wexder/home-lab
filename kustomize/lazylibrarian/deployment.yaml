@@ -38,7 +38,7 @@ spec:
       containers:
         - name: lazylibrarian
           image: linuxserver/lazylibrarian:latest
-          envs:
+          env:
             - name: TZ
               value: UTC
             - name: PGID
