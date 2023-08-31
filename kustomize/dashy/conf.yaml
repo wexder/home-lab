@@ -37,9 +37,9 @@ sections: # An array of sections
     items:
       - title: Hubble
         description: Hubble
-        icon: hl-hubble
+        icon: hl-cilium
         url: https://hubble.k8s.neurobug.com
       - title: Kuma
         description: Kuma
-        icon: hl-kuma
+        icon: hl-uptime-kuma
         url: https://kuma.k8s.neurobug.com
