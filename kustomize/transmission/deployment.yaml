@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: transmission
+  labels:
+    app: transmission
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: transmission
+  template:
+    metadata:
+      labels:
+        app: transmission
+    spec:
+      volumes:
+        - name: transmission-downloads
+          persistentVolumeClaim:
+            claimName: transmission-downloads
+        - name: transmission-config
+          persistentVolumeClaim:
+            claimName: transmission-config
+      containers:
+        - name: transmission
+          image: linuxserver/transmission:amd64-latest
+          ports:
+            - containerPort: 9091
+            - containerPort: 51413
+          resources:
+            requests:
+              cpu: 200m
+              memory: 200Mi
+            limits:
+              cpu: 400m
+              memory: 400Mi
+          volumeMounts:
+            - mountPath: /config
+              name: transmission-config
+            - mountPath: /downloads
+              name: transmission-downloads

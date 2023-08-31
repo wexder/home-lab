@@ -1,0 +1,11 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: transmission-route
+spec:
+  routes:
+    - kind: Rule
+      match: Host(`transmission.k8s.neurobug.com`)
+      services:
+        - name: transmission
+          port: 9091
