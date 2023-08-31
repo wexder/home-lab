@@ -9,6 +9,6 @@ spec:
     - ReadWriteMany
   nfs:
     server: 192.168.1.112
-    path: "/mnt/main_pool/private/metadata"
+    path: "/mnt/main_pool/private/metadata/kavita"
   mountOptions:
     - nfsvers=4.2
