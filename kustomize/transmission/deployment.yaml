@@ -28,7 +28,7 @@ spec:
           image: linuxserver/transmission:amd64-latest
           env:
             - name: PGID
-              value: 3000
+              value: "3000"
           ports:
             - containerPort: 9091
             - containerPort: 51413
