@@ -16,11 +16,15 @@ spec:
     spec:
       volumes:
         - name: transmission-downloads
-          persistentVolumeClaim:
-            claimName: transmission-downloads
+          nfs:
+            server: 192.168.1.112
+            path: /mnt/main_pool/private/downloads
+            readOnly: false
         - name: transmission-config
-          persistentVolumeClaim:
-            claimName: transmission-config
+          nfs:
+            server: 192.168.1.112
+            path: /mnt/main_pool/private/metadata/transmission
+            readOnly: false
       containers:
         - name: transmission
           image: linuxserver/transmission:amd64-latest
