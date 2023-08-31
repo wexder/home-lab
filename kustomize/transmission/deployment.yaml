@@ -6,6 +6,7 @@ metadata:
     app: transmission
 spec:
   replicas: 1
+  revisionHistoryLimit: 1
   selector:
     matchLabels:
       app: transmission
@@ -31,6 +32,11 @@ spec:
           ports:
             - containerPort: 9091
             - containerPort: 51413
+          env:
+            - name: PUID
+              value: "1000"
+            - name: PGID
+              value: "1000"
           resources:
             requests:
               cpu: 200m
