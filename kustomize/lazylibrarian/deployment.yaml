@@ -15,6 +15,11 @@ spec:
       labels:
         app: lazylibrarian
     spec:
+      securityContext:
+        runAsNonRoot: false
+        readOnlyRootFilesystem: false
+        runAsUser: 0
+        runAsGroup: 0
       volumes:
         - name: lazylibrarian-config
           nfs:
