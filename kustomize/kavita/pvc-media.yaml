@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: kavita-media-pv
+  name: kavita-media
 spec:
   accessModes:
     - ReadWriteMany
