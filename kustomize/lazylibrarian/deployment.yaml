@@ -38,13 +38,13 @@ spec:
       containers:
         - name: lazylibrarian
           image: tccr.io/truecharts/lazylibrarian:latest
-          resources:
-            requests:
-              cpu: 200m
-              memory: 200Mi
-            limits:
-              cpu: 200m
-              memory: 200Mi
+          # resources:
+          #   requests:
+          #     cpu: 200m
+          #     memory: 200Mi
+          #   limits:
+          #     cpu: 200m
+              # memory: 200Mi
           command:   
           ports:
             - containerPort: 5299

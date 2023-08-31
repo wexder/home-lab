@@ -29,6 +29,10 @@ sections: # An array of sections
         description: Kavita
         icon: hl-kavita
         url: https://kavita.k8s.neurobug.com
+      - title: Lazy Librarian
+        description: Lazy Librarian
+        icon: hl-lazylibrarian
+        url: https://lazylibrarian.k8s.neurobug.com
       - title: Transmission
         description: Transmission
         icon: hl-transmission
