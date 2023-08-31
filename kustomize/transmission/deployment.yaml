@@ -15,8 +15,6 @@ spec:
       labels:
         app: transmission
     spec:
-      securityContext:
-          privileged: true
       volumes:
         - name: transmission-downloads
           nfs:

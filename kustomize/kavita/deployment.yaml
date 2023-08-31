@@ -6,6 +6,7 @@ metadata:
     app: kavita
 spec:
   replicas: 1
+  revisionHistoryLimit: 1
   selector:
     matchLabels:
       app: kavita
@@ -20,11 +21,15 @@ spec:
         fsGroup: 3000
       volumes:
         - name: kavita-config
-          persistentVolumeClaim:
-            claimName: kavita-config
+          nfs:
+            server: 192.168.1.112
+            path: /mnt/main_pool/private/metadata/kavita
+            readOnly: false
         - name: kavita-media
-          persistentVolumeClaim:
-            claimName: kavita-media
+          nfs:
+            server: 192.168.1.112
+            path: /mnt/main_pool/private/media/ebooks
+            readOnly: false
       containers:
         - name: kavita
           image: kizaing/kavita:latest
