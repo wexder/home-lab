@@ -32,14 +32,13 @@ spec:
           ports:
             - containerPort: 9091
             - containerPort: 51413
-          env:
-          resources:
-            requests:
-              cpu: 200m
-              memory: 200Mi
-            limits:
-              cpu: 200m
-              memory: 200Mi
+          # resources:
+          #   requests:
+          #     cpu: 200m
+          #     memory: 200Mi
+          #   limits:
+          #     cpu: 200m
+          #     memory: 200Mi
           volumeMounts:
             - mountPath: /config
               name: transmission-config

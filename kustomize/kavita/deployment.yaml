@@ -33,13 +33,13 @@ spec:
       containers:
         - name: kavita
           image: kizaing/kavita:latest
-          resources:
-            requests:
-              cpu: 200m
-              memory: 200Mi
-            limits:
-              cpu: 400m
-              memory: 400Mi
+          # resources:
+          #   requests:
+          #     cpu: 200m
+          #     memory: 200Mi
+          #   limits:
+          #     cpu: 400m
+          #     memory: 400Mi
           command:   
           ports:
             - containerPort: 5000
