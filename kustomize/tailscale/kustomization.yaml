@@ -1,0 +1,15 @@
+namespace: tailscale
+
+resources:
+- cluster-role-binding.yaml
+- cluster-role.yaml
+- deployment.yaml
+- namespace.yaml
+- rbo.yaml
+- rbp.yaml
+- role-operator.yaml
+- role-proxy.yaml
+- sa-operator.yaml
+- sa-tailscale.yaml
+# TODO
+# - secret.yaml

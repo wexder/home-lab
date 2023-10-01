@@ -14,3 +14,8 @@
 ```
 
 Argo repository for Snowy lab.
+
+
+
+### TODO
+[ ] - nfs pv with dns
