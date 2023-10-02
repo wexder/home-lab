@@ -7,6 +7,11 @@ metadata:
 spec:
   ports:
     - port: 9091
+      name: default
+      targetPort: 9091
+      protocol: TCP
+    - port: 80
+      name: tailscale
       targetPort: 9091
       protocol: TCP
   selector:

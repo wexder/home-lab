@@ -8,6 +8,7 @@ resources:
 - service.yaml
 - namespace.yaml
 - ingress.yaml
+- tailscale.yaml
 
 configMapGenerator:
   - name: dashy-config

@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: dashy-tailscale
+spec:
+  defaultBackend:
+    service:
+      name: dashy
+      port:
+        number: 80
+  ingressClassName: tailscale
+  tls:
+  - hosts:
+    - dashy
