@@ -12,5 +12,8 @@ spec:
     - port: 5299
       targetPort: 5299
       protocol: TCP
+    - port: 80
+      targetPort: 5299
+      protocol: TCP
   selector:
     app: lazylibrarian
