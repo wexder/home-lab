@@ -17,9 +17,11 @@ spec:
     spec:
       serviceAccountName: operator
       volumes:
-      - name: oauth
-        secret:
-          secretName: operator-oauth
+        - name: config
+          emptyDir: {}
+        - name: oauth
+          secret:
+            secretName: operator-oauth
       containers:
         - name: operator
           image: tailscale/k8s-operator:unstable
@@ -49,9 +51,11 @@ spec:
             - name: AUTH_PROXY
               value: "false"
           volumeMounts:
-          - name: oauth
-            mountPath: /oauth
-            readOnly: true
+            - name: config
+              mountPath: /.config
+            - name: oauth
+              mountPath: /oauth
+              readOnly: true
           securityContext:
             capabilities:
               drop:
