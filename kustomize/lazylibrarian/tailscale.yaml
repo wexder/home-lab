@@ -7,7 +7,7 @@ spec:
     service:
       name: lazylibrarian
       port:
-        number: 5299
+        name: tailscale
   ingressClassName: tailscale
   tls:
   - hosts:
