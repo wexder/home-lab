@@ -22,28 +22,28 @@ sections: # An array of sections
       - title: Argo
         description: Argo
         icon: hl-argocd
-        url: https://argo.k8s.neurobug.com
+        url: https://argo.tailcceac.ts.net
   - name: Media
     items:
       - title: Kavita
         description: Kavita
         icon: hl-kavita
-        url: https://kavita.k8s.neurobug.com
+        url: https://kavita.tailcceac.ts.net
       - title: Lazy Librarian
         description: Lazy Librarian
         icon: hl-lazylibrarian
-        url: https://lazylibrarian.k8s.neurobug.com
+        url: https://lazylibrarian.tailcceac.ts.net
       - title: Transmission
         description: Transmission
         icon: hl-transmission
-        url: https://transmission.k8s.neurobug.com
+        url: https://transmission.tailcceac.ts.net
   - name: Monitoring
     items:
       - title: Hubble
         description: Hubble
         icon: hl-cilium
-        url: https://hubble.k8s.neurobug.com
+        url: https://hubble.tailcceac.ts.net
       - title: Kuma
         description: Kuma
         icon: hl-uptime-kuma
-        url: https://kuma.k8s.neurobug.com
+        url: https://kuma.tailcceac.ts.net
