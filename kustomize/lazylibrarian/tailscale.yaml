@@ -9,6 +9,6 @@ spec:
       port:
         number: 80
   ingressClassName: tailscale
-  tls:
-  - hosts:
-    - lazylibrarian
+  # tls:
+  # - hosts:
+  #   - lazylibrarian
