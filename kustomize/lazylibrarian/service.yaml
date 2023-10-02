@@ -10,11 +10,6 @@ metadata:
 spec:
   ports:
     - port: 5299
-      name: default
-      targetPort: 5299
-      protocol: TCP
-    - port: 443
-      name: tailscale
       targetPort: 5299
       protocol: TCP
   selector:
