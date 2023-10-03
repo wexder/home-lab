@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: radarr
+  labels:
+    app: radarr
+spec:
+  ports:
+    - port: 7878
+      name: default
+      targetPort: 7878
+      protocol: TCP
+    - port: 80
+      name: tailscale
+      targetPort: 7878
+      protocol: TCP
+  selector:
+    app: radarr

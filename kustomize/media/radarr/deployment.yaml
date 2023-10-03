@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: radarr
+  labels:
+    app: radarr
+spec:
+  replicas: 1
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      app: radarr
+  template:
+    metadata:
+      labels:
+        app: radarr
+    spec:
+      volumes:
+        - name: radarr-config
+          nfs:
+            server: 192.168.1.112
+            path: /mnt/main_pool/private/metadata
+            readOnly: false
+        - name: radarr-media
+          nfs:
+            server: 192.168.1.112
+            path: /mnt/main_pool/private/media/movies
+            readOnly: false
+        - name: radarr-downloads
+          nfs:
+            server: 192.168.1.112
+            path: /mnt/main_pool/private/downloads
+            readOnly: false
+      containers:
+        - name: radarr
+          # TODO maybe change image
+          image: ghcr.io/onedr0p/radarr-develop
+          command:   
+          ports:
+            - containerPort: 5299
+          volumeMounts:
+            - mountPath: /config
+              name: radarr-config
+              subPath: radarr
+              readonly: false
+            - mountPath: /downloads
+              name: radarr-downloads
+              readonly: false
+            - mountPath: /movies/
+              name: radarr-media
+              readonly: false
