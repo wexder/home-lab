@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sonarr
+  labels:
+    app: sonarr
+spec:
+  replicas: 1
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      app: sonarr
+  template:
+    metadata:
+      labels:
+        app: sonarr
+    spec:
+      volumes:
+        - name: sonarr-config
+          nfs:
+            server: 192.168.1.112
+            path: /mnt/main_pool/private/metadata
+            readOnly: false
+        - name: sonarr-media
+          nfs:
+            server: 192.168.1.112
+            path: /mnt/main_pool/private/media/movies
+            readOnly: false
+        - name: sonarr-downloads
+          nfs:
+            server: 192.168.1.112
+            path: /mnt/main_pool/private/downloads
+            readOnly: false
+      containers:
+        - name: sonarr
+          # TODO maybe change image
+          image: ghcr.io/onedr0p/sonarr-develop:rolling
+          command:   
+          ports:
+            - containerPort: 7878
+          volumeMounts:
+            - mountPath: /config
+              name: sonarr-config
+              subPath: sonarr
+              readonly: false
+            - mountPath: /downloads
+              name: sonarr-downloads
+              readonly: false
+            - mountPath: /movies/
+              name: sonarr-media
+              readonly: false
