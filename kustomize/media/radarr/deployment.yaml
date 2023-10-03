@@ -34,7 +34,7 @@ spec:
       containers:
         - name: radarr
           # TODO maybe change image
-          image: ghcr.io/onedr0p/radarr-develop
+          image: ghcr.io/onedr0p/radarr-develop:rolling
           command:   
           ports:
             - containerPort: 5299
