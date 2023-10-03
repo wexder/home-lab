@@ -37,7 +37,7 @@ spec:
           image: ghcr.io/onedr0p/radarr-develop:rolling
           command:   
           ports:
-            - containerPort: 5299
+            - containerPort: 7878
           volumeMounts:
             - mountPath: /config
               name: radarr-config
