@@ -23,6 +23,10 @@ sections: # An array of sections
         description: Argo
         icon: hl-argocd
         url: https://argo.tailcceac.ts.net
+      - title: NAS
+        description: NAS
+        icon: hl-truenas
+        url: https://nas.tailcceac.ts.net
   - name: Media
     items:
       - title: Kavita
