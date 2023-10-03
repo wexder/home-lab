@@ -47,3 +47,7 @@ sections: # An array of sections
         description: Kuma
         icon: hl-uptime-kuma
         url: https://kuma.tailcceac.ts.net
+      - title: PiKVM
+        description: PiKVM
+        icon: hl-pikvm-light
+        url: https://pikvm.tailcceac.ts.net
