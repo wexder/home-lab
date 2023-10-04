@@ -17,9 +17,10 @@ spec:
     spec:
       volumes:
         - name: readarr-config
-          nfs:
-            server: 192.168.1.112
-            path: /mnt/main_pool/private/metadata
+          iscsi:
+            targetPortal: 192.168.1.112:3260
+            iqn: iqn.2005-10.org.freenas.ctl:test
+            fsType: ext4
             readOnly: false
         - name: readarr-media
           nfs:
