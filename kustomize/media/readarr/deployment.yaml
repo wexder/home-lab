@@ -18,9 +18,10 @@ spec:
       volumes:
         - name: readarr-config
           iscsi:
-            targetPortal: 192.168.1.112:3260
+            targetPortal: 192.168.1.112
             iqn: iqn.2005-10.org.freenas.ctl:test
             fsType: ext4
+            lun: 0
             readOnly: false
         - name: readarr-media
           nfs:
