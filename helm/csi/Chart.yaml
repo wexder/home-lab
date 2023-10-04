@@ -5,5 +5,5 @@ type: application
 version: 1.0.0
 dependencies:
 - name: truenas-csp
-  version: 1.1.p
+  version: 1.1.4
   repository:  https://hpe-storage.github.io/truenas-csp
