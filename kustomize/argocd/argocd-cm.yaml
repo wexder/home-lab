@@ -1,5 +1,12 @@
 apiVersion: v1
 data:
+  resource.exclusions: |
+   - apiGroups:
+       - cilium.io
+     kinds:
+       - CiliumIdentity
+     clusters:
+       - "*"
   url: https://argo.k8s.neurobug.com
   # dex.config: |
   #   connectors:
