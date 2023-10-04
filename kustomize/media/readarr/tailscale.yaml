@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: readarr-tailscale
+spec:
+  defaultBackend:
+    service:
+      name: readarr
+      port:
+        name: tailscale
+  ingressClassName: tailscale
+  tls:
+  - hosts:
+    - readarr

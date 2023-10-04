@@ -1,51 +1,51 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sonarr
+  name: readarr
   labels:
-    app: sonarr
+    app: readarr
 spec:
   replicas: 1
   revisionHistoryLimit: 1
   selector:
     matchLabels:
-      app: sonarr
+      app: readarr
   template:
     metadata:
       labels:
-        app: sonarr
+        app: readarr
     spec:
       volumes:
-        - name: sonarr-config
+        - name: readarr-config
           nfs:
             server: 192.168.1.112
             path: /mnt/main_pool/private/metadata
             readOnly: false
-        - name: sonarr-media
+        - name: readarr-media
           nfs:
             server: 192.168.1.112
-            path: /mnt/main_pool/private/media/shows
+            path: /mnt/main_pool/private/media/ebooks
             readOnly: false
-        - name: sonarr-downloads
+        - name: readarr-downloads
           nfs:
             server: 192.168.1.112
             path: /mnt/main_pool/private/downloads
             readOnly: false
       containers:
-        - name: sonarr
+        - name: readarr
           # TODO maybe change image
-          image: ghcr.io/onedr0p/sonarr-develop:rolling
+          image: ghcr.io/onedr0p/readarr-develop:rolling
           command:   
           ports:
-            - containerPort: 8989
+            - containerPort: 8787
           volumeMounts:
             - mountPath: /config
-              name: sonarr-config
-              subPath: sonarr
+              name: readarr-config
+              subPath: readarr
               readonly: false
             - mountPath: /downloads
-              name: sonarr-downloads
+              name: readarr-downloads
               readonly: false
-            - mountPath: /shows/
-              name: sonarr-media
+            - mountPath: /ebooks/
+              name: readarr-media
               readonly: false
