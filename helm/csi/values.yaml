@@ -1,4 +1,6 @@
 democratic-csi:
+  csiDriver:
+    name: democratic
   node:
     hostPID: true
     driver:
