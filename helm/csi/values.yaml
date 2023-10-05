@@ -64,12 +64,12 @@ democratic-csi:
       # please see the most up-to-date example of the corresponding config here:
       # https://github.com/democratic-csi/democratic-csi/tree/master/examples
       # YOU MUST COPY THE DATA HERE INLINE!
-      driver: freenas-iscsi
-      instance_id: freenas-iscsi
+      driver: freenas-api-iscsi
+      instance_id: freenas-api-iscsi
       httpConnection:
-        protocol: https
-        host: 192.169.1.112
-        port: 443
+        protocol: http
+        host: 192.168.1.112
+        port: 80
         # use only 1 of apiKey or username/password
         # if both are present, apiKey is preferred
         # apiKey is only available starting in TrueNAS-12
@@ -80,18 +80,6 @@ democratic-csi:
         # use apiVersion 2 for TrueNAS-12 and up (will work on 11.x in some scenarios as well)
         # leave unset for auto-detection
         apiVersion: 2
-      sshConnection:
-        host: 192.168.1.112
-        port: 22
-        username: k8s
-        privateKey: |
-          -----BEGIN OPENSSH PRIVATE KEY-----
-          b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
-          QyNTUxOQAAACCMKvUV4VjbnVMFc97AuglR2XptBguOBia89cd0CgZqHwAAAJhWsfXSVrH1
-          0gAAAAtzc2gtZWQyNTUxOQAAACCMKvUV4VjbnVMFc97AuglR2XptBguOBia89cd0CgZqHw
-          AAAEBWbl3zOUKXcmSsnmwQANBy0shQ0sd+BKRzNUUJSnmPwIwq9RXhWNudUwVz3sC6CVHZ
-          em0GC44GJrz1x3QKBmofAAAAFXdleGRlckBiYXR0bGUtbWFjaGluZQ==
-          -----END OPENSSH PRIVATE KEY-----
       zfs:
         # can be used to override defaults if necessary
         # the example below is useful for TrueNAS 12
@@ -130,7 +118,7 @@ democratic-csi:
         # 512, 1K, 2K, 4K, 8K, 16K, 64K, 128K default is 16K
         zvolBlocksize:
       iscsi:
-        targetPortal: "192.168.1.112"
+        targetPortal: "server[:port]"
         # for multipath
         targetPortals: [] # [ "server[:port]", "server[:port]", ... ]
         # leave empty to omit usage of -I with iscsiadm
