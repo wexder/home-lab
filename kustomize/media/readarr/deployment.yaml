@@ -11,15 +11,15 @@ spec:
     matchLabels:
       app: readarr
   template:
-    securityContext:
-      runAsUser: 568
-      runAsGroup: 568
-      fsGroup: 568
-      fsGroupChangePolicy: "OnRootMismatch"
     metadata:
       labels:
         app: readarr
     spec:
+      securityContext:
+        runAsUser: 568
+        runAsGroup: 568
+        fsGroup: 568
+        fsGroupChangePolicy: "OnRootMismatch"
       volumes:
         - name: readarr-config
           persistentVolumeClaim:
