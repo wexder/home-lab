@@ -75,7 +75,7 @@ democratic-csi:
         # apiKey is only available starting in TrueNAS-12
         #apiKey:
         username: k8s
-        password: k8s
+        password: 123
         allowInsecure: true
         # use apiVersion 2 for TrueNAS-12 and up (will work on 11.x in some scenarios as well)
         # leave unset for auto-detection
