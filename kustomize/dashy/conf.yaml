@@ -41,6 +41,18 @@ sections: # An array of sections
         description: Transmission
         icon: hl-transmission
         url: https://transmission.tailcceac.ts.net
+      - title: Radarr
+        description: Radarr
+        icon: hl-radarr
+        url: https://radarr.tailcceac.ts.net
+      - title: Sonarr
+        description: Sonarr
+        icon: hl-sonarr
+        url: https://sonarr.tailcceac.ts.net
+      - title: Readarr
+        description: Readarr
+        icon: hl-readarr
+        url: https://readarr.tailcceac.ts.net
   - name: Monitoring
     items:
       - title: Hubble
