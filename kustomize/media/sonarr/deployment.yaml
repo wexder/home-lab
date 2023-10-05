@@ -19,6 +19,7 @@ spec:
         - name: sonarr-config
           persistentVolumeClaim:
             claimName: sonarr-iscsi
+            readOnly: false
         - name: sonarr-media
           nfs:
             server: 192.168.1.112

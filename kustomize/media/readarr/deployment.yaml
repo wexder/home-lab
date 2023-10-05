@@ -19,6 +19,7 @@ spec:
         - name: readarr-config
           persistentVolumeClaim:
             claimName: readarr-iscsi
+            readOnly: false
         - name: readarr-media
           nfs:
             server: 192.168.1.112

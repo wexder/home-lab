@@ -19,6 +19,7 @@ spec:
         - name: radarr-config
           persistentVolumeClaim:
             claimName: radarr-iscsi
+            readOnly: false
         - name: radarr-media
           nfs:
             server: 192.168.1.112
