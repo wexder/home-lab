@@ -40,7 +40,6 @@ spec:
           volumeMounts:
             - mountPath: /config
               name: readarr-config
-              subPath: readarr
               readonly: false
             - mountPath: /downloads
               name: readarr-downloads

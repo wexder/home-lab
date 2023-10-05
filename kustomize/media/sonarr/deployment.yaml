@@ -40,7 +40,6 @@ spec:
           volumeMounts:
             - mountPath: /config
               name: sonarr-config
-              subPath: sonarr
               readonly: false
             - mountPath: /downloads
               name: sonarr-downloads

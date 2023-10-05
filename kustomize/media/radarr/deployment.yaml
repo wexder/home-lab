@@ -40,7 +40,6 @@ spec:
           volumeMounts:
             - mountPath: /config
               name: radarr-config
-              subPath: radarr
               readonly: false
             - mountPath: /downloads
               name: radarr-downloads
