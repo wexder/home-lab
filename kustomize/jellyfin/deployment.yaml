@@ -21,9 +21,9 @@ spec:
         app: jellyfin
     spec:
       securityContext:
-        runAsUser: 568
-        runAsGroup: 568
-        fsGroup: 568
+        runAsNonRoot: false
+        runAsUser: 0
+        runAsGroup: 0
         fsGroupChangePolicy: "OnRootMismatch"
       volumes:
         - name: nfs-jellyfin-config
@@ -41,10 +41,6 @@ spec:
             readOnly: false
       containers:
       - env:
-        - name: PGID
-          value: "\x36\x35\x35\x34\x31" # < ASCII code for '65541'
-        - name: PUID
-          value: "\x31\x30\x34\x34" #< ACII code for '1044'
         - name: TZ
           value: Europe/Amsterdam
         # securityContext:
