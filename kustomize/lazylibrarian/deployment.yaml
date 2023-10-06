@@ -16,9 +16,9 @@ spec:
         app: lazylibrarian
     spec:
       securityContext:
-        runAsUser: 568
-        runAsGroup: 568
-        fsGroup: 568
+        runAsNonRoot: false
+        runAsUser: 0
+        runAsGroup: 0
         fsGroupChangePolicy: "OnRootMismatch"
       volumes:
         - name: lazylibrarian-config
