@@ -6,7 +6,7 @@ metadata:
 spec:
   defaultBackend:
     service:
-      name: hubble
+      name: hubble-ui
       port:
         number: 80
   ingressClassName: tailscale
