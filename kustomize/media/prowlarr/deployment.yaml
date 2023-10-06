@@ -42,6 +42,10 @@ spec:
           command:   
           ports:
             - containerPort: 9696
+          resources:
+            requests:
+              # cpu: 200m
+              memory: 2Gi
           volumeMounts:
             - mountPath: /config
               name: prowlarr-config
