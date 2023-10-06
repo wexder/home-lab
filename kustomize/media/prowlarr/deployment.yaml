@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prowlarr
+  labels:
+    app: prowlarr
+spec:
+  replicas: 1
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      app: prowlarr
+  template:
+    metadata:
+      labels:
+        app: prowlarr
+    spec:
+      securityContext:
+        runAsUser: 568
+        runAsGroup: 568
+        fsGroup: 568
+        fsGroupChangePolicy: "OnRootMismatch"
+      volumes:
+        - name: prowlarr-config
+          persistentVolumeClaim:
+            claimName: prowlarr-iscsi
+            readOnly: false
+        - name: prowlarr-media
+          nfs:
+            server: 192.168.1.112
+            path: /mnt/main_pool/private/media/movies
+            readOnly: false
+        - name: prowlarr-downloads
+          nfs:
+            server: 192.168.1.112
+            path: /mnt/main_pool/private/downloads
+            readOnly: false
+      containers:
+        - name: prowlarr
+          # TODO maybe change image
+          image: ghcr.io/onedr0p/prowlarr-develop:rolling
+          command:   
+          ports:
+            - containerPort: 9696
+          volumeMounts:
+            - mountPath: /config
+              name: prowlarr-config
+              readonly: false
+            - mountPath: /downloads
+              name: prowlarr-downloads
+              readonly: false
+            - mountPath: /movies/
+              name: prowlarr-media
+              readonly: false
