@@ -22,9 +22,8 @@ spec:
             path: /mnt/main_pool/private/downloads
             readOnly: false
         - name: transmission-config
-          nfs:
-            server: 192.168.1.112
-            path: /mnt/main_pool/private/metadata
+          persistentVolumeClaim:
+            claimName: transmission-iscsi
             readOnly: false
       containers:
         - name: transmission
