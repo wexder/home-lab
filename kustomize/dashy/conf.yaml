@@ -41,6 +41,10 @@ sections: # An array of sections
         description: Transmission
         icon: hl-transmission
         url: https://transmission.tailcceac.ts.net
+      - title: Prowlarr
+        description: Prowlarr
+        icon: hl-prowlarr
+        url: https://prowlarr.tailcceac.ts.net
       - title: Radarr
         description: Radarr
         icon: hl-radarr
