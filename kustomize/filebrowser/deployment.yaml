@@ -57,9 +57,9 @@ spec:
           name: filebrowser
           env:
             - name: PUID
-              value: 1026
+              value: "1026"
             - name: PGID
-              value: 100
+              value: "100"
           ports:
             - containerPort: 8080
           volumeMounts:
