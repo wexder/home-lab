@@ -44,6 +44,12 @@ spec:
             server: 192.168.1.112
             path: /mnt/main_pool/private/media/ebooks
             readOnly: false
+        - name: conf
+          configMap:
+            name: filebrowser-config
+            items:
+              - key: settings.json
+                path: .filebrowser.json
       containers:
       - image:  filebrowser/filebrowser
         imagePullPolicy: Always
@@ -52,11 +58,14 @@ spec:
         - containerPort: 80
           protocol: TCP
         volumeMounts:
+        - mountPath: /.filebrowser.json
+          subPath: /.filebrowser.json
+          name: nfs-filebrowser-config
         - mountPath: /config
           name: nfs-filebrowser-config
-        - mountPath: /shows
+        - mountPath: /data/shows
           name: nfs-filebrowser-shows
-        - mountPath: /movies
+        - mountPath: /data/movies
           name: nfs-filebrowser-movies
-        - mountPath: /ebooks
+        - mountPath: /data/ebooks
           name: nfs-filebrowser-ebooks

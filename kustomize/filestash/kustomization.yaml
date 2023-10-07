@@ -7,3 +7,8 @@ resources:
 - service.yaml
 - tailscale.yaml
 - pvc.yaml
+
+configMapGenerator:
+  - name: filebrowser-config
+    files:
+      - settings.json
