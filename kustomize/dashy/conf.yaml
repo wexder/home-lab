@@ -27,6 +27,10 @@ sections: # An array of sections
         description: NAS
         icon: hl-truenas
         url: https://nas.tailcceac.ts.net
+      - title: Filebrowser
+        description: Filebrowser
+        icon: hl-filebrowser
+        url: https://filebrowser.tailcceac.ts.net
   - name: Media
     items:
       - title: Kavita
@@ -61,6 +65,10 @@ sections: # An array of sections
         description: Jellyfin
         icon: hl-jellyfin
         url: https://jellyfin.tailcceac.ts.net
+      - title: LibGen
+        description: LibGen
+        icon: favicon
+        url: https://libgen.is
   - name: Monitoring
     items:
       - title: Hubble
