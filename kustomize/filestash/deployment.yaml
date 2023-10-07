@@ -2,8 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: filestash
-  name: filestash
+    app: filebrowser
+  name: filebrowser
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
@@ -14,11 +14,11 @@ spec:
     type: RollingUpdate
   selector:
     matchLabels:
-      app: filestash
+      app: filebrowser
   template:
     metadata:
       labels:
-        app: filestash
+        app: filebrowser
     spec:
       securityContext:
         runAsNonRoot: false
@@ -26,26 +26,37 @@ spec:
         runAsGroup: 0
         fsGroupChangePolicy: "OnRootMismatch"
       volumes:
-        - name: nfs-filestash-config
+        - name: nfs-filebrowser-config
           persistentVolumeClaim:
-            claimName: filestash-iscsi
-        # - name: nfs-filestash-shows
-        #   nfs:
-        #     server: 192.168.1.112
-        #     path: /mnt/main_pool/private/media/shows
-        #     readOnly: false
-        # - name: nfs-filestash-movies
-        #   nfs:
-        #     server: 192.168.1.112
-        #     path: /mnt/main_pool/private/media/movies
-        #     readOnly: false
+            claimName: filebrowser-iscsi
+        - name: nfs-filebrowser-shows
+          nfs:
+            server: 192.168.1.112
+            path: /mnt/main_pool/private/media/shows
+            readOnly: false
+        - name: nfs-filebrowser-movies
+          nfs:
+            server: 192.168.1.112
+            path: /mnt/main_pool/private/media/movies
+            readOnly: false
+        - name: nfs-filebrowser-ebooks
+          nfs:
+            server: 192.168.1.112
+            path: /mnt/main_pool/private/media/ebooks
+            readOnly: false
       containers:
-      - image: machines/filestash
+      - image:  filebrowser/filebrowser
         imagePullPolicy: Always
-        name: filestash
+        name: filebrowser
         ports:
-        - containerPort: 8334
+        - containerPort: 8080
           protocol: TCP
         volumeMounts:
-        - mountPath: /app/data/state/
-          name: nfs-filestash-config
+        - mountPath: /config
+          name: nfs-filebrowser-config
+        - mountPath: /shows
+          name: nfs-filebrowser-shows
+        - mountPath: /movies
+          name: nfs-filebrowser-movies
+        - mountPath: /ebooks
+          name: nfs-filebrowser-ebooks

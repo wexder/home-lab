@@ -1,5 +1,5 @@
 # kustomization.yml
-namespace: filestash
+namespace: filebrowser
 
 resources:
 - namespace.yaml
