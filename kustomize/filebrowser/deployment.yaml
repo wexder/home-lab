@@ -55,6 +55,11 @@ spec:
         - image:  filebrowser/filebrowser
           imagePullPolicy: Always
           name: filebrowser
+          envs:
+            - name: PUID
+              value: 1026
+            - name: PGID
+              value: 100
           ports:
             - containerPort: 8080
           volumeMounts:
