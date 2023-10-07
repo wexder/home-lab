@@ -65,7 +65,10 @@ spec:
               name: filebrowser-config
             - mountPath: /data/shows
               name: nfs-filebrowser-shows
+              readOnly: false
             - mountPath: /data/movies
               name: nfs-filebrowser-movies
+              readOnly: false
             - mountPath: /data/ebooks
               name: nfs-filebrowser-ebooks
+              readOnly: false
