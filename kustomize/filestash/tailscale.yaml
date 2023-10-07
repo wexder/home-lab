@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: filestash-tailscale
+spec:
+  defaultBackend:
+    service:
+      name: filestash
+      port:
+        name: tailscale
+  ingressClassName: tailscale
+  tls:
+  - hosts:
+    - filestash

@@ -1,0 +1,9 @@
+# kustomization.yml
+namespace: filestash
+
+resources:
+- namespace.yaml
+- deployment.yaml
+- service.yaml
+- tailscale.yaml
+- pvc.yaml
