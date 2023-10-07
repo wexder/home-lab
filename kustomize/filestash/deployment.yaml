@@ -60,7 +60,7 @@ spec:
         volumeMounts:
         - mountPath: /.filebrowser.json
           subPath: .filebrowser.json
-          name: filebrowser-config
+          name: conf
         - mountPath: /config
           name: nfs-filebrowser-config
         - mountPath: /data/shows
