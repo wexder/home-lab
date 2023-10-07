@@ -21,11 +21,11 @@ spec:
       labels:
         app: filebrowser
     spec:
-      securityContext:
-        runAsUser: 568
-        runAsGroup: 568
-        fsGroup: 568
-        fsGroupChangePolicy: "OnRootMismatch"
+      # securityContext:
+      #   runAsUser: 568
+      #   runAsGroup: 568
+      #   fsGroup: 568
+      #   fsGroupChangePolicy: "OnRootMismatch"
       volumes:
         - name: filebrowser-config
           persistentVolumeClaim:
@@ -55,11 +55,6 @@ spec:
         - image:  filebrowser/filebrowser
           imagePullPolicy: Always
           name: filebrowser
-          env:
-            - name: PUID
-              value: "568"
-            - name: PGID
-              value: "568"
           ports:
             - containerPort: 8080
           volumeMounts:
