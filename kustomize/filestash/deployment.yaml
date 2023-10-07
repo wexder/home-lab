@@ -27,7 +27,7 @@ spec:
         runAsGroup: 0
         fsGroupChangePolicy: "OnRootMismatch"
       volumes:
-        - name: nfs-filebrowser-config
+        - name: filebrowser-config
           persistentVolumeClaim:
             claimName: filebrowser-iscsi
         - name: nfs-filebrowser-shows
@@ -57,13 +57,12 @@ spec:
         name: filebrowser
         ports:
         - containerPort: 8080
-          protocol: TCP
         volumeMounts:
         - mountPath: /.filebrowser.json
           subPath: .filebrowser.json
           name: conf
         - mountPath: /config
-          name: nfs-filebrowser-config
+          name: filebrowser-config
         - mountPath: /data/shows
           name: nfs-filebrowser-shows
         - mountPath: /data/movies
