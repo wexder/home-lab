@@ -6,6 +6,7 @@ metadata:
   name: jellyfin
 spec:
   progressDeadlineSeconds: 600
+  revisionHistoryLimit: 1
   replicas: 1
   strategy:
     rollingUpdate:
