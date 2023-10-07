@@ -30,7 +30,7 @@ spec:
             readOnly: false
       containers:
         - name: kavita
-          image: kizaing/kavita:latest
+          image: ghcr.io/kareadita/kavita:nightly
           # resources:
           #   requests:
           #     cpu: 200m
