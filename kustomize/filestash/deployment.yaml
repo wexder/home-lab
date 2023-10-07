@@ -59,7 +59,7 @@ spec:
           protocol: TCP
         volumeMounts:
         - mountPath: /.filebrowser.json
-          subPath: /.filebrowser.json
+          subPath: .filebrowser.json
           name: nfs-filebrowser-config
         - mountPath: /config
           name: nfs-filebrowser-config
