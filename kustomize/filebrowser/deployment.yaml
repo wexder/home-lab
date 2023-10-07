@@ -21,11 +21,11 @@ spec:
       labels:
         app: filebrowser
     spec:
-      # securityContext:
-      #   runAsUser: 568
-      #   runAsGroup: 568
-      #   fsGroup: 568
-      #   fsGroupChangePolicy: "OnRootMismatch"
+      securityContext:
+        runAsUser: 568
+        runAsGroup: 568
+        fsGroup: 568
+        fsGroupChangePolicy: "OnRootMismatch"
       volumes:
         - name: filebrowser-config
           persistentVolumeClaim:
