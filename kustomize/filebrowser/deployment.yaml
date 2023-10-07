@@ -52,20 +52,20 @@ spec:
               - key: settings.json
                 path: .filebrowser.json
       containers:
-      - image:  filebrowser/filebrowser
-        imagePullPolicy: Always
-        name: filebrowser
-        ports:
-        - containerPort: 8080
-        volumeMounts:
-        - mountPath: /.filebrowser.json
-          subPath: .filebrowser.json
-          name: conf
-        - mountPath: /config
-          name: filebrowser-config
-        - mountPath: /data/shows
-          name: nfs-filebrowser-shows
-        - mountPath: /data/movies
-          name: nfs-filebrowser-movies
-        - mountPath: /data/ebooks
-          name: nfs-filebrowser-ebooks
+        - image:  filebrowser/filebrowser
+          imagePullPolicy: Always
+          name: filebrowser
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - mountPath: /.filebrowser.json
+              subPath: .filebrowser.json
+              name: conf
+            - mountPath: /config
+              name: filebrowser-config
+            - mountPath: /data/shows
+              name: nfs-filebrowser-shows
+            - mountPath: /data/movies
+              name: nfs-filebrowser-movies
+            - mountPath: /data/ebooks
+              name: nfs-filebrowser-ebooks

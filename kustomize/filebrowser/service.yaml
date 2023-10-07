@@ -6,13 +6,8 @@ metadata:
     app: filebrowser
 spec:
   ports:
-    - port: 8080
-      name: default
-      targetPort: 8080
-      protocol: TCP
     - port: 80
-      name: tailscale
-      targetPort: 8080
+      targetPort: 80
       protocol: TCP
   selector:
     app: filebrowser

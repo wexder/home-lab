@@ -7,7 +7,7 @@ spec:
     service:
       name: filebrowser
       port:
-        name: tailscale
+        number: 80
   ingressClassName: tailscale
   tls:
   - hosts:
