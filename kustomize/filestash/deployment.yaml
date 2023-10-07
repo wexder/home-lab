@@ -49,17 +49,17 @@ spec:
             name: filebrowser-config
             items:
               - key: settings.json
-                path: .filebrowser.json
+                path: settings.json
       containers:
-      - image:  filebrowser/filebrowser
+      - image:  filebrowser/filebrowser:s6
         imagePullPolicy: Always
         name: filebrowser
         ports:
         - containerPort: 80
           protocol: TCP
         volumeMounts:
-        - mountPath: /.filebrowser.json
-          subPath: .filebrowser.json
+        - mountPath: /config/settings.json
+          subPath: settings.json
           name: nfs-filebrowser-config
         - mountPath: /config
           name: nfs-filebrowser-config
