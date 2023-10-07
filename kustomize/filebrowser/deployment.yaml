@@ -55,7 +55,7 @@ spec:
         - image:  filebrowser/filebrowser
           imagePullPolicy: Always
           name: filebrowser
-          envs:
+          env:
             - name: PUID
               value: 1026
             - name: PGID
