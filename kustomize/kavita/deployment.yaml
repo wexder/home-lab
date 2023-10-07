@@ -30,14 +30,7 @@ spec:
             readOnly: false
       containers:
         - name: kavita
-          image: ghcr.io/kareadita/kavita:nightly
-          # resources:
-          #   requests:
-          #     cpu: 200m
-          #     memory: 200Mi
-          #   limits:
-          #     cpu: 400m
-          #     memory: 400Mi
+          image: ghcr.io/kareadita/kavita:latest
           command:   
           ports:
             - containerPort: 5000
