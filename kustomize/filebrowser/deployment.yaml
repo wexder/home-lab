@@ -57,9 +57,9 @@ spec:
           name: filebrowser
           env:
             - name: PUID
-              value: "1026"
+              value: "568"
             - name: PGID
-              value: "100"
+              value: "568"
           ports:
             - containerPort: 8080
           volumeMounts:
@@ -68,12 +68,12 @@ spec:
               name: conf
             - mountPath: /config
               name: filebrowser-config
-            - mountPath: /data/shows
+            - mountPath: /shows
               name: nfs-filebrowser-shows
               readOnly: false
-            - mountPath: /data/movies
+            - mountPath: /movies
               name: nfs-filebrowser-movies
               readOnly: false
-            - mountPath: /data/ebooks
+            - mountPath: /ebooks
               name: nfs-filebrowser-ebooks
               readOnly: false
