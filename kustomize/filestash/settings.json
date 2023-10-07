@@ -1,6 +1,6 @@
 {
-  "port": 80,
-  "baseURL": "0.0.0.0",
+  "port": 8080,
+  "baseURL": "",
   "address": "",
   "log": "stdout",
   "database": "/config/filebrowser.db",
