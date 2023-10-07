@@ -21,10 +21,8 @@ spec:
         fsGroup: 3000
       volumes:
         - name: kavita-config
-          nfs:
-            server: 192.168.1.112
-            path: /mnt/main_pool/private/metadata
-            readOnly: false
+          persistentVolumeClaim:
+            claimName: kavita-iscsi
         - name: kavita-media
           nfs:
             server: 192.168.1.112
