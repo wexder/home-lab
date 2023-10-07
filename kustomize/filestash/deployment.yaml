@@ -58,9 +58,9 @@ spec:
         - containerPort: 80
           protocol: TCP
         volumeMounts:
-        # - mountPath: /.filebrowser.json
-        #   subPath: .filebrowser.json
-        #   name: conf
+        - mountPath: /.filebrowser.json
+          subPath: .filebrowser.json
+          name: conf
         - mountPath: /config
           name: nfs-filebrowser-config
         - mountPath: /data/shows
