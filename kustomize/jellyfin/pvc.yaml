@@ -2,9 +2,10 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: jellyfin-iscsi
-  # annotations:
-  #   volume.beta.kubernetes.io/storage-class: "freenas-iscsi-csi"
+  annotations:
+    volume.beta.kubernetes.io/storage-class: "freenas-iscsi-csi"
 spec:
+  storageClassName: freenas-iscsi-csi
   accessModes:
     - ReadWriteOnce
   resources:
