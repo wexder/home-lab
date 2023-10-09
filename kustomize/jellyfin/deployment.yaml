@@ -49,7 +49,7 @@ spec:
         image: ghcr.io/linuxserver/jellyfin
         imagePullPolicy: Always
         name: jellyfin
-        livenessProbe:
+        readinessProbe:
           httpGet:
             path: /health
             port: http-tcp
