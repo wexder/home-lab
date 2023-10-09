@@ -6,13 +6,13 @@ metadata:
     app: jellyfin
 spec:
   ports:
-    - port: 9696
+    - port: 8096
       name: default
-      targetPort: 9696
+      targetPort: 8096
       protocol: TCP
     - port: 80
       name: tailscale
-      targetPort: 8920
+      targetPort: 8096
       protocol: TCP
   selector:
     app: jellyfin
