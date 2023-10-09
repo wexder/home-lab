@@ -12,7 +12,7 @@ spec:
       protocol: TCP
     - port: 80
       name: tailscale
-      targetPort: 8096
+      targetPort: 8920
       protocol: TCP
   selector:
     app: jellyfin
