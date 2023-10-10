@@ -5,14 +5,8 @@ metadata:
     app: jellyfin
   name: jellyfin
 spec:
-  progressDeadlineSeconds: 600
   revisionHistoryLimit: 1
   replicas: 1
-  strategy:
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 1
-    type: RollingUpdate
   selector:
     matchLabels:
       app: jellyfin
@@ -34,12 +28,10 @@ spec:
           nfs:
             server: 192.168.1.112
             path: /mnt/main_pool/private/media/shows
-            readOnly: false
         - name: nfs-jellyfin-movies
           nfs:
             server: 192.168.1.112
             path: /mnt/main_pool/private/media/movies
-            readOnly: false
       containers:
       - image: ghcr.io/linuxserver/jellyfin
         imagePullPolicy: Always
