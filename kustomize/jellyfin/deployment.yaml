@@ -60,7 +60,7 @@ spec:
         readinessProbe:
             httpGet:
               path: /health
-            port: http-tcp
+              port: http-tcp
         volumeMounts:
         - mountPath: /config
           name: nfs-jellyfin-config
