@@ -1,4 +1,7 @@
 {
+  "repositories": [
+    "wexder/home-lab"
+  ],
   "packageRules": [
     {
       "matchPackagePatterns": [
