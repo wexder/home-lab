@@ -1,0 +1,18 @@
+name: Renovate
+
+on:
+  workflow_dispatch: {}
+  schedule:
+      - cron: "0 17 * * 1" # 10am pdt / 9am pst, weekly on Monday
+
+jobs:
+  renovate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.6.0
+      - name: Self-hosted Renovate
+        uses: renovatebot/github-action@v39.0.5
+        with:
+          renovate-image: myproxyhub.domain.com/renovate/renovate
+          token: ${{ secrets.RENOVATE_TOKEN }}
