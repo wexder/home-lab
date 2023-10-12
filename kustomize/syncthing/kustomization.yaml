@@ -6,4 +6,5 @@ resources:
 - deployment.yaml
 - service.yaml
 - tailscale.yaml
+- tailscale-sync.yaml
 - pvc.yaml

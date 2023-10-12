@@ -10,5 +10,8 @@ spec:
       targetPort: 8384
       name: tailscale
       protocol: TCP
+    - port: 22000
+      targetPort: 22000
+      protocol: TCP
   selector:
     app: syncthing
