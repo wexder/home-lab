@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: syncthing
+  name: syncthing
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 1
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: syncthing
+  template:
+    metadata:
+      labels:
+        app: syncthing
+    spec:
+      securityContext:
+        runAsUser: 568
+        runAsGroup: 568
+        fsGroup: 568
+        fsGroupChangePolicy: "OnRootMismatch"
+      volumes:
+        - name: syncthing-config
+          persistentVolumeClaim:
+            claimName: syncthing-iscsi
+        # - name: nfs-syncthing-data
+        #   nfs:
+        #     server: 192.168.1.112
+        #     path: /mnt/main_pool/private/syncthing/
+        #     readOnly: false
+      containers:
+        - image:  linuxserver/syncthing
+          imagePullPolicy: Always
+          name: syncthing
+          ports:
+            - containerPort: 8384
+          volumeMounts:
+            - mountPath: /config
+              name: syncthing-config
