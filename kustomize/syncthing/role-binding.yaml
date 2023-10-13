@@ -7,5 +7,5 @@ subjects:
   name: "tailscale-sidecar"
 roleRef:
   kind: Role
-  name: tailscale
+  name: tailscale-sidecar
   apiGroup: rbac.authorization.k8s.io
