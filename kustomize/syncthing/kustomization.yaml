@@ -8,3 +8,6 @@ resources:
 # - tailscale.yaml
 # - tailscale-sync.yaml
 - pvc.yaml
+- role.yaml
+- role-binding.yaml
+- sa.yaml

@@ -5,6 +5,7 @@ metadata:
     app: syncthing
   name: syncthing
 spec:
+  serviceAccountName: "tailscale-sidecar"
   progressDeadlineSeconds: 600
   replicas: 1
   revisionHistoryLimit: 1
@@ -51,7 +52,7 @@ spec:
           env:
             # Store the state in a k8s secret
           - name: TS_KUBE_SECRET
-            value: "{{TS_KUBE_SECRET}}"
+            value: "sidecar-state"
           - name: TS_USERSPACE
             value: "false"
           - name: TS_AUTHKEY
