@@ -13,6 +13,6 @@ spec:
     - port: 22000
       targetPort: 22000
       name: tailscale-sync
-      protocol: TCP
+      protocol: UDP
   selector:
     app: syncthing

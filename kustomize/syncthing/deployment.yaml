@@ -41,6 +41,7 @@ spec:
           name: syncthing
           ports:
             - containerPort: 8384
+            - containerPort: 22000
           volumeMounts:
             - mountPath: /config
               name: syncthing-config
