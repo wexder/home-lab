@@ -5,7 +5,6 @@ metadata:
     app: syncthing
   name: syncthing
 spec:
-  serviceAccountName: "tailscale-sidecar"
   progressDeadlineSeconds: 600
   replicas: 1
   revisionHistoryLimit: 1
@@ -22,6 +21,7 @@ spec:
       labels:
         app: syncthing
     spec:
+      serviceAccountName: "tailscale-sidecar"
       securityContext:
         runAsNonRoot: false
         runAsUser: 0
