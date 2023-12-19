@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: photoprism
+  labels:
+    app: photoprism
+spec:
+  replicas: 1
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      app: photoprism
+  template:
+    metadata:
+      labels:
+        app: photoprism
+    spec:
+      securityContext:
+        runAsNonRoot: false
+        runAsUser: 0
+        runAsGroup: 0
+        fsGroupChangePolicy: "OnRootMismatch"
+      volumes:
+        - name: photoprism-config
+          persistentVolumeClaim:
+            claimName: photoprism-iscsi
+            readOnly: false
+        - name: photoprism-media
+          nfs:
+            server: 192.168.1.112
+            path: /mnt/main_pool/private/photoprism
+            readOnly: false
+            readOnly: false
+      containers:
+        - name: photoprism
+          image: photoprism/photoprism:latest
+          # resources:
+          #   requests:
+          #     cpu: 200m
+          #     memory: 200Mi
+          #   limits:
+          #     cpu: 200m
+              # memory: 200Mi
+          command:   
+          ports:
+            - containerPort: 2342
+          volumeMounts:
+            - mountPath: /config
+              name: photoprism-config
+              subPath: photoprism
+              readonly: false
+            - mountPath: /storage/
+              name: photoprism-media
+              subPath: storage
+              readonly: false
+            - mountPath: /import/
+              name: photoprism-media
+              subPath: import
+              readonly: false
+            - mountPath: /originals/
+              name: photoprism-media
+              subPath: originals
+              readonly: false

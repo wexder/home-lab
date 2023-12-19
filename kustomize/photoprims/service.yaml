@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: photoprism
+  labels:
+    app: photoprism
+spec:
+  ports:
+    - port: 2342
+      name: default
+      targetPort: 2342
+      protocol: TCP
+    - port: 80
+      name: tailscale
+      targetPort: 2342
+      protocol: TCP
+  selector:
+    app: photoprism
