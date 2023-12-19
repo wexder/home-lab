@@ -11,7 +11,7 @@
 
   outputs = { self, nixpkgs, devenv, ... } @ inputs:
     let
-      pkgs = nixpkgs.legacyPackages."x86_64-linux";
+      pkgs = import nixpkgs { system = "x86_64-linux"; config.allowUnfree = true; };
     in
     {
       devShell.x86_64-linux = devenv.lib.mkShell {
