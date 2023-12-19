@@ -30,7 +30,6 @@ spec:
             server: 192.168.1.112
             path: /mnt/main_pool/private/photoprism
             readOnly: false
-            readOnly: false
       containers:
         - name: photoprism
           image: photoprism/photoprism:latest
