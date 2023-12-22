@@ -52,12 +52,12 @@ democratic-csi:
     hostPID: true
     driver:
       extraEnv:
-        - name: ISCSIADM_HOST_STRATEGY
-          value: nsenter
-        - name: ISCSIADM_HOST_PATH
-          value: /var/local/sbin/iscsiadm
+        # - name: ISCSIADM_HOST_STRATEGY
+        #   value: nsenter
+        # - name: ISCSIADM_HOST_PATH
+        #   value: /var/local/sbin/iscsiadm
       iscsiDirHostPath: /var/local/etc/iscsi
-      iscsiDirHostPathType: ""
+      iscsiDirHostPathType: Directory
 
   driver:
     config:
