@@ -65,6 +65,10 @@ sections: # An array of sections
         description: Jellyfin
         icon: hl-jellyfin
         url: https://jellyfin.tailcceac.ts.net
+      - title: Photoprism
+        description: Photoprism
+        icon: hl-photoprism
+        url: https://photoprism.tailcceac.ts.net
       - title: LibGen
         description: LibGen
         icon: favicon
