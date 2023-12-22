@@ -1,3 +1,5 @@
 .devenv/
 .direnv/
 .terraform/
+*.tfstate
+*.tfstate.backup
