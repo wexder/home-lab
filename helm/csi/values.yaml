@@ -57,7 +57,7 @@ democratic-csi:
         - name: ISCSIADM_HOST_PATH
           value: /var/local/sbin/iscsiadm
       iscsiDirHostPath: /var/local/etc/iscsi
-      iscsiDirHostPathType: Directory
+      iscsiDirHostPathType: 
 
   driver:
     config:
