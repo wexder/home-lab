@@ -22,9 +22,13 @@
 
             # This is your devenv configuration
             packages = with pkgs; [
+              kubernetes-helm
+              yq
+              talosctl
               terraform
               kubecm
               kustomize
+              kdash
             ];
 
             enterShell = ''
