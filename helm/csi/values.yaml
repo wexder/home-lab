@@ -55,7 +55,7 @@ democratic-csi:
         - name: ISCSIADM_HOST_STRATEGY
           value: nsenter
         - name: ISCSIADM_HOST_PATH
-          value: /var/local/sbin/iscsiadm
+          value: /usr/local/sbin/iscsiadm
       iscsiDirHostPath: /var/local/etc/iscsi
       iscsiDirHostPathType: 
 
