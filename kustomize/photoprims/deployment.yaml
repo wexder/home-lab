@@ -36,6 +36,16 @@ spec:
           env:
             - name: PHOTOPRISM_ADMIN_PASSWORD
               value: admin
+            - name: PHOTOPRISM_CONFIG_PATH
+              value: /config
+            - name: PHOTOPRISM_ORIGINALS_PATH
+              value: /photoprism/originals
+            - name: PHOTOPRISM_ORIGINALS_PATH
+              value: /photoprism/originals
+            - name: PHOTOPRISM_STORAGE_PATH
+              value: /photoprism/storage
+            - name: PHOTOPRISM_IMPORT_PATH
+              value: /photoprism/import
           # resources:
           #   requests:
           #     cpu: 200m
@@ -51,15 +61,7 @@ spec:
               name: photoprism-config
               subPath: photoprism
               readonly: false
-            - mountPath: /storage/
+            - mountPath: /photoprism
               name: photoprism-media
               subPath: storage
-              readonly: false
-            - mountPath: /import/
-              name: photoprism-media
-              subPath: import
-              readonly: false
-            - mountPath: /originals/
-              name: photoprism-media
-              subPath: originals
               readonly: false
