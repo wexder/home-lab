@@ -9,6 +9,7 @@ kube-prometheus-stack:
             storage: 50Gi
         selector: {}
 
+  grafana.adminPassword: admin
   # grafana.additionalDataSources:
   # - name: prometheus-sample
   #   access: proxy
