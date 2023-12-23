@@ -22,6 +22,7 @@
 
             # This is your devenv configuration
             packages = with pkgs; [
+              trivy
               kubernetes-helm
               yq
               talosctl
@@ -38,3 +39,4 @@
       };
     };
 }
+
