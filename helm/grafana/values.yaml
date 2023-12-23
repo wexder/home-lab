@@ -1,15 +1,15 @@
 kube-prometheus-stack:
-  # alertmanager:
-  #   alertmanagerSpec:
-  #     storage:
-  #       volumeClaimTemplate:
-  #         spec:
-  #           storageClassName: freenas-iscsi-csi
-  #           accessModes: ["ReadWriteOnce"]
-  #           resources:
-  #             requests:
-  #               storage: 50Gi
-  #           selector: {}
+  alertmanager:
+    alertmanagerSpec:
+      storage:
+        volumeClaimTemplate:
+          spec:
+            storageClassName: freenas-iscsi-csi
+            accessModes: ["ReadWriteOnce"]
+            resources:
+              requests:
+                storage: 50Gi
+            selector: {}
 
   grafana:
     adminPassword: admin
@@ -46,20 +46,17 @@ kube-prometheus-stack:
   prometheus:
     prometheusSpec:
       retention: 10d
-      # storageSpec:
-      #   volumeClaimTemplate:
-      #     spec:
-      #       storageClassName: freenas-iscsi-csi
-      #       accessModes: ["ReadWriteOnce"]
-      #       resources:
-      #         requests:
-      #           storage: 100Gi
-      #       selector: {}
-      additionalScrapeConfigs:
-        - job_name: truenas
-          remote_read:
-            url: http://192.168.1.112:30002
-          scheme: http
+      storageSpec:
+        volumeClaimTemplate:
+          spec:
+            storageClassName: freenas-iscsi-csi
+            accessModes: ["ReadWriteOnce"]
+            resources:
+              requests:
+                storage: 100Gi
+            selector: {}
+      remote_read:
+        url: http://192.168.1.112:30002
 
   # prometheus.prometheusSpec.resources
     # limits:
