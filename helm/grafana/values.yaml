@@ -54,7 +54,7 @@ kube-prometheus-stack:
               requests:
                 storage: 100Gi
       remote_read:
-        url: http://192.168.1.112:30002
+        url: http://192.168.1.112:30002/api/v1/read
 
   # prometheus.prometheusSpec.resources
     # limits:
