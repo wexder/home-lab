@@ -1,0 +1,16 @@
+trivy-operator:
+  serviceMonitor:
+    enabled: true
+  trivy:
+    resources:
+      requests:
+        cpu: 100m
+        memory: 100M
+        # ephemeralStorage: "2Gi"
+      limits:
+        cpu: 500m
+        memory: 1Gi
+    ignoreUnfixed: true
+    slow: false
+  operator:
+    metricsVulnIdEnabled: true
