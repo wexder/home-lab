@@ -24,6 +24,12 @@ kube-prometheus-stack:
   #   url: https://{{ printf "%s-prometheus.svc" .Release.Name }}:9090
   #   version: 1
   
+  prometheus.prometheusSpec.additionalScrapeConfigs:
+    - job_name: truenas
+      remote_read:
+        url: http://192.168.1.112:30002
+      scheme: http
+    
   # prometheusOperator.resources
     # limits:
     #   cpu: 200m
