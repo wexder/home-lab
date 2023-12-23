@@ -56,7 +56,7 @@ kube-prometheus-stack:
       additionalScrapeConfigs:
         - job_name: nas
           scheme: http
-          static_config:
+          static_configs:
             targets:
               - "192.168.1.112:9108"
 
