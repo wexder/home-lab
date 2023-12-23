@@ -45,6 +45,7 @@ kube-prometheus-stack:
   prometheus:
     prometheusSpec:
       retention: 10d
+      serviceMonitorSelectorNilUsesHelmValues: false
       storageSpec:
         volumeClaimTemplate:
           spec:
