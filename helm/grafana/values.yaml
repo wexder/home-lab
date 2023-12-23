@@ -53,9 +53,12 @@ kube-prometheus-stack:
             resources:
               requests:
                 storage: 100Gi
-      # TODO monitor nas
-      # remote_read:
-      #   url: http://192.168.1.112:30002/api/v1/read
+      additionalScrapeConfigs:
+        - job_name: nas
+          scheme: http
+          static_config:
+            targets:
+              - "192.168.1.112:9108"
 
   # prometheus.prometheusSpec.resources
     # limits:
