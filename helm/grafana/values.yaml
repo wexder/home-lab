@@ -1,0 +1,58 @@
+kube-prometheus-stack:
+  alertmanager.alertmanagerSpec.storage:
+    volumeClaimTemplate:
+      spec:
+        storageClassName: freenas-iscsi-csi
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 50Gi
+        selector: {}
+
+  # grafana.additionalDataSources:
+  # - name: prometheus-sample
+  #   access: proxy
+  #   basicAuth: true
+  #   basicAuthPassword: pass
+  #   basicAuthUser: daco
+  #   editable: false
+  #   jsonData:
+  #       tlsSkipVerify: true
+  #   orgId: 1
+  #   type: prometheus
+  #   url: https://{{ printf "%s-prometheus.svc" .Release.Name }}:9090
+  #   version: 1
+  
+  # prometheusOperator.resources
+    # limits:
+    #   cpu: 200m
+    #   memory: 200Mi
+    # requests:
+    #   cpu: 100m
+    #   memory: 100Mi
+    
+  # prometheusOperator.admissionWebhooks.deployment.resources:
+    # limits:
+    #   cpu: 200m
+    #   memory: 200Mi
+    # requests:
+    #   cpu: 100m
+    #   memory: 100Mi
+    
+  prometheus.prometheusSpec.retention: 10d
+  # prometheus.prometheusSpec.resources
+    # limits:
+    #   cpu: 200m
+    #   memory: 200Mi
+    # requests:
+    #   cpu: 100m
+    #   memory: 100Mi
+  prometheus.prometheusSpec.storageSpec:
+   volumeClaimTemplate:
+     spec:
+       storageClassName: freenas-iscsi-csi
+       accessModes: ["ReadWriteOnce"]
+       resources:
+         requests:
+           storage: 100Gi
+     selector: {}
