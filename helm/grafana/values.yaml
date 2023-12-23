@@ -24,12 +24,6 @@ kube-prometheus-stack:
   #   url: https://{{ printf "%s-prometheus.svc" .Release.Name }}:9090
   #   version: 1
   
-  prometheus.prometheusSpec.additionalScrapeConfigs:
-    - job_name: truenas
-      remote_read:
-        url: http://192.168.1.112:30002
-      scheme: http
-    
   # prometheusOperator.resources
     # limits:
     #   cpu: 200m
@@ -46,7 +40,23 @@ kube-prometheus-stack:
     #   cpu: 100m
     #   memory: 100Mi
     
-  prometheus.prometheusSpec.retention: 10d
+  prometheus.prometheusSpec:
+    retention: 10d
+    storageSpec:
+      volumeClaimTemplate:
+        spec:
+          storageClassName: freenas-iscsi-csi
+          accessModes: ["ReadWriteOnce"]
+          resources:
+            requests:
+              storage: 100Gi
+          selector: {}
+    additionalScrapeConfigs:
+      - job_name: truenas
+        remote_read:
+          url: http://192.168.1.112:30002
+        scheme: http
+
   # prometheus.prometheusSpec.resources
     # limits:
     #   cpu: 200m
@@ -54,12 +64,3 @@ kube-prometheus-stack:
     # requests:
     #   cpu: 100m
     #   memory: 100Mi
-  prometheus.prometheusSpec.storageSpec:
-   volumeClaimTemplate:
-     spec:
-       storageClassName: freenas-iscsi-csi
-       accessModes: ["ReadWriteOnce"]
-       resources:
-         requests:
-           storage: 100Gi
-     selector: {}
