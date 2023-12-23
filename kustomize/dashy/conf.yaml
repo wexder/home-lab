@@ -31,6 +31,10 @@ sections: # An array of sections
         description: Filebrowser
         icon: hl-filebrowser
         url: https://filebrowser.tailcceac.ts.net
+      - title: Grafana
+        description: Grafana
+        icon: hl-grafana
+        url: https://grafana.tailcceac.ts.net
   - name: Media
     items:
       - title: Kavita
