@@ -12,6 +12,13 @@ kube-prometheus-stack:
 
   grafana:
     adminPassword: admin
+    persistence:
+      type: pvc
+      enabled: true
+      storageClassName: freenas-iscsi-csi
+      accessModes:
+        - ReadWriteOnce
+      size: 10Gi
   # grafana.additionalDataSources:
   # - name: prometheus-sample
   #   access: proxy
