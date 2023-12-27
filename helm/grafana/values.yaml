@@ -68,6 +68,7 @@ kube-prometheus-stack:
         - job_name: ups
           scheme: http
           metrics_path: /ups_metrics
+          scrape_interval: 10s
           params:
             ups: [ "serverups" ]
           static_configs:
