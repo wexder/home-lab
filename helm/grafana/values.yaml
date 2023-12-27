@@ -65,6 +65,12 @@ kube-prometheus-stack:
           static_configs:
             - targets:
                 - "192.168.1.19:40001"
+        - job_name: ups
+          scheme: http
+          metrics_path: /ups_metrics?ups=serverups
+          static_configs:
+            - targets:
+                - "192.168.1.19:40002"
 
   # prometheus.prometheusSpec.resources
     # limits:
