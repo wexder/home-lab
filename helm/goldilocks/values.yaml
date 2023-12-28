@@ -1,3 +1,5 @@
 goldilocks:
+  metrics-server:
+    enabled: true
   vpa:
     enabled: true
