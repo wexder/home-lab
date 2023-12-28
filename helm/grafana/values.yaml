@@ -11,6 +11,10 @@ kube-prometheus-stack:
                 storage: 50Gi
 
   grafana:
+    sidecar:
+      dashboards:
+        provider:
+          folder: kubernetes
     adminPassword: admin
     persistence:
       type: pvc
