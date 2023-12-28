@@ -3,4 +3,4 @@ kind: Namespace
 metadata:
   name: filebrowser
   labels:
-    goldilocks.fairwinds.com/enabled: true
+    goldilocks.fairwinds.com/enabled: "true"
