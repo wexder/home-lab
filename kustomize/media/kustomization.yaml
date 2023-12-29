@@ -7,4 +7,5 @@ resources:
 - sonarr
 - readarr
 - prowlarr
-- solverr
+# not working for now
+# - solverr
