@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: solverr
+  labels:
+    app: solverr
+spec:
+  replicas: 1
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      app: solverr
+  template:
+    metadata:
+      labels:
+        app: solverr
+    spec:
+      securityContext:
+        runAsUser: 568
+        runAsGroup: 568
+        fsGroup: 568
+        fsGroupChangePolicy: "OnRootMismatch"
+      containers:
+        - name: solverr
+          # TODO maybe change image
+          image: ghcr.io/flaresolverr/flaresolverr:latest
+          command:   
+          ports:
+            - containerPort: 8191
+          resources:
+            requests:
+              # cpu: 200m
+              memory: 2Gi
