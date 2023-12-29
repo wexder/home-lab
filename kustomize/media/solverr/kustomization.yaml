@@ -3,4 +3,4 @@ namespace: media
 
 resources:
 - deployment.yaml
-- pvc.yaml
+- service.yaml
