@@ -37,7 +37,7 @@ spec:
             readOnly: false
       containers:
         - name: lazylibrarian
-          image: tccr.io/truecharts/lazylibrarian:latest
+          image: ghcr.io/linuxserver/lazylibrarian:latest
           # resources:
           #   requests:
           #     cpu: 200m
