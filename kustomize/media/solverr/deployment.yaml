@@ -15,14 +15,8 @@ spec:
       labels:
         app: solverr
     spec:
-      # securityContext:
-      #   runAsUser: 568
-      #   runAsGroup: 568
-      #   fsGroup: 568
-      #   fsGroupChangePolicy: "OnRootMismatch"
       containers:
         - name: solverr
-          # TODO maybe change image
           image: ghcr.io/flaresolverr/flaresolverr:latest
           command:   
           env:
@@ -36,7 +30,3 @@ spec:
               value: "Europe/London"
           ports:
             - containerPort: 8191
-          resources:
-            requests:
-              # cpu: 200m
-              memory: 2Gi
