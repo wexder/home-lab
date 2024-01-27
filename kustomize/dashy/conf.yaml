@@ -69,6 +69,10 @@ sections: # An array of sections
         description: Jellyfin
         icon: hl-jellyfin
         url: https://jellyfin.tailcceac.ts.net
+      - title: Plex
+        description: plex
+        icon: hl-plex
+        url: https://plex.tailcceac.ts.net
       - title: Photoprism
         description: Photoprism
         icon: hl-photoprism
