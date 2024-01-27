@@ -33,6 +33,9 @@ spec:
         - name: wireguard
           secret:
             secretName: wireguard
+            items:
+              - key: tunnel
+                path: wg_confs/tunnel.conf
       containers:
         - name: wireguard
           image: ghcr.io/linuxserver/wireguard
@@ -46,8 +49,10 @@ spec:
             allowPrivilegeEscalation: true
             readOnlyRootFilesystem: false
           volumeMounts:
-            - mountPath: /config/wg_confs/
+            - mountPath: /config/wg_confs/tunnel.conf
+              subPath: wg_confs/tunnel.conf
               name: wireguard
+              readOnly: false
         - name: transmission
           image: ghcr.io/k8s-at-home/transmission:latest
           ports:
