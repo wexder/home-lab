@@ -54,7 +54,7 @@ spec:
           protocol: UDP      
         readinessProbe:
             httpGet:
-              path: /health
+              path: /web
               port: http-tcp
         volumeMounts:
         - mountPath: /config
