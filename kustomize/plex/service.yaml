@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: plex
+  labels:
+    app: plex
+spec:
+  ports:
+    - port: 32400
+      name: default
+      targetPort: 32400
+      protocol: TCP
+    - port: 80
+      name: tailscale
+      targetPort: http-tcp
+      protocol: TCP
+  selector:
+    app: plex

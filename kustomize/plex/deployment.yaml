@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  labels:
+    app: plex
+  name: plex
+spec:
+  revisionHistoryLimit: 1
+  replicas: 1
+  selector:
+    matchLabels:
+      app: plex
+  template:
+    metadata:
+      labels:
+        app: plex
+    spec:
+      securityContext:
+        runAsNonRoot: false
+        runAsUser: 0
+        runAsGroup: 0
+        fsGroupChangePolicy: "OnRootMismatch"
+      volumes:
+        - name: nfs-plex-config
+          persistentVolumeClaim:
+            claimName: plex-iscsi
+        - name: nfs-plex-shows
+          nfs:
+            server: 192.168.1.112
+            path: /mnt/main_pool/private/media/shows
+        - name: nfs-plex-movies
+          nfs:
+            server: 192.168.1.112
+            path: /mnt/main_pool/private/media/movies
+      containers:
+      - image: ghcr.io/linuxserver/plex
+        imagePullPolicy: Always
+        name: plex
+        ports:
+        - containerPort: 32400
+          name: http-tcp
+          protocol: TCP
+        - containerPort: 8920
+          name: https-tcp
+          protocol: TCP
+        - containerPort: 1900
+          name: dlna-udp
+          protocol: UDP
+        - containerPort: 7359
+          name: discovery-udp
+          protocol: UDP      
+        readinessProbe:
+            httpGet:
+              path: /health
+              port: http-tcp
+        volumeMounts:
+        - mountPath: /config
+          name: nfs-plex-config
+        - mountPath: /movies
+          name: nfs-plex-movies
+        - mountPath: /shows
+          name: nfs-plex-shows
