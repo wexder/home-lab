@@ -33,9 +33,6 @@ spec:
         - name: wireguard
           secret:
             secretName: wireguard
-            items:
-              - key: tunnel
-                path: tunnel.conf
       containers:
         - name: wireguard
           image: ghcr.io/linuxserver/wireguard
