@@ -10,3 +10,4 @@ resources:
 - service.yaml
 - pvc.yaml
 - tailscale.yaml
+- sealedSecret.yaml
