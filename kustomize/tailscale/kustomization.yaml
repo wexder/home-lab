@@ -11,5 +11,4 @@ resources:
 - role-proxy.yaml
 - sa-operator.yaml
 - sa-tailscale.yaml
-# TODO
-# - secret.yaml
+- sealedSecret.yaml

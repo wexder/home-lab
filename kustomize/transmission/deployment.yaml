@@ -30,7 +30,27 @@ spec:
           persistentVolumeClaim:
             claimName: transmission-iscsi
             readOnly: false
+        - name: wireguard
+          secret:
+            secretName: wireguard
+            items:
+              - key: tunnel
+                path: tunnel.conf
       containers:
+        - name: wireguard
+          image: ghcr.io/linuxserver/wireguard
+          imagePullPolicy: IfNotPresent
+          securityContext:
+            privileged: true
+            capabilities:
+              add:
+                - NET_ADMIN
+                - SYS_MODULE
+            allowPrivilegeEscalation: true
+            readOnlyRootFilesystem: false
+          volumeMounts:
+            - mountPath: /config/wg_confs/
+              name: wireguard
         - name: transmission
           image: ghcr.io/k8s-at-home/transmission:latest
           ports:
