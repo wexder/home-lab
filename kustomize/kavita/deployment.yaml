@@ -30,7 +30,7 @@ spec:
             readOnly: false
       containers:
         - name: kavita
-          image: ghcr.io/kareadita/kavita:latest
+          image: jvmilazz0/kavita:latest
           command:   
           ports:
             - containerPort: 5000
