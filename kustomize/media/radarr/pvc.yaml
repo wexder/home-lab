@@ -6,7 +6,6 @@ metadata:
     volume.beta.kubernetes.io/storage-class: "freenas-iscsi-csi"
 spec:
   storageClassName: freenas-iscsi-csi
-  volumeName: pvc-418a641a-9974-4a17-9f99-a36dded59133
   accessModes:
     - ReadWriteOnce
   resources:
