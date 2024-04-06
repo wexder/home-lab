@@ -8,7 +8,6 @@ spec:
   storageClassName: freenas-iscsi-csi
   accessModes:
     - ReadWriteOnce
-  volumeName: pvc-a1be0bd4-acf3-4b17-90f5-92fdc16e838f
   resources:
     requests:
       storage: 1Gi
