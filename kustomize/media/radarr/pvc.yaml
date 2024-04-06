@@ -4,9 +4,9 @@ metadata:
   name: radarr-iscsi
   annotations:
     volume.beta.kubernetes.io/storage-class: "freenas-iscsi-csi"
-  uid: b37c5be7-507f-4a6e-9fa7-f1890fb044f2
 spec:
   storageClassName: freenas-iscsi-csi
+  volumeName: pvc-418a641a-9974-4a17-9f99-a36dded59133
   accessModes:
     - ReadWriteOnce
   resources:
