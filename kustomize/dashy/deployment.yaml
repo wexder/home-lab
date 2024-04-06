@@ -32,7 +32,9 @@ spec:
               cpu: 100m
               memory: 500Mi
           startupProbe:
-            periodSeconds: 5
+            failureThreshold: 30
+            periodSeconds: 10
+            initialDelaySeconds: 30
             timeoutSeconds: 10
             httpGet:
               path: /
