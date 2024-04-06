@@ -8,7 +8,7 @@ spec:
       name: readarr
       port:
         name: tailscale
-  ingressClassName: tailscale
+  ingressClassName: tailscale-disabled
   tls:
   - hosts:
     - readarr

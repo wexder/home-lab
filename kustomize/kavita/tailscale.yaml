@@ -8,7 +8,7 @@ spec:
       name: kavita
       port:
         name: tailscale
-  ingressClassName: tailscale
+  ingressClassName: tailscale-disabled
   tls:
   - hosts:
     - kavita
