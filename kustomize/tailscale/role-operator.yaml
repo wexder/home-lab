@@ -8,5 +8,5 @@ rules:
   resources: ["secrets"]
   verbs: ["*"]
 - apiGroups: ["apps"]
-  resources: ["statefulsets"]
+  resources: ["*"]
   verbs: ["*"]
