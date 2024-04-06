@@ -12,3 +12,5 @@ resources:
 - sa-operator.yaml
 - sa-tailscale.yaml
 - sealedSecret.yaml
+- crds.yaml
+- ingress-class.yaml
