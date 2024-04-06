@@ -8,7 +8,7 @@ spec:
       name: radarr
       port:
         name: tailscale
-  ingressClassName: tailscale-disabled
+  ingressClassName: tailscale
   tls:
   - hosts:
     - radarr

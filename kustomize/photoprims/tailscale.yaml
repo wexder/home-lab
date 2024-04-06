@@ -8,7 +8,7 @@ spec:
       name: photoprism
       port:
         name: tailscale
-  ingressClassName: tailscale-disabled
+  ingressClassName: tailscale
   tls:
   - hosts:
     - photoprism
