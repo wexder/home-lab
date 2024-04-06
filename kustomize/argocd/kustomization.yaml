@@ -12,6 +12,6 @@ resources:
 - namespace.yaml
 - tailscale.yaml
 
-patchesStrategicMerge:
-- argocd-cm.yaml
-- argocd-cmd.yaml
+patches:
+- path: argocd-cm.yaml
+- path: argocd-cmd.yaml

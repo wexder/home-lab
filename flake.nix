@@ -30,6 +30,7 @@
               kubecm
               kustomize
               kdash
+              kubeseal
             ];
 
             enterShell = ''
