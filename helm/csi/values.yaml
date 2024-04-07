@@ -135,7 +135,7 @@ democratic-csi:
         # for multipath
         # targetPortals: [] # [ "server[:port]", "server[:port]", ... ]
         # leave empty to omit usage of -I with iscsiadm
-        interface:
+        # interface: eth0
 
         # MUST ensure uniqueness
         # full iqn limit is 223 bytes, plan accordingly
@@ -154,7 +154,7 @@ democratic-csi:
             targetGroupAuthType: None
             # get the correct ID from the "Authorized Access" section of the UI
             # only required if using Chap
-            targetGroupAuthGroup:
+            # targetGroupAuthGroup:
 
         #extentCommentTemplate: "{{ parameters.[csi.storage.k8s.io/pvc/namespace] }}/{{ parameters.[csi.storage.k8s.io/pvc/name] }}"
         extentInsecureTpc: true
