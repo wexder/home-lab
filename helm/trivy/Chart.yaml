@@ -3,6 +3,6 @@ name: trivy-operator
 version: 1.0.0
 type: application
 dependencies:
-  - name: trivy-operator
-    version: 0.19.1
-    repository: https://aquasecurity.github.io/helm-charts/
+  # - name: trivy-operator
+  #   version: 0.19.1
+  #   repository: https://aquasecurity.github.io/helm-charts/
