@@ -40,9 +40,11 @@ democratic-csi:
       node-publish-secret:
       controller-expand-secret:
 
-  volume:
-      idTemplate: "{{ parameters.[csi.storage.k8s.io/pvc/namespace] }}-{{ parameters.[csi.storage.k8s.io/pvc/name] }}"
-      deleteStrategy: retain
+  _private:
+    csi:
+      volume:
+          idTemplate: "{{ parameters.[csi.storage.k8s.io/pvc/namespace] }}-{{ parameters.[csi.storage.k8s.io/pvc/name] }}"
+          deleteStrategy: retain
       # idHash:
       #   strategy: crc16
         #strategy: crc32
