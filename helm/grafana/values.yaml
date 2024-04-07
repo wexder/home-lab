@@ -11,6 +11,7 @@ kube-prometheus-stack:
                 storage: 50Gi
 
   grafana:
+    fullnameOverride: grafana
     sidecar:
       dashboards:
         provider:
