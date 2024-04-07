@@ -40,15 +40,6 @@ democratic-csi:
       node-publish-secret:
       controller-expand-secret:
 
-  _private:
-    csi:
-      volume:
-          idTemplate: "{{ parameters.[csi.storage.k8s.io/pvc/namespace] }}-{{ parameters.[csi.storage.k8s.io/pvc/name] }}"
-          deleteStrategy: retain
-      # idHash:
-      #   strategy: crc16
-        #strategy: crc32
-        #strategy: md5
   # if your cluster supports snapshots you may enable below
   volumeSnapshotClasses: []
   #- name: freenas-iscsi-csi
@@ -75,6 +66,19 @@ democratic-csi:
       # YOU MUST COPY THE DATA HERE INLINE!
       driver: freenas-api-iscsi
       instance_id: freenas-api-iscsi
+
+      #####################################
+      # Testing, will brake               #
+      # ###################################
+      _private:
+        csi:
+          volume:
+            idTemplate: "{{ parameters.[csi.storage.k8s.io/pvc/namespace] }}-{{ parameters.[csi.storage.k8s.io/pvc/name] }}"
+          deleteStrategy: retain
+            # idHash:
+            #   strategy: crc16
+            #strategy: crc32
+            #strategy: md5
       httpConnection:
         protocol: http
         host: 192.168.1.112
