@@ -1,3 +1,4 @@
+fullnameOverride: grafana
 kube-prometheus-stack:
   alertmanager:
     alertmanagerSpec:
