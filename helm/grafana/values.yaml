@@ -1,5 +1,6 @@
 kube-prometheus-stack:
   alertmanager:
+    nameOverride: alertmanager
     alertmanagerSpec:
       storage:
         volumeClaimTemplate:
@@ -11,8 +12,6 @@ kube-prometheus-stack:
                 storage: 50Gi
 
   grafana:
-    fullnameOverride: gra
-    nameOverride: gf
     sidecar:
       dashboards:
         provider:
