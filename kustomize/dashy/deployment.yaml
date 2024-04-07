@@ -40,6 +40,8 @@ spec:
               path: /
               port: 80
           livenessProbe:
+            initialDelaySeconds: 30
+            timeoutSeconds: 10
             httpGet:
               path: /
               port: 80
