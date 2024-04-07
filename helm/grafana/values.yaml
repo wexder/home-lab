@@ -1,4 +1,5 @@
 kube-prometheus-stack:
+  nameOverride: kps
   cleanPrometheusOperatorObjectNames: true
   alertmanager:
     enabled: true
