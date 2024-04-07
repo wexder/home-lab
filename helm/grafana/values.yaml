@@ -1,5 +1,6 @@
 kube-prometheus-stack:
   alertmanager:
+    enabled: false
     nameOverride: alertmanager
     alertmanagerSpec:
       storage:
