@@ -40,6 +40,13 @@ democratic-csi:
       node-publish-secret:
       controller-expand-secret:
 
+  volume:
+      idTemplate: "{{ parameters.[csi.storage.k8s.io/pvc/namespace] }}-{{ parameters.[csi.storage.k8s.io/pvc/name] }}"
+      deleteStrategy: retain
+      # idHash:
+      #   strategy: crc16
+        #strategy: crc32
+        #strategy: md5
   # if your cluster supports snapshots you may enable below
   volumeSnapshotClasses: []
   #- name: freenas-iscsi-csi
