@@ -24,13 +24,13 @@ spec:
       containers:
         - name: dashy
           image: lissy93/dashy:latest
-          resources:
-            requests:
-              cpu: 200m
-              memory: 100Mi
-            limits:
-              cpu: 400m
-              memory: 500Mi
+          # resources:
+          #   requests:
+          #     cpu: 200m
+          #     memory: 100Mi
+          #   limits:
+          #     cpu: 400m
+          #     memory: 500Mi
           startupProbe:
             failureThreshold: 30
             periodSeconds: 10
