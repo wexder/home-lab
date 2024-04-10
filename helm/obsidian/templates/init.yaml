@@ -14,7 +14,7 @@ spec:
       restartPolicy: OnFailure
       containers:
       - name: live-sync-init
-        image: radial/busyboxplus:curl
+        image: curlimages/curl:latest
         command:
           - sh
           - -c
