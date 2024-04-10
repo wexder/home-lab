@@ -17,10 +17,10 @@ couchdb:
     storageClass: freenas-iscsi-csi
     accessModes: ["ReadWriteOnce"]
     size: 10Gi
-  resources:
-    requests:
-      cpu: 400m
-      memory: 300Mi
-    limits:
-      cpu: 400m
-      memory: 500Mi
+  # resources:
+  #   requests:
+  #     cpu: 400m
+  #     memory: 300Mi
+  #   limits:
+  #     cpu: 400m
+  #     memory: 500Mi

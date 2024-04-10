@@ -18,7 +18,7 @@ spec:
         command:
           - sh
           - -c
-          - 'curl -s -v https://raw.githubusercontent.com/vrtmrz/obsidian-livesync/main/utils/couchdb/couchdb-init.sh | sh'
+          - 'curl -s -v https://raw.githubusercontent.com/vrtmrz/obsidian-livesync/main/utils/couchdb/couchdb-init.sh'
         imagePullPolicy: Always
         env:
           - name: hostname
