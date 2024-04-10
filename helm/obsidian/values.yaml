@@ -1,5 +1,5 @@
 couchdb:
-  clusterSize: 3
+  clusterSize: 1
   adminUsername: admin
   adminPassword: admin # not working
   adminHash: fn4/H97SsqUYXrtAHIgzhA==
@@ -10,3 +10,10 @@ couchdb:
       uuid: 97bb31e3-956b-4255-be02-850b61b45735
   autoSetup:
     enabled: true
+  persistentVolume:
+    enabled: true
+    storageClassName: freenas-iscsi-csi
+    accessModes: ["ReadWriteOnce"]
+    resources:
+      requests:
+        storage: 10Gi
