@@ -1,0 +1,32 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: live-sync-init
+  annotations:
+    # This is what defines this resource as a hook. Without this line, the
+    # job is considered part of the release.
+    "helm.sh/hook": post-install
+    "helm.sh/hook-weight": "-5"
+    "helm.sh/hook-delete-policy": before-hook-creation
+spec:
+  template:
+    spec:
+      restartPolicy: OnFailure
+      containers:
+      - name: live-sync-init
+        image: busybox:latest
+        command: ["curl", "-s", "https://raw.githubusercontent.com/vrtmrz/obsidian-livesync/main/utils/couchdb/couchdb-init.sh", "|", "bash"]
+        imagePullPolicy: Always
+        env:
+          - name: hostname
+            value: "{{ template "couchdb.svcname". }}.{{.Release.Namespace}}.svc.{{default "cluster.local" .Values.dns.clusterDomainSuffix}}:{{.Values.service.externalPort}}"
+          - name: username
+            valueFrom:
+              secretKeyRef:
+                key: adminUsername
+                name: obsidian-couchdb
+          - name: password
+            valueFrom:
+              secretKeyRef:
+                key: adminPassword
+                name: obsidian-couchdb
