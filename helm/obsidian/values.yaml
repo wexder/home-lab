@@ -1,0 +1,4 @@
+couchdb:
+  clusterSize: 1
+  adminUsername: admin
+  adminPassword: admin
