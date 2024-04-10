@@ -12,7 +12,6 @@ couchdb:
     enabled: true
     defaultDatabases:
       - _global_changes
-      - _users
   persistentVolume:
     enabled: true
     storageClass: freenas-iscsi-csi

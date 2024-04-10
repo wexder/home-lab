@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: obsidian-livesync
+spec:
+  defaultBackend:
+    service:
+      name: obsidian-couchdb
+      port:
+        number: obsidian-couchdb
+  ingressClassName: tailscale
+  tls:
+  - hosts:
+    - obsidian-livesync
