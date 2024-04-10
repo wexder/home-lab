@@ -1,5 +1,5 @@
 couchdb:
-  clusterSize: 3
+  clusterSize: 1
   adminUsername: admin
   adminPassword: admin # not working
   adminHash: -pbkdf2-d1fed3f8ab1903afb42d778dffd0bb36cc4be64c,secret,10
