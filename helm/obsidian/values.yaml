@@ -14,6 +14,4 @@ couchdb:
     enabled: true
     storageClass: freenas-iscsi-csi
     accessModes: ["ReadWriteOnce"]
-    resources:
-      requests:
-        storage: 10Gi
+    size: 10Gi
