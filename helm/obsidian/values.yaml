@@ -12,7 +12,7 @@ couchdb:
     enabled: true
   persistentVolume:
     enabled: true
-    storageClassName: freenas-iscsi-csi
+    storageClass: freenas-iscsi-csi
     accessModes: ["ReadWriteOnce"]
     resources:
       requests:
