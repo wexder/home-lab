@@ -5,7 +5,7 @@ metadata:
 spec:
   defaultBackend:
     service:
-      name: obsidian-couchdb
+      name: obsidian-svc-couchdb
       port:
         number: 5984
   ingressClassName: tailscale
