@@ -16,7 +16,7 @@ spec:
       - name: live-sync-init
         image: radial/busyboxplus:curl
         command:
-          - /bin/bash
+          - /bin/sh
           - -c
           - 'curl -s https://raw.githubusercontent.com/vrtmrz/obsidian-livesync/main/utils/couchdb/couchdb-init.sh | bash'
         imagePullPolicy: Always
