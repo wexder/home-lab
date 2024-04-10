@@ -15,11 +15,14 @@ spec:
       containers:
       - name: live-sync-init
         image: busybox:latest
-        command: ["curl", "-s", "https://raw.githubusercontent.com/vrtmrz/obsidian-livesync/main/utils/couchdb/couchdb-init.sh", "|", "bash"]
+        command:
+          - sh
+          - -c
+          - 'curl -s https://raw.githubusercontent.com/vrtmrz/obsidian-livesync/main/utils/couchdb/couchdb-init.sh | bash'
         imagePullPolicy: Always
         env:
           - name: hostname
-            value: "{{ template "couchdb.svcname" . }}.{{ .Release.Namespace }}.svc.{{ default "cluster.local" .Values.couchdb.dns.clusterDomainSuffix }}:{{ .Values.couchdb.service.externalPort}}"
+            value: "obsidian-couchdb.{{ .Release.Namespace }}.svc.{{ default "cluster.local" .Values.couchdb.dns.clusterDomainSuffix }}:{{ .Values.couchdb.service.externalPort}}"
           - name: username
             valueFrom:
               secretKeyRef:
