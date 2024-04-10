@@ -2,3 +2,4 @@ couchdb:
   clusterSize: 1
   adminUsername: admin
   adminPassword: admin
+  couchdbConfig.couchdb.uuid: 97bb31e3-956b-4255-be02-850b61b45735
