@@ -22,7 +22,7 @@ spec:
         imagePullPolicy: Always
         env:
           - name: hostname
-            value: "obsidian-couchdb.{{ .Release.Namespace }}.svc.{{ default "cluster.local" .Values.couchdb.dns.clusterDomainSuffix }}:{{ .Values.couchdb.service.externalPort}}"
+            value: "obsidian-svc-couchdb.{{ .Release.Namespace }}.svc.{{ default "cluster.local" .Values.couchdb.dns.clusterDomainSuffix }}:{{ .Values.couchdb.service.externalPort}}"
           - name: username
             valueFrom:
               secretKeyRef:
