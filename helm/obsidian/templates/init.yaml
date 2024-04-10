@@ -19,7 +19,7 @@ spec:
         imagePullPolicy: Always
         env:
           - name: hostname
-            value: "{{ template "couchdb.svcname" . }}.{{ .Release.Namespace }}.svc.{{ default "cluster.local" .Values.dns.clusterDomainSuffix }}:{{ .Values.service.externalPort}}"
+            value: "{{ template "couchdb.svcname" . }}.{{ .Release.Namespace }}.svc.{{ default "cluster.local" .Values.couchdb.dns.clusterDomainSuffix }}:{{ .Values.couchdb.service.externalPort}}"
           - name: username
             valueFrom:
               secretKeyRef:
