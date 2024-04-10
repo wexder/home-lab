@@ -7,7 +7,7 @@ spec:
     service:
       name: obsidian-couchdb
       port:
-        number: obsidian-couchdb
+        number: 5984
   ingressClassName: tailscale
   tls:
   - hosts:
