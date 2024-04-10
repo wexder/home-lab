@@ -10,6 +10,9 @@ couchdb:
       uuid: 97bb31e3-956b-4255-be02-850b61b45735
   autoSetup:
     enabled: true
+    defaultDatabases:
+      - _global_changes
+      - _users
   persistentVolume:
     enabled: true
     storageClass: freenas-iscsi-csi
