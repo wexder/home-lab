@@ -24,8 +24,7 @@ spec:
         image: curlimages/curl:latest
         command:
           - sh
-          - -c
-          - 'bash /init/init.sh'
+          - '/init/init.sh'
         imagePullPolicy: Always
         volumeMounts:
            - mountPath: /init/init.sh
