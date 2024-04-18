@@ -18,8 +18,13 @@ spec:
         command:
           - sh
           - -c
-          - 'curl -s -v https://raw.githubusercontent.com/vrtmrz/obsidian-livesync/main/utils/couchdb/couchdb-init.sh'
+          - 'bash /init/init.sh'
         imagePullPolicy: Always
+        volumeMounts:
+           - mountPath: /init/init.sh
+             name: live-sync-init-config
+             subPath: init.sh
+             readonly: true
         env:
           - name: hostname
             value: "obsidian-svc-couchdb.{{ .Release.Namespace }}.svc.{{ default "cluster.local" .Values.couchdb.dns.clusterDomainSuffix }}:{{ .Values.couchdb.service.externalPort}}"
