@@ -12,6 +12,13 @@ spec:
   template:
     spec:
       restartPolicy: OnFailure
+      volumes:
+        - name: live-sync-init-config
+          secret:
+            secretName: live-sync-init-config
+            items:
+              - key: init.sh
+                path: init.sh
       containers:
       - name: live-sync-init
         image: curlimages/curl:latest
