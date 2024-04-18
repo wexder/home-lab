@@ -14,8 +14,8 @@ spec:
       restartPolicy: OnFailure
       volumes:
         - name: live-sync-init-config
-          secret:
-            secretName: live-sync-init-config
+          configMap:
+            name: live-sync-init-config
             items:
               - key: init.sh
                 path: init.sh
