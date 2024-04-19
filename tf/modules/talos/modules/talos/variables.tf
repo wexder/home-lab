@@ -3,19 +3,16 @@ variable "cluster_endpoint" {
   type        = string
 }
 
-variable "node_ips" {
-  description = "Cluster nodes"
-  type        = list(string)
-}
-
 variable "nodes" {
   description = "Nodes configuration"
   type = map(
     object({
-      ip     = string
-      vip    = string
-      cores  = number
-      memory = number
+      ip           = string
+      vip          = string
+      target_node  = string
+      cores        = number
+      memory       = number
+      machine_type = string
     })
   )
 }
