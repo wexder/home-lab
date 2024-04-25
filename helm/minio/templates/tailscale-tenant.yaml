@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: minio-obsidian
+spec:
+  defaultBackend:
+    service:
+      name: obsidian-hl
+      port:
+        number: 9000
+  ingressClassName: tailscale
+  tls:
+  - hosts:
+    - minio-obsidian
