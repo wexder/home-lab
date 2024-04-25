@@ -131,7 +131,7 @@ harbor:
       - trivy
 
   # Run the migration job via helm hook
-  enableMigrateHelmHook: true
+  enableMigrateHelmHook: false
   metrics:
     enabled: true
     serviceMonitor:
