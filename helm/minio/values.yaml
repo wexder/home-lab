@@ -6,6 +6,7 @@ tenant:
     name: obsidian
     pools:
       - servers: 1
+        volumesPerServer: 1
         name: obsidian-pool
         size: 10Gi
         storageClassName: freenas-iscsi-csi
