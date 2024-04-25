@@ -7,7 +7,7 @@ spec:
     service:
       name: console
       port:
-        number: 9443
+        number: 9090
   ingressClassName: tailscale
   tls:
   - hosts:
