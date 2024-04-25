@@ -5,7 +5,7 @@ metadata:
 spec:
   defaultBackend:
     service:
-      name: obsidian-hl
+      name: minio
       port:
         number: 9000
   ingressClassName: tailscale
