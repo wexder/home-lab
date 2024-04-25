@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: harbor
+spec:
+  defaultBackend:
+    service:
+      name: harbor
+      port:
+        number: 30002
+  ingressClassName: tailscale
+  tls:
+  - hosts:
+    - harbor
