@@ -7,7 +7,7 @@ spec:
     service:
       name: minio
       port:
-        number: 9000
+        number: 443
   ingressClassName: tailscale
   tls:
   - hosts:
