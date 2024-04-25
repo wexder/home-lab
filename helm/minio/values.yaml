@@ -10,3 +10,7 @@ tenant:
         name: obsidian-pool
         size: 10Gi
         storageClassName: freenas-iscsi-csi
+    buckets:
+      - name: obsidian
+        objectLock: false        # optional
+        region: us-east-1        # optional
