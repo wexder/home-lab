@@ -1,0 +1,11 @@
+tenant:
+  name: obsidian-env-config
+  accessKey: minio
+  secretKey: minio123
+  tenant:
+    name: obsidian
+    pools:
+      - server: 1
+        name: obsidian-pool
+        size: 10Gi
+        storageClassName: freenas-iscsi-csi
