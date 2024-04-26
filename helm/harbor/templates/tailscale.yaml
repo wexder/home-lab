@@ -7,7 +7,7 @@ spec:
     service:
       name: harbor
       port:
-        number: 8080
+        number: 80
   ingressClassName: tailscale
   tls:
   - hosts:
