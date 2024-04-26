@@ -8,6 +8,7 @@ resources:
 - github.com/argoproj/argo-cd//manifests/cluster-install?ref=v2.8.4
 - bootstrap.yaml
 - project.yaml
+- project-cg.yaml
 - repository.yaml
 - namespace.yaml
 - tailscale.yaml
