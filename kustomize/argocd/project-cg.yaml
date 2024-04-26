@@ -1,11 +1,11 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: CodeGrowers
+  name: codegrowers
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  description: CodeGrowers
+  description: codegrowers
   sourceRepos:
   - '*'
   destinations:
