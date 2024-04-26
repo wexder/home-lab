@@ -11,6 +11,7 @@ resources:
 - repository.yaml
 - namespace.yaml
 - tailscale.yaml
+- sealedSecret.yaml
 
 patches:
 - path: argocd-cm.yaml
