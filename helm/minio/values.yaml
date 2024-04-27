@@ -1,7 +1,8 @@
 tenant:
-  name: obsidian-env-config
-  accessKey: minio
-  secretKey: minio123
+  secrets:
+    name: obsidian-env-config
+    accessKey: minio
+    secretKey: minio123
   tenant:
     name: obsidian
     pools:

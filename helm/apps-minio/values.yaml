@@ -1,7 +1,8 @@
 tenant:
-  name: apps-minio-env-config
-  accessKey: minio
-  secretKey: minio123
+  secrets:
+    name: apps-minio-env-config
+    accessKey: minio
+    secretKey: minio123
   tenant:
     name: apps-minio
     pools:
