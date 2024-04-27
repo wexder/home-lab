@@ -1,10 +1,10 @@
 tenant:
   secrets:
-    name: obsidian-env-config
+    name: myminio-env-config
     accessKey: minio
     secretKey: minio123
   existingSecret:
-    name: obsidian-env-config
+    name: myminio-env-config
   tenant:
     name: obsidian
     pools:
