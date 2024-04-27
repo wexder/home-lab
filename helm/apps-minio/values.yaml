@@ -1,0 +1,16 @@
+tenant:
+  name: apps-minio-env-config
+  accessKey: minio
+  secretKey: minio123
+  tenant:
+    name: apps-minio
+    pools:
+      - servers: 1
+        volumesPerServer: 1
+        name: apps-minio-pool
+        size: 20Gi
+        storageClassName: freenas-iscsi-csi
+    buckets:
+      - name: apps
+        objectLock: false        # optional
+        region: us-east-1        # optional
