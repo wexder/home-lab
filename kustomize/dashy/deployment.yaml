@@ -38,10 +38,10 @@ spec:
             timeoutSeconds: 30
             httpGet:
               path: /
-              port: 80
+              port: 8080
           command:   
           ports:
-            - containerPort: 80
+            - containerPort: 8080
           volumeMounts:
             - name: conf
               mountPath: /app/public/conf.yml
