@@ -23,7 +23,7 @@ spec:
               path: conf.yml 
       containers:
         - name: dashy
-          image: lissy93/dashy:latest
+          image: lissy93/dashy:3.0.0
           # resources:
           #   requests:
           #     cpu: 200m
@@ -33,9 +33,9 @@ spec:
           #     memory: 500Mi
           startupProbe:
             failureThreshold: 30
-            periodSeconds: 10
-            initialDelaySeconds: 30
-            timeoutSeconds: 10
+            periodSeconds: 15
+            initialDelaySeconds: 60
+            timeoutSeconds: 15
             httpGet:
               path: /
               port: 80
