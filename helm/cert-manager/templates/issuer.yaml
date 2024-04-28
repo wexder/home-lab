@@ -14,7 +14,7 @@ spec:
           tokenSecretRef:
             name: digitalocean-dns
             key: access-token
-      selector:
-        dnsNames:
-        - 'codegrowers.local-k8s.tech'
-        - '*.codegrowers.local-k8s.tech'
+      # selector:
+      #   dnsNames:
+      #   - 'codegrowers.local-k8s.tech'
+      #   - '*.codegrowers.local-k8s.tech'
