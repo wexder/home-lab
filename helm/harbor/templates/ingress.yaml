@@ -4,7 +4,8 @@ metadata:
   name: harbor-ext
 spec:
   rules:
-  - http:
+  - host: "harbor.talos-private.lan"
+    http:
       paths:
       - path: /
         pathType: Prefix
