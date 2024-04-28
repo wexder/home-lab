@@ -44,5 +44,5 @@ spec:
             - containerPort: 8080
           volumeMounts:
             - name: conf
-              mountPath: /app/public/conf.yml
+              mountPath: /app/user-data/conf.yml
               subPath: conf.yml
