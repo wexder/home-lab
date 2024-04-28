@@ -12,5 +12,3 @@ spec:
         backend:
           service:
             name: harbor
-            port:
-              number: 80
