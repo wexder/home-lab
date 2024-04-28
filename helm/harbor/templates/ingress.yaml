@@ -11,4 +11,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: harbor
+            name: harbor-2
+            port:
+              number: 443
