@@ -2,6 +2,8 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: harbor-ext
+  annotations:
+    cert-manager.io/cluster-issuer: dio-local-issuer
 spec:
   rules:
   - host: "harbor.talos-private.lan"
@@ -11,6 +13,10 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: harbor-2
+            name: harbor
             port:
-              number: 443
+              number: 80
+  tls:
+  - hosts:
+    - harbor.talos-private.lan
+    secretName: harbor-cert
