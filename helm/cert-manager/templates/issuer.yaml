@@ -16,4 +16,5 @@ spec:
             key: access-token
       selector:
         dnsNames:
+        - 'codegrowers.local-k8s.tech'
         - '*.codegrowers.local-k8s.tech'
