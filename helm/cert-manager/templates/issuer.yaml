@@ -4,6 +4,8 @@ metadata:
   name: dio-local-issuer
 spec:
   acme:
+    privateKeySecretRef:
+      name: dio-local-issuer-account-key
     solvers:
     - dns01:
         digitalocean:
