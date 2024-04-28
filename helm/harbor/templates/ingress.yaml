@@ -6,7 +6,7 @@ metadata:
     cert-manager.io/cluster-issuer: dio-local-issuer
 spec:
   rules:
-  - host: "harbor.talos-private.lan"
+  - host: "harbor.codegrowers.local-k8s.tech"
     http:
       paths:
       - path: /
@@ -18,5 +18,5 @@ spec:
               number: 80
   tls:
   - hosts:
-    - harbor.talos-private.lan
+    - harbor.codegrowers.local-k8s.tech
     secretName: harbor-cert
