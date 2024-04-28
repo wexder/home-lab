@@ -3,6 +3,3 @@ kind: L2Advertisement
 metadata:
   name: cheap-advertisement
   namespace: metallb-system
-spec:
-  ipAddressPools:
-  - cheap
