@@ -10,6 +10,7 @@ rules:
         - secrets
         - serviceaccounts
         - configmaps
+        - endpointslices
       verbs:
         - '*'
     - apiGroups:
@@ -17,5 +18,6 @@ rules:
       resources:
         - statefulsets
         - deployments
+        - endpointslices
       verbs:
         - '*'
