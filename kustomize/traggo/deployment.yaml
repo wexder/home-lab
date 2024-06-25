@@ -39,5 +39,5 @@ spec:
               memory: 200Mi
           volumeMounts:
             - mountPath: /opt/traggo/data
-              name: traggo-iscsi
+              name: traggo-data
               readonly: false
