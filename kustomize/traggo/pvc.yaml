@@ -1,7 +1,7 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: transmission-iscsi
+  name: traggo-iscsi
   annotations:
     volume.beta.kubernetes.io/storage-class: "freenas-iscsi-csi"
 spec:
