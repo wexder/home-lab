@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: traggo-tailscale
+spec:
+  defaultBackend:
+    service:
+      name: traggo
+      port:
+        name: tailscale
+  ingressClassName: tailscale
+  tls:
+  - hosts:
+    - traggo

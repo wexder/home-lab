@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: traggo
+  labels:
+    app: traggo
+spec:
+  ports:
+    - port: 80
+      name: tailscale
+      targetPort: 3030
+      protocol: TCP
+  selector:
+    app: traggo

@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: traggo
+  labels:
+    app: traggo
+spec:
+  replicas: 1
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      app: traggo
+  template:
+    metadata:
+      labels:
+        app: traggo
+    spec:
+      securityContext:
+        runAsUser: 568
+        runAsGroup: 568
+        fsGroup: 568
+        fsGroupChangePolicy: "OnRootMismatch"
+      volumes:
+        - name: traggo-data
+          persistentVolumeClaim:
+            claimName: traggo-iscsi
+            readOnly: false
+      containers:
+        - name: traggo
+          image: ghcr.io/k8s-at-home/traggo:latest
+          ports:
+            - containerPort: 3030
+          resources:
+            requests:
+              cpu: 200m
+              memory: 200Mi
+            limits:
+              cpu: 200m
+              memory: 200Mi
+          volumeMounts:
+            - mountPath: /opt/traggo/data
+              name: traggo-iscsi
+              readonly: false
