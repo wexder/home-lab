@@ -1,0 +1,4 @@
+sentry:
+  clickhouse:
+    persistentVolumeClaim:
+      storageClass: "freenas-iscsi-csi"
