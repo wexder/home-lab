@@ -12,8 +12,13 @@ sentry:
     global:
       storageClass: freenas-iscsi-csi
   postgresql:
+    replication:
+      readReplicas: 1
     global:
       storageClass: freenas-iscsi-csi
+      postgresql:
+        auth:
+          username: postgres
   redis:
     replica:
       replicaCount: 1
