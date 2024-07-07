@@ -48,16 +48,16 @@ democratic-csi:
   #  # detachedSnapshots: "false"
   #  secrets:
   #    snapshotter-secret:
-  node:
-    hostPID: true
-    driver:
-      extraEnv:
-        - name: ISCSIADM_HOST_STRATEGY
-          value: nsenter
-        - name: ISCSIADM_HOST_PATH
-          value: /usr/local/sbin/iscsiadm
-      iscsiDirHostPath: /var/local/etc/iscsi
-      iscsiDirHostPathType: 
+  # node:
+    # hostPID: true
+    # driver:
+    #   extraEnv:
+    #     - name: ISCSIADM_HOST_STRATEGY
+    #       value: nsenter
+    #     - name: ISCSIADM_HOST_PATH
+    #       value: /usr/local/sbin/iscsiadm
+    #   iscsiDirHostPath: /var/local/etc/iscsi
+    #   iscsiDirHostPathType: ""
 
   driver:
     config:
