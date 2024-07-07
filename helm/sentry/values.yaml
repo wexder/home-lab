@@ -1,4 +1,7 @@
 sentry:
+  filestore:
+    persistence:
+      storageClass: "freenas-iscsi-csi"
   clickhouse:
     persistentVolumeClaim:
       storageClass: "freenas-iscsi-csi"
