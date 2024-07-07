@@ -19,6 +19,7 @@ sentry:
       postgresql:
         auth:
           username: postgres
+          password: postgres
   redis:
     replica:
       replicaCount: 1
@@ -32,3 +33,8 @@ sentry:
     replicaCount: 1
     global:
       storageClass: freenas-iscsi-csi
+  sentry:
+    web:
+      replicas: 0
+    nginx:
+      replicas: 0
