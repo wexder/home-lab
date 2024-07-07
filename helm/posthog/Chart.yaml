@@ -1,0 +1,8 @@
+apiVersion: v2
+name: posthog
+version: 1.0.0
+type: application
+dependencies:
+  - name: posthog
+    version: 0.23.2
+    repository: https://helm.zeet.dev
