@@ -1,0 +1,3 @@
+posthog:
+  ingress:
+    enabled: false
