@@ -6,17 +6,23 @@ sentry:
     persistence:
       storageClass: freenas-iscsi-csi
   kafka:
+    controller:
+      replicaCount: 1
     global:
       storageClass: freenas-iscsi-csi
   postgresql:
     global:
       storageClass: freenas-iscsi-csi
   redis:
+    replica:
+      replicaCount: 1
     global:
       storageClass: freenas-iscsi-csi
   rabbitmq:
+    replicaCount: 1
     global:
       storageClass: freenas-iscsi-csi
   zookeeper:
+    replicaCount: 1
     global:
       storageClass: freenas-iscsi-csi
