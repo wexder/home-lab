@@ -19,7 +19,6 @@ sentry:
       postgresql:
         auth:
           username: postgres
-          password: postgres
   redis:
     replica:
       replicaCount: 1
@@ -36,5 +35,5 @@ sentry:
   sentry:
     web:
       replicas: 0
-    nginx:
-      replicas: 0
+  nginx:
+    replicaCount: 0
