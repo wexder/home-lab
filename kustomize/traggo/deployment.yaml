@@ -27,7 +27,7 @@ spec:
             readOnly: false
       containers:
         - name: traggo
-          image: ghcr.io/k8s-at-home/traggo:latest
+          image: traggo/server:latest
           ports:
             - containerPort: 3030
           resources:
