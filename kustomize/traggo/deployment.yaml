@@ -30,6 +30,9 @@ spec:
           image: traggo/server:latest
           ports:
             - containerPort: 3030
+          env:
+            - name: TRAGGO_PORT
+              value: 3030
           resources:
             requests:
               cpu: 200m
