@@ -34,6 +34,6 @@ sentry:
       storageClass: freenas-iscsi-csi
   sentry:
     web:
-      replicas: 1
+      replicas: 0
   nginx:
-    replicaCount: 1
+    replicaCount: 0
