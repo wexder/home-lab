@@ -3,5 +3,20 @@ sentry:
     persistence:
       storageClass: "freenas-iscsi-csi"
   clickhouse:
-    persistentVolumeClaim:
-      storageClass: "freenas-iscsi-csi"
+    persistence:
+      storageClass: freenas-iscsi-csi
+  kafka:
+    global:
+      storageClass: freenas-iscsi-csi
+  postgresql:
+    global:
+      storageClass: freenas-iscsi-csi
+  redis:
+    global:
+      storageClass: freenas-iscsi-csi
+  rabbitmq:
+    global:
+      storageClass: freenas-iscsi-csi
+  zookeeper:
+    global:
+      storageClass: freenas-iscsi-csi
