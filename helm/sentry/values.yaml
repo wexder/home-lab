@@ -3,6 +3,7 @@ sentry:
     persistence:
       storageClass: "freenas-iscsi-csi"
   clickhouse:
+    replicas: "1"
     persistence:
       storageClass: freenas-iscsi-csi
   kafka:

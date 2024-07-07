@@ -2,6 +2,7 @@ posthog:
   ingress:
     enabled: false
   clickhouse:
+    replicas: "1"
     persistence:
       storageClass: freenas-iscsi-csi
   kafka:
