@@ -1,7 +1,8 @@
 sentry:
   filestore:
-    persistence:
-      storageClass: "freenas-iscsi-csi"
+    filesystem:
+      persistence:
+        storageClass: "freenas-iscsi-csi"
   clickhouse:
     replicas: "1"
     persistence:
