@@ -6,8 +6,9 @@ sentry:
   clickhouse:
     clickhouse:
       replicas: 3
-      persistence:
-        storageClass: freenas-iscsi-csi
+      persistentVolumeClaim:
+        dataPersistentVolume:
+          storageClass: freenas-iscsi-csi
   kafka:
     controller:
       replicaCount: 1
