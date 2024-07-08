@@ -8,7 +8,9 @@ sentry:
       replicas: 3
       persistentVolumeClaim:
         dataPersistentVolume:
-          storageClass: freenas-iscsi-csi
+          storageClassName: freenas-iscsi-csi
+        logPersistentVolume:
+          storageClassName: freenas-iscsi-csi
   kafka:
     controller:
       replicaCount: 1
