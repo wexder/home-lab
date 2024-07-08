@@ -33,6 +33,21 @@ spec:
           name: bgppeers.metallb.io
           jsonPointers:
             - /spec/conversion/webhook/clientConfig/caBundle
+        - group: "apiextensions.k8s.io"
+          kind: CustomResourceDefinition
+          name: clickhouseinstallations.clickhouse.altinity.com
+          jsonPointers:
+            - /spec/versions/additionalPrinterColumns/priority
+        - group: "apiextensions.k8s.io"
+          kind: CustomResourceDefinition
+          name: clickhouseinstallationtemplates.clickhouse.altinity
+          jsonPointers:
+            - /spec/versions/additionalPrinterColumns/priority
+        - group: "apiextensions.k8s.io"
+          kind: CustomResourceDefinition
+          name: clickhouseoperatorconfigurations.clickhouse.altinity
+          jsonPointers:
+            - /spec/versions/additionalPrinterColumns/priority
       source:
         repoURL: https://github.com/wexder/home-lab
         targetRevision: HEAD
