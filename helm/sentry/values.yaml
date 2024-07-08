@@ -5,7 +5,7 @@ sentry:
         storageClass: "freenas-iscsi-csi"
   clickhouse:
     clickhouse:
-      replicas: 3
+      replicas: 1
       persistentVolumeClaim:
         dataPersistentVolume:
           storageClassName: freenas-iscsi-csi
