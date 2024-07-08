@@ -9,6 +9,12 @@ spec:
     namespace: argocd
     server: https://kubernetes.default.svc
   project: snowy-lab
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
   source:
     path: bootstrap
     repoURL: https://github.com/wexder/home-lab
