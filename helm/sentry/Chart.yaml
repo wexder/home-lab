@@ -4,5 +4,5 @@ version: 1.0.0
 type: application
 dependencies:
   - name: sentry
-    version: 23.9.1
+    version: 23.11.0
     repository: https://sentry-kubernetes.github.io/charts
