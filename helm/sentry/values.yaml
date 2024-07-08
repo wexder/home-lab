@@ -5,7 +5,7 @@ sentry:
         storageClass: "freenas-iscsi-csi"
   clickhouse:
     clickhouse:
-      # replicas: 1
+      replicas: 1
       persistentVolumeClaim:
         dataPersistentVolume:
           storageClassName: freenas-iscsi-csi
@@ -13,12 +13,12 @@ sentry:
           storageClassName: freenas-iscsi-csi
   kafka:
     controller:
-      # replicaCount: 1
+      replicaCount: 1
     global:
       storageClass: freenas-iscsi-csi
   postgresql:
     replication:
-      # readReplicas: 1
+      readReplicas: 1
     global:
       storageClass: freenas-iscsi-csi
       postgresql:
@@ -26,15 +26,15 @@ sentry:
           username: postgres
   redis:
     replica:
-      # replicaCount: 1
+      replicaCount: 1
     global:
       storageClass: freenas-iscsi-csi
   rabbitmq:
-    # replicaCount: 1
+    replicaCount: 1
     global:
       storageClass: freenas-iscsi-csi
   zookeeper:
-    # replicaCount: 1
+    replicaCount: 1
     global:
       storageClass: freenas-iscsi-csi
   sentry:
