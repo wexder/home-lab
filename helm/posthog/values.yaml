@@ -1,6 +1,6 @@
 posthog:
   ingress:
-    enabled: false
+    enabled: true
   clickhouse:
     replicas: 1
     clickhouse:
