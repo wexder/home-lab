@@ -40,12 +40,12 @@ spec:
             - .spec.versions[].additionalPrinterColumns[].priority
         - group: "apiextensions.k8s.io"
           kind: CustomResourceDefinition
-          name: clickhouseinstallationtemplates.clickhouse.altinity
+          name: clickhouseinstallationtemplates.clickhouse.altinity.com
           jqPathExpressions:
             - .spec.versions[].additionalPrinterColumns[].priority
         - group: "apiextensions.k8s.io"
           kind: CustomResourceDefinition
-          name: clickhouseoperatorconfigurations.clickhouse.altinity
+          name: clickhouseoperatorconfigurations.clickhouse.altinity.com
           jqPathExpressions:
             - .spec.versions[].additionalPrinterColumns[].priority
       source:
