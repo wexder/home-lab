@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: posthog-ext
+spec:
+  rules:
+  - host: "posthog.kairos.local-k8s.tech"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: posthog
+            port:
+              number: 8000
+  tls:
+  - hosts:
+    - posthog.kairos.local-k8s.tech
+    secretName: posthog-cert
