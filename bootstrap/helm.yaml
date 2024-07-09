@@ -48,6 +48,14 @@ spec:
           name: clickhouseoperatorconfigurations.clickhouse.altinity.com
           jqPathExpressions:
             - .spec.versions[].additionalPrinterColumns[].priority
+        - group: "v1"
+          kind: PersistentVolume
+          name: pvc-560b7969-f0b4-4d4d-b053-2871278604a6
+          namespace: posthog
+        - group: "batch/v1"
+          kind: Job
+          name: posthog-migrate-2024-07-09-07-34-52
+          namespace: posthog
       source:
         repoURL: https://github.com/wexder/home-lab
         targetRevision: HEAD
