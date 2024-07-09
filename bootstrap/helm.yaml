@@ -48,8 +48,7 @@ spec:
           name: clickhouseoperatorconfigurations.clickhouse.altinity.com
           jqPathExpressions:
             - .spec.versions[].additionalPrinterColumns[].priority
-        - group: "v1"
-          kind: PersistentVolume
+        - kind: PersistentVolume
           name: pvc-560b7969-f0b4-4d4d-b053-2871278604a6
           namespace: posthog
         - group: "batch/v1"
