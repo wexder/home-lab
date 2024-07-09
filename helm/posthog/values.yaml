@@ -24,3 +24,5 @@ posthog:
     replicaCount: 1
     global:
       storageClass: freenas-iscsi-csi
+  service:
+    type: ClusterIP
