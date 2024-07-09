@@ -14,7 +14,3 @@ spec:
             name: posthog-web
             port:
               number: 8000
-  tls:
-  - hosts:
-    - posthog.kairos.local-k8s.tech
-    secretName: posthog-cert
