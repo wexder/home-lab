@@ -1,6 +1,5 @@
 supabase:
   global:
     storageClass: freenas-iscsi-csi
-  jwt:
-    autoGenerate:
-      forceRun: true
+    jwt:
+      existingSecret: supabase-jwt-token
