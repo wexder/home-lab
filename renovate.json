@@ -2,14 +2,6 @@
   "repositories": [
     "wexder/home-lab"
   ],
-  "packageRules": [
-    {
-      "matchPackagePatterns": [
-        "*"
-      ],
-      "groupName": "dependencies"
-    }
-  ],
   "branchPrefix": "deps/",
   "username": "renovate-bot",
   "gitAuthor": "Renovate Bot <bot@renovateapp.com>",
