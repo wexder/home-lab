@@ -48,6 +48,8 @@ spec:
           name: clickhouseoperatorconfigurations.clickhouse.altinity.com
           jqPathExpressions:
             - .spec.versions[].additionalPrinterColumns[].priority
+        - kind: PersistentVolume
+          namespace: posthog
       source:
         repoURL: https://github.com/wexder/home-lab
         targetRevision: HEAD
