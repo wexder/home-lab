@@ -1,6 +1,0 @@
-supabase:
-  global:
-    storageClass: freenas-iscsi-csi
-  jwt:
-    autoGenerate:
-      forceRun: true
