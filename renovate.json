@@ -1,12 +1,6 @@
 {
-  "repositories": [
-    "wexder/home-lab"
-  ],
   "branchPrefix": "deps/",
-  "username": "renovate-bot",
   "gitAuthor": "Renovate Bot <bot@renovateapp.com>",
-  "onboarding": false,
-  "platform": "github",
   "forkProcessing": "enabled",
   "kubernetes": {
     "fileMatch": [
