@@ -3,6 +3,8 @@ supabase:
     storageClass: freenas-iscsi-csi
     jwt:
       existingSecret: supabase-jwt-token
+  kong:
+    enabled: false
   jwt:
     secret: bVVtyG11zbjpo4qmy8LUkvYOFrQL8c0J5s2vDQIx
     anonKey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ewogICJyb2xlIjogImFub24iLAogICJpc3MiOiAic3VwYWJhc2UiLAogICJpYXQiOiAxNzIwNzM1MjAwLAogICJleHAiOiAxODc4NTAxNjAwCn0.n25yvBrHicZwuQmrxn0rPFkdwKCGcs7W3AGggQgV9wI
