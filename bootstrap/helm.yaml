@@ -49,6 +49,7 @@ spec:
           jqPathExpressions:
             - .spec.versions[].additionalPrinterColumns[].priority
         - kind: PersistentVolume
+          group: v1 
           namespace: posthog
       source:
         repoURL: https://github.com/wexder/home-lab
