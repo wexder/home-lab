@@ -3,6 +3,10 @@ snipeit:
     enabled: false
   mysql:
     enabled: true
+    persistance:
+      storageClass: freenas-iscsi-csi
+  persistance:
+    storageClass: freenas-iscsi-csi
   config:
     snipeit:
       key: base64:BFXfUqgJa48yW4+29YyTy7uNto2HyLtRZJIJXBW4U/w=
