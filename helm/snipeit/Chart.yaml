@@ -1,0 +1,8 @@
+apiVersion: v2
+name: snipeit
+version: 1.0.0
+type: application
+dependencies:
+  - name: snipeit
+    version: 3.4.1
+    repository: https://storage.googleapis.com/t3n-helm-charts
