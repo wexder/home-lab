@@ -3,9 +3,9 @@ snipeit:
     enabled: false
   mysql:
     enabled: true
-    persistance:
+    persistence:
       storageClass: freenas-iscsi-csi
-  persistance:
+  persistence:
     storageClass: freenas-iscsi-csi
   config:
     snipeit:
