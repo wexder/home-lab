@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bazarr
+  labels:
+    app: bazarr
+spec:
+  replicas: 1
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      app: bazarr
+  template:
+    metadata:
+      labels:
+        app: bazarr
+    spec:
+      securityContext:
+        runAsUser: 568
+        runAsGroup: 568
+        fsGroup: 568
+        fsGroupChangePolicy: "OnRootMismatch"
+      volumes:
+        - name: bazarr-config
+          persistentVolumeClaim:
+            claimName: bazarr-iscsi
+            readOnly: false
+        - name: bazarr-movies
+          nfs:
+            server: 192.168.1.112
+            path: /mnt/main_pool/private/media/movies
+            readOnly: false
+        - name: bazarr-shows
+          nfs:
+            server: 192.168.1.112
+            path: /mnt/main_pool/private/media/shows
+            readOnly: false
+        - name: bazarr-downloads
+          nfs:
+            server: 192.168.1.112
+            path: /mnt/main_pool/private/downloads
+            readOnly: false
+      containers:
+        - name: bazarr
+          # TODO maybe change image
+          image: ghcr.io/onedr0p/bazarr:rolling
+          command:   
+          ports:
+            - containerPort: 6767
+          volumeMounts:
+            - mountPath: /config
+              name: bazarr-config
+              readonly: false
+            - mountPath: /downloads
+              name: bazarr-downloads
+              readonly: false
+            - mountPath: /movies/
+              name: bazarr-movies
+              readonly: false
+            - mountPath: /shows/
+              name: bazarr-shows
+              readonly: false
+
