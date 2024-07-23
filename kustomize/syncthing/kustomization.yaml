@@ -1,13 +1,13 @@
 # kustomization.yml
 namespace: syncthing
 
-# resources:
-# - namespace.yaml
-# - deployment.yaml
-# - service.yaml
-# - tailscale.yaml
-# - tailscale-sync.yaml
-# - pvc.yaml
-# - role.yaml
-# - role-binding.yaml
-# - sa.yaml
+resources:
+- namespace.yaml
+- deployment.yaml
+- service.yaml
+- tailscale.yaml
+ # - tailscale-sync.yaml
+- pvc.yaml
+- role.yaml
+- role-binding.yaml
+- sa.yaml
