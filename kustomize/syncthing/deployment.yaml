@@ -47,7 +47,7 @@ spec:
             - mountPath: /config
               name: syncthing-config
             - mountPath: /data
-              name: nfs-syncthing-config
+              name: nfs-syncthing-data
         - name: ts-sidecar
           imagePullPolicy: Always
           image: "ghcr.io/tailscale/tailscale:latest"
