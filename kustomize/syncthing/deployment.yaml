@@ -48,22 +48,3 @@ spec:
               name: syncthing-config
             - mountPath: /data
               name: nfs-syncthing-data
-        - name: ts-sidecar
-          imagePullPolicy: Always
-          image: "ghcr.io/tailscale/tailscale:latest"
-          env:
-            # Store the state in a k8s secret
-          - name: TS_KUBE_SECRET
-            value: "sidecar-state"
-          - name: TS_USERSPACE
-            value: "false"
-          - name: TS_AUTHKEY
-            valueFrom:
-              secretKeyRef:
-                name: sidecar-state
-                key: client_secret
-                optional: true
-          securityContext:
-            capabilities:
-              add:
-              - NET_ADMIN
