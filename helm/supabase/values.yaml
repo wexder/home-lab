@@ -1,4 +1,5 @@
 supabase:
+  enabled: false
   global:
     storageClass: freenas-iscsi-csi
     jwt:

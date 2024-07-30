@@ -6,3 +6,4 @@ dependencies:
   - name: supabase
     version: 5.3.0
     repository: https://charts.bitnami.com/bitnami
+    condition: supabase.enabled
