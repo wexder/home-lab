@@ -6,3 +6,4 @@ dependencies:
   - name: posthog
     version: 0.23.2
     repository: https://helm.zeet.dev
+    condition: posthog.enabled

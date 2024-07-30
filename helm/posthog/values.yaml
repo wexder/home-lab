@@ -1,4 +1,5 @@
 posthog:
+  enabled: false
   ingress:
     enabled: false
   clickhouse:
