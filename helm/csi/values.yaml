@@ -81,7 +81,7 @@ democratic-csi:
             #strategy: md5
       httpConnection:
         protocol: http
-        host: 192.168.1.112
+        host: 192.168.1.111
         port: 80
         # use only 1 of apiKey or username/password
         # if both are present, apiKey is preferred
