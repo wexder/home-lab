@@ -27,17 +27,17 @@ spec:
             readOnly: false
         - name: bazarr-movies
           nfs:
-            server: 192.168.1.112
+            server: 192.168.1.111
             path: /mnt/main_pool/private/media/movies
             readOnly: false
         - name: bazarr-shows
           nfs:
-            server: 192.168.1.112
+            server: 192.168.1.111
             path: /mnt/main_pool/private/media/shows
             readOnly: false
         - name: bazarr-downloads
           nfs:
-            server: 192.168.1.112
+            server: 192.168.1.111
             path: /mnt/main_pool/private/downloads
             readOnly: false
       containers:

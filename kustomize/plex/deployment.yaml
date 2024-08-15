@@ -26,11 +26,11 @@ spec:
             claimName: plex-iscsi
         - name: nfs-plex-shows
           nfs:
-            server: 192.168.1.112
+            server: 192.168.1.111
             path: /mnt/main_pool/private/media/shows
         - name: nfs-plex-movies
           nfs:
-            server: 192.168.1.112
+            server: 192.168.1.111
             path: /mnt/main_pool/private/media/movies
       containers:
       - image: ghcr.io/linuxserver/plex

@@ -32,17 +32,17 @@ spec:
             claimName: filebrowser-iscsi
         - name: nfs-filebrowser-shows
           nfs:
-            server: 192.168.1.112
+            server: 192.168.1.111
             path: /mnt/main_pool/private/media/shows
             readOnly: false
         - name: nfs-filebrowser-movies
           nfs:
-            server: 192.168.1.112
+            server: 192.168.1.111
             path: /mnt/main_pool/private/media/movies
             readOnly: false
         - name: nfs-filebrowser-ebooks
           nfs:
-            server: 192.168.1.112
+            server: 192.168.1.111
             path: /mnt/main_pool/private/media/ebooks
             readOnly: false
         - name: conf
