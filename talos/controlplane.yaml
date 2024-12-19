@@ -79,7 +79,7 @@ cluster:
         key: LS0tLS1CRUdJTiBFQyBQUklWQVRFIEtFWS0tLS0tCk1IY0NBUUVFSUJadjFhN3F6S2N6YWNxamJQTjZFeXpIRWx1ZzZQWFdLMWFpYUZvK3VORXBvQW9HQ0NxR1NNNDkKQXdFSG9VUURRZ0FFbTJWQ25qNGsyUmhBUTRFQWM0RVMzOWZuUlN0ZUdBVEN1TDNDYlFEZ1p1WWpCVWxIcnphNApCNWRIZDRPYTU0bE4wRWVraFd0NFovNUtYeU41ZU9ESTZnPT0KLS0tLS1FTkQgRUMgUFJJVkFURSBLRVktLS0tLQo=
     # API server specific configuration options.
     apiServer:
-        image: registry.k8s.io/kube-apiserver:v1.28.0 # The container image used in the API server manifest.
+        image: registry.k8s.io/kube-apiserver:v1.30.2 # The container image used in the API server manifest.
         # Extra certificate subject alternative names for the API server's certificate.
         certSANs:
             - 192.168.1.55
