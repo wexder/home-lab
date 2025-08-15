@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: roamrise
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: argocd
+    server: https://kubernetes.default.svc
+  project: codegrowers
+  source:
+    path: ci/dev/kube/api
+    repoURL: https://github.com/Code-Growers/roamrise.git
+    targetRevision: dev
