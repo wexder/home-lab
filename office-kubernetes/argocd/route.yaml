@@ -6,6 +6,8 @@ spec:
   parentRefs:
   - name: web
     namespace: argocd
+  hostnames:
+  - "argocd.k8s.local-k8s.tech"
   rules:
   - backendRefs:
     - name: argocd-server
