@@ -11,5 +11,9 @@ cilium:
     autoMount:
       enabled: false
     hostRoot: /sys/fs/cgroup
-  k8sServiceHost: localhost
-  k8sServicePort: 7445
+  k8sServiceHost: auto
+  # k8sServicePort: 7445
+  gatewayAPI:
+    enabled: true
+    enableAlpn: true
+    enableAppProtocol: true
