@@ -5,6 +5,7 @@ metadata:
 spec:
   parentRefs:
   - name: web
+    namespace: argocd
   rules:
   - backendRefs:
     - name: argocd-server
