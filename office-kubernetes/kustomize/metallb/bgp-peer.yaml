@@ -2,7 +2,7 @@ apiVersion: metallb.io/v1beta2
 kind: BGPPeer
 metadata:
   name: unifi-router
-  namespace: metallb-system
+  namespace: metallb
 spec:
   myASN: 64512
   peerASN: 64512
