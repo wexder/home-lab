@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: traggo
-  labels:
-    goldilocks.fairwinds.com/enabled: "true"

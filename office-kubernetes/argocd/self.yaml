@@ -1,0 +1,21 @@
+# Self application set for bootstraping
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd-apps-self
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/wexder/home-lab.git'
+    path: ./office-kubernetes/argocd/
+    targetRevision: feature/rework-to-nix
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

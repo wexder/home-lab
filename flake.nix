@@ -1,43 +1,36 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs";
-    devenv.url = "github:cachix/devenv/v0.6.3";
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    make-shell.url = "github:nicknovitski/make-shell";
   };
 
-  nixConfig = {
-    extra-trusted-public-keys = "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=";
-    extra-substituters = "https://devenv.cachix.org";
-  };
+  outputs =
+    inputs@{ nixpkgs, flake-parts, ... }:
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      imports = [
+        inputs.make-shell.flakeModules.default
+      ];
+      systems = [
+        "x86_64-linux"
+      ];
 
-  outputs = { self, nixpkgs, devenv, ... } @ inputs:
-    let
-      pkgs = import nixpkgs { system = "x86_64-linux"; config.allowUnfree = true; };
-    in
-    {
-      devShell.x86_64-linux = devenv.lib.mkShell {
-        inherit inputs pkgs;
-
-        modules = [
-          ({ pkgs, lib, ... }: {
-
-            # This is your devenv configuration
-            packages = with pkgs; [
-              trivy
-              kubernetes-helm
-              yq
-              talosctl
-              terraform
-              kubecm
-              kustomize
-              kdash
-              kubeseal
+      perSystem =
+        { config
+        , self'
+        , inputs'
+        , pkgs
+        , system
+        , ...
+        }:
+        {
+          make-shells.default = {
+            packages = [
+              pkgs.kubernetes-helm
+              pkgs.talosctl
+              pkgs.kustomize
             ];
-
-            enterShell = ''
-            '';
-          })
-        ];
-      };
+          };
+        };
     };
 }
-

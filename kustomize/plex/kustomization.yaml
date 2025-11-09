@@ -1,9 +1,0 @@
-# kustomization.yml
-namespace: plex
-
-resources:
-- namespace.yaml
-- deployment.yaml
-- service.yaml
-- tailscale.yaml
-- pvc.yaml
