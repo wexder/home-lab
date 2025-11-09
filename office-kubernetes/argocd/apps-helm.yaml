@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: helm-apps
+spec:
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
+  generators:
+    - git:
+        repoURL: https://github.com/wexder/home-lab.git
+        revision: feature/rework-to-nix
+        directories:
+          - path: "office-kubernetes/helm/*"
+  template:
+    metadata:
+      name: '{{.path.basenameNormalized}}-{{.app}}'
+    spec:
+      project: '{{.app}}'
+      source:
+        repoURL: https://github.com/wexder/home-lab.git
+        targetRevision: feature/rework-to-nix
+        path: '{{.path.basename}}/deployment/overlay/{{.app}}/dev'
+      destination:
+        server: 'https://kubernetes.default.svc'
+        namespace: '{{.app}}'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true

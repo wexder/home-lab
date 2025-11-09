@@ -12,7 +12,9 @@ resources:
 
 # Argo bootstrap
 - self.yaml
-# - projects.yaml
+- projects.yaml
+- apps-helm.yaml
+- repository.yaml
   
 patches:
   - path: argocd-cmd-params-cm.yaml
