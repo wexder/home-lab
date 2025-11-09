@@ -8,3 +8,6 @@ resources:
   - advertisement.yaml
   # Why is this needed ?
   - namespace.yaml
+
+patches:
+  - path: namespace-patch.yaml
