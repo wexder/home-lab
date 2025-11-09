@@ -8,7 +8,7 @@ resources:
 # Argo install
 - https://github.com/argoproj/argo-cd//manifests/cluster-install/?ref=v3.2.0
 - namespace.yaml
-# - ingress.yaml
+- route.yaml
 
 # Argo bootstrap
 - self.yaml
