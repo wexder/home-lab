@@ -5,3 +5,8 @@ namespace: metallb-system
 
 resources:
   - github.com/metallb/metallb/config/frr?ref=v0.15.2
+  - bgp-peer.yaml
+  - pool.yaml
+  - advertisement.yaml
+  # Why is this needed ?
+  - namespace.yaml
