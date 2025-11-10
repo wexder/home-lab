@@ -1,0 +1,15 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cert-manager
+  namespace: cert-manager
+spec:
+  containers:
+    - args:
+        - '--v=2'
+        - '--cluster-resource-namespace=$(POD_NAMESPACE)'
+        - '--leader-election-namespace=cert-manager'
+        - >-
+          --acme-http01-solver-image=quay.io/jetstack/cert-manager-acmesolver:v1.19.1
+        - '--max-concurrent-challenges=60'
+      name: cert-manager-controller

@@ -10,3 +10,4 @@ resources:
 
 patches:
   - path: cert-manager-cainjector.yaml
+  - path: cert-manager.yaml
