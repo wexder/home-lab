@@ -8,7 +8,7 @@ spec:
   gatewayClassName: cilium
   listeners:
     - protocol: HTTPS
-      hostname: local-k8s.tech
+      hostname: "*.k8s.local-k8s.tech"
       port: 443
       name: web-https
       allowedRoutes:
@@ -17,7 +17,7 @@ spec:
       tls:
         mode: Terminate
         certificateRefs:
-          - name: k8s-local-k8s-tech-tls
+          - name: local-k8s-tech-tls
     - protocol: HTTP
       port: 80
       name: web-http
