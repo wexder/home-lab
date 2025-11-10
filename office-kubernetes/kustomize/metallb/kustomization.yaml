@@ -6,6 +6,7 @@ resources:
   - bgp-peer.yaml
   - pool.yaml
   - advertisement.yaml
+  - profile.yaml
   # Why is this needed ?
   - namespace.yaml
 
