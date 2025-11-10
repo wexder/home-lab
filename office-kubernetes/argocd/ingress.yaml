@@ -5,13 +5,13 @@ metadata:
   # annotations:
   #   cert-manager.io/cluster-issuer: letsencrypt-issuer
 spec:
-  ingressClassName: cilium
+  ingressClassName: traefik
   # tls:
   #   - hosts:
-  #       - argocd.mcorecode.com
+  #       - argocd.k8s.local-k8s.tech
   #     secretName: grafana-ingress-cert
   rules:
-    - host: argocd.mcorecode.com
+    - host: "argocd.k8s.local-k8s.tech"
       http:
         paths:
           - path: /
