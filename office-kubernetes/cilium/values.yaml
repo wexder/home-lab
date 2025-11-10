@@ -17,6 +17,3 @@ cilium:
     enabled: true
     enableAlpn: true
     enableAppProtocol: true
-  ingressController:
-    enabled: true
-    loadbalancerMode: dedicated

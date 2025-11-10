@@ -5,10 +5,10 @@ metadata:
 spec:
   parentRefs:
   - name: web
-    namespace: argocd
+    namespace: gateway-system
   hostnames:
-  - "argocd.k8s.local-k8s.tech"
+    - "argocd.k8s.local-k8s.tech"
   rules:
-  - backendRefs:
-    - name: argocd-server
-      port: 80
+    - backendRefs:
+      - name: argocd-server
+        port: 80
