@@ -8,5 +8,5 @@ resources:
   - sealed-secret.yaml
   - issuer.yaml
 
-patch:
+patches:
   - path: cert-manager-cainjector.yaml
