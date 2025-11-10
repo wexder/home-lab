@@ -11,6 +11,7 @@ spec:
             - '--v=2'
             - '--cluster-resource-namespace=$(POD_NAMESPACE)'
             - '--leader-election-namespace=cert-manager'
+            - '--enable-gateway-api'
             - >-
               --acme-http01-solver-image=quay.io/jetstack/cert-manager-acmesolver:v1.19.1
             - '--max-concurrent-challenges=60'
