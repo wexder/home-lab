@@ -10,6 +10,7 @@ resources:
 - namespace.yaml
 - web-gateway.yaml
 - route.yaml
+- ingress.yaml
 
 # Argo bootstrap
 - self.yaml

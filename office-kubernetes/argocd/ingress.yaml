@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: argocd-ingress
+  # annotations:
+  #   cert-manager.io/cluster-issuer: letsencrypt-issuer
+spec:
+  ingressClassName: cilium
+  # tls:
+  #   - hosts:
+  #       - argocd.mcorecode.com
+  #     secretName: grafana-ingress-cert
+  rules:
+    - host: argocd.mcorecode.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: argocd-server
+                port:
+                  number: 80
