@@ -1,0 +1,12 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cert-manager-cainjector
+spec:
+  template:
+    spec:
+      containers:
+        - args:
+            - '--v=2'
+            - '--leader-election-namespace=cert-manager'
+          name: cert-manager-cainjector

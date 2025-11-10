@@ -7,3 +7,6 @@ resources:
   - https://github.com/cert-manager/cert-manager/releases/download/v1.19.1/cert-manager.yaml
   - sealed-secret.yaml
   - issuer.yaml
+
+patch:
+  - path: cert-manager-cainjector.yaml
