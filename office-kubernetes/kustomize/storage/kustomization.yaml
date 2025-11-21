@@ -5,5 +5,3 @@ namespace: storage-system
 
 resources:
   - namespace.yaml
-  - iscsi-valkey.yaml
-  - iscsi-postgres.yaml
