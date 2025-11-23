@@ -1,4 +1,8 @@
 immich:
+  immich:
+    persistence:
+      library:
+        existingClaim: nfs-pvc
   controllers:
     main:
       containers:
