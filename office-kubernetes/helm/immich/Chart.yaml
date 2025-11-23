@@ -1,0 +1,9 @@
+apiVersion: v2
+name: immich
+description: A Helm chart for Kubernetes
+type: application
+version: 1.0.0
+dependencies:
+- name: immich
+  version: 0.10.2
+  repository: https://immich-app.github.io/immich-charts
