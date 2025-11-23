@@ -4,11 +4,14 @@ metadata:
   name: main-psql
 spec:
   instances: 1
-  imageCatalogRef:
-    apiGroup: postgresql.cnpg.io
-    kind: ClusterImageCatalog
-    name: postgresql
-    major: 18
+  # TODO switch to extensions once ready
+  # https://github.com/cloudnative-pg/postgres-extensions-containers/pull/1
+  imageName: ghcr.io/tensorchord/cloudnative-vectorchord:18.1
+  # imageCatalogRef:
+  #   apiGroup: postgresql.cnpg.io
+  #   kind: ClusterImageCatalog
+  #   name: postgresql
+  #   major: 18
   storage:
     pvcTemplate:
       accessModes:
@@ -17,13 +20,13 @@ spec:
         requests:
           storage: 50Gi
       storageClassName: freenas-iscsi-csi
-  postgresql:
-    shared_preload_libraries:
-      - "vchord.so"
-    extensions:
-      - name: vectorchord
-        image:
-          reference: ghcr.io/tensorchord/cloudnative-vectorchord:18.1
+  # postgresql:
+  #   shared_preload_libraries:
+  #     - "vchord.so"
+  #   extensions:
+  #     - name: vectorchord
+  #       image:
+  #         reference: ghcr.io/tensorchord/cloudnative-vectorchord:18.1
   managed:
     roles:
     - name: immich
