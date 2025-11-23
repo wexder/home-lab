@@ -7,3 +7,6 @@ spec:
   owner: immich
   cluster:
     name: main-psql
+  extensions:
+    - name: vchord
+    - name: earthdistance
