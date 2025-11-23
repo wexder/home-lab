@@ -22,14 +22,12 @@ immich:
                   name: immich-postgres-password
             env:
               - name: DB_DATABASE_NAME
-                value/valueFrom: immich
+                value: immich
               - name: DB_HOSTNAME
-                value/valueFrom: main-psql-pool.postgres.svc.cluster.local
-              - name: DB_PASSWORD
-                value/valueFrom: xxx
+                value: main-psql-pool.postgres.svc.cluster.local
               - name: DB_PORT
-                value/valueFrom: 5432
+                value: 5432
               - name: DB_USERNAME
-                value/valueFrom: immich
+                value: immich
   machine-learning:
     enabled: true
