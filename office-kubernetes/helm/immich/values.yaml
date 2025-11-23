@@ -9,23 +9,27 @@ immich:
         main:
           image:
             tag: v2.3.1
-          envFrom:
-            - secretRef:
-                name: immich-postgres-password
-          env:
-            - name: DB_DATABASE_NAME
-              value/valueFrom: immich
-            - name: DB_HOSTNAME
-              value/valueFrom: main-psql-pool.postgres.svc.cluster.local
-            - name: DB_PASSWORD
-              value/valueFrom: xxx
-            - name: DB_PORT
-              value/valueFrom: 5432
-            - name: DB_USERNAME
-              value/valueFrom: immich
   valkey:
     enabled: true
   server:
     enabled: true
+    controllers:
+      main:
+        containers:
+          main:
+            envFrom:
+              - secretRef:
+                  name: immich-postgres-password
+            env:
+              - name: DB_DATABASE_NAME
+                value/valueFrom: immich
+              - name: DB_HOSTNAME
+                value/valueFrom: main-psql-pool.postgres.svc.cluster.local
+              - name: DB_PASSWORD
+                value/valueFrom: xxx
+              - name: DB_PORT
+                value/valueFrom: 5432
+              - name: DB_USERNAME
+                value/valueFrom: immich
   machine-learning:
     enabled: true
