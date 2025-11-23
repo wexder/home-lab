@@ -4,3 +4,5 @@ kind: Kustomization
 resources:
   - https://raw.githubusercontent.com/cloudnative-pg/cloudnative-pg/main/releases/cnpg-1.28.0-rc1.yaml
   - namespace.yaml
+  - main.yaml
+  - users.yaml
