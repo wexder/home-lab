@@ -18,6 +18,8 @@ spec:
           storage: 50Gi
       storageClassName: freenas-iscsi-csi
   postgresql:
+    shared_preload_libraries:
+      - "vchord.so"
     extensions:
       - name: vectorchord
         image:
