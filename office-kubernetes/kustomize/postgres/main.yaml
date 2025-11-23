@@ -15,6 +15,7 @@ spec:
   managed:
     roles:
     - name: immich
+      ensure: present
       createdb: true
       login: true
       passwordSecret:
