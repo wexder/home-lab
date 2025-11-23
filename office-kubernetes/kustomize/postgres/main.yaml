@@ -7,7 +7,7 @@ spec:
   # TODO switch to extensions once ready
   # https://github.com/cloudnative-pg/postgres-extensions-containers/pull/1
   # Also immich is stupid and does not yet support vectorchord v1.0.0
-  imageName: ghcr.io/tensorchord/cloudnative-vectorchord:17.1-0.4.3
+  imageName: ghcr.io/tensorchord/cloudnative-vectorchord:17-0.4.3
   # imageCatalogRef:
   #   apiGroup: postgresql.cnpg.io
   #   kind: ClusterImageCatalog
