@@ -68,9 +68,9 @@ democratic-csi:
       instance_id: freenas-api-iscsi
 
       httpConnection:
-        protocol: http
-        host: 192.168.1.112
-        port: 80
+        protocol: https
+        host: nas.office.local-k8s.tech
+        port: 443
         # use only 1 of apiKey or username/password
         # if both are present, apiKey is preferred
         # apiKey is only available starting in TrueNAS-12
@@ -121,7 +121,7 @@ democratic-csi:
       iscsi:
         # targetPortal: "192.168.1.111:3260"
         # for multipath
-        targetPortals: ["192.168.1.112:3260"] # [ "server[:port]", "server[:port]", ... ]
+        targetPortals: ["192.168.240.112:3260"] # [ "server[:port]", "server[:port]", ... ]
         # leave empty to omit usage of -I with iscsiadm
         # interface: eth0
 
