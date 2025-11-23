@@ -17,11 +17,11 @@ spec:
         requests:
           storage: 50Gi
       storageClassName: freenas-iscsi-csi
-  # postgresql:
-  #   extensions:
-  #     - name: vectorchord
-  #       image:
-  #         reference: ghcr.io/tensorchord/cloudnative-vectorchord:18.1
+  postgresql:
+    extensions:
+      - name: vectorchord
+        image:
+          reference: ghcr.io/tensorchord/cloudnative-vectorchord:18.1
   managed:
     roles:
     - name: immich
