@@ -10,3 +10,4 @@ spec:
   extensions:
     - name: vchord
     - name: earthdistance
+    - name: vector
