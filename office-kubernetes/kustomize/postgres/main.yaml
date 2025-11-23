@@ -19,7 +19,7 @@ spec:
       storageClassName: freenas-iscsi-csi
   postgresql:
     extensions:
-      - name: 
+      - name: vectorchord
         image:
           reference: ghcr.io/tensorchord/cloudnative-vectorchord:18.1
   managed:
