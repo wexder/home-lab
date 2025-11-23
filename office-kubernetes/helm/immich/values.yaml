@@ -1,0 +1,13 @@
+immich:
+  controllers:
+    main:
+      containers:
+        main:
+          image:
+            tag: v2.3.1
+  valkey:
+    enabled: true
+  server:
+    enabled: true
+  machine-learning:
+    enabled: true
