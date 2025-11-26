@@ -6,3 +6,8 @@ resources:
   - service.yaml
   - route.yaml
   - prowlarr-secret.yaml
+
+configMapGenerator:
+  - name: prowlarr-config
+    files:
+      - config.xml

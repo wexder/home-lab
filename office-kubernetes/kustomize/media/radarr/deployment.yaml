@@ -33,6 +33,12 @@ spec:
             readOnly: false
         - name: tmp-config
           emptyDir: {}
+        - name: config-xml
+          configMap:
+            name: radarr-config
+            items:
+            - key: config.xml
+              path: config.xml
       containers:
         - name: radarr
           image: ghcr.io/home-operations/radarr:rolling
@@ -66,3 +72,7 @@ spec:
             - mountPath: /config/
               name: tmp-config
               readonly: false
+            - mountPath: /config/config.xml
+              subPath: config.xml
+              name: config-xml
+              readonly: true

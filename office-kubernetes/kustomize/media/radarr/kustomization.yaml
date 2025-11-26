@@ -6,3 +6,8 @@ resources:
   - service.yaml
   - route.yaml
   - radarr-secret.yaml
+
+configMapGenerator:
+  - name: radarr-config
+    files:
+      - config.xml

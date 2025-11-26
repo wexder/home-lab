@@ -1,16 +1,16 @@
 <Config>
   <BindAddress>*</BindAddress>
-  <Port>8989</Port>
+  <Port>7878</Port>
   <SslPort>9898</SslPort>
   <EnableSsl>False</EnableSsl>
   <LaunchBrowser>True</LaunchBrowser>
-  <ApiKey>2720346e6a3f43ffa683f3e95f3eb552</ApiKey>
+  <ApiKey>1bd571f78d1d4978a8bb6534d2a8d7b7</ApiKey>
   <AuthenticationMethod>External</AuthenticationMethod>
-  <AuthenticationRequired>DisabledForLocalAddresses</AuthenticationRequired>
+  <AuthenticationRequired>Enabled</AuthenticationRequired>
   <LogLevel>info</LogLevel>
   <SslCertPath></SslCertPath>
   <SslCertPassword></SslCertPassword>
   <UrlBase></UrlBase>
-  <InstanceName>Sonarr</InstanceName>
+  <InstanceName>Radarr</InstanceName>
   <UpdateMechanism>Docker</UpdateMechanism>
 </Config>
