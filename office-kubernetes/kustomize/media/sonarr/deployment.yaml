@@ -33,6 +33,12 @@ spec:
             readOnly: false
         - name: tmp-config
           emptyDir: {}
+        - name: config-xml
+          configMap:
+            name: sonarr-config
+            items:
+            - key: config.xml
+              path: config.xml
       containers:
         - name: sonarr
           image: ghcr.io/home-operations/sonarr:rolling
@@ -62,6 +68,10 @@ spec:
               readonly: false
             - mountPath: /shows/
               name: sonarr-media
+              readonly: false
+            - mountPath: /config/config.xml
+              subPath: config.xml
+              name: config-xml
               readonly: false
             - mountPath: /config/
               name: tmp-config
