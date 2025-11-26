@@ -20,6 +20,9 @@ spec:
         runAsGroup: 568
         fsGroup: 568
         fsGroupChangePolicy: "OnRootMismatch"
+      volumes:
+        - name: tmp-config
+          emptyDir: {}
       containers:
         - name: prowlarr
           image: ghcr.io/home-operations/prowlarr:rolling
@@ -41,3 +44,7 @@ spec:
               value: main-psql-rw.postgres.svc.cluster.local
             - name: PROWLARR__POSTGRES__MAINDB
               value: prowlarr-main
+          volumeMounts:
+            - mountPath: /config/
+              name: tmp-config
+              readonly: false
