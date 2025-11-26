@@ -9,5 +9,5 @@ resources:
 
 configMapGenerator:
   - name: sonarr-config
-    envs:
-    - config.xml
+    files:
+      - config.xml
