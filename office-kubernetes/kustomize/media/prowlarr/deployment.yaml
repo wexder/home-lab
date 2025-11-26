@@ -44,6 +44,8 @@ spec:
               value: main-psql-rw.postgres.svc.cluster.local
             - name: PROWLARR__POSTGRES__MAINDB
               value: prowlarr-main
+            - name: PROWLARR__LOG__DBENABLED
+              value: "false"
           volumeMounts:
             - mountPath: /config/
               name: tmp-config

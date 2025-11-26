@@ -54,6 +54,8 @@ spec:
               value: main-psql-rw.postgres.svc.cluster.local
             - name: SONARR__POSTGRES__MAINDB
               value: sonarr-main
+            - name: SONARR__LOG__DBENABLED
+              value: "false"
           volumeMounts:
             - mountPath: /downloads
               name: sonarr-downloads

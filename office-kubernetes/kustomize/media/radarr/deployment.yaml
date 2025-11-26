@@ -54,6 +54,8 @@ spec:
               value: main-psql-rw.postgres.svc.cluster.local
             - name: RADARR__POSTGRES__MAINDB
               value: radarr-main
+            - name: RADARR__LOG__DBENABLED
+              value: "false"
           volumeMounts:
             - mountPath: /downloads
               name: radarr-downloads
