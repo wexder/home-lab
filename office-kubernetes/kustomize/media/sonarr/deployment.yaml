@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sonarr
+  labels:
+    app: sonarr
+spec:
+  replicas: 1
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      app: sonarr
+  template:
+    metadata:
+      labels:
+        app: sonarr
+    spec:
+      securityContext:
+        runAsUser: 568
+        runAsGroup: 568
+        fsGroup: 568
+        fsGroupChangePolicy: "OnRootMismatch"
+      volumes:
+        - name: sonarr-media
+          nfs:
+            server: 192.168.240.112
+            path: /mnt/main_pool/private/media/shows
+            readOnly: false
+        - name: sonarr-downloads
+          nfs:
+            server: 192.168.240.112
+            path: /mnt/main_pool/private/downloads
+            readOnly: false
+      containers:
+        - name: sonarr
+          image: ghcr.io/home-operations/sonarr:rolling
+          command:   
+          ports:
+            - containerPort: 8989
+              name: http
+          envFrom:
+            - secretRef:
+                name: sonarr-postgres-user
+          env:
+            - name: SONARR__POSTGRES__HOST
+              value: main-psql-rw.postgres.svc.cluster.local
+            - name: SONARR__POSTGRES__PORT
+              value: 5432
+            - name: SONARR__POSTGRES__USER
+              value: sonarr
+            - name: SONARR__POSTGRES__HOST
+              value: main-psql-rw.postgres.svc.cluster.local
+            - name: SONARR__POSTGRES__MAINDB
+              value: sonarr-main
+          volumeMounts:
+            - mountPath: /downloads
+              name: sonarr-downloads
+              readonly: false
+            - mountPath: /shows/
+              name: sonarr-media
+              readonly: false

@@ -33,10 +33,28 @@ spec:
     - name: immich
       ensure: present
       superuser: true
-      createdb: true
+      createdb: false
       login: true
       passwordSecret:
         name: immich-postgres-user
+    - name: sonarr
+      ensure: present
+      createdb: false
+      login: true
+      passwordSecret:
+        name: sonarr-postgres-user
+    - name: radarr
+      ensure: present
+      createdb: false
+      login: true
+      passwordSecret:
+        name: radarr-postgres-user
+    - name: prowlarr
+      ensure: present
+      createdb: false
+      login: true
+      passwordSecret:
+        name: prowlarr-postgres-user
 ---
 apiVersion: postgresql.cnpg.io/v1
 kind: Pooler

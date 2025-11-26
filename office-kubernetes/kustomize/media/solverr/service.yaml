@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: solverr
+  labels:
+    app: solverr
+spec:
+  ports:
+    - port: 8191
+      name: default
+      targetPort: 8191
+      protocol: TCP
+  selector:
+    app: solverr
