@@ -34,7 +34,7 @@ spec:
             - name: PROWLARR__POSTGRES__HOST
               value: main-psql-rw.postgres.svc.cluster.local
             - name: PROWLARR__POSTGRES__PORT
-              value: 5432
+              value: "5432"
             - name: PROWLARR__POSTGRES__USER
               value: prowlarr
             - name: PROWLARR__POSTGRES__HOST
