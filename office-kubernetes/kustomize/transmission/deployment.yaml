@@ -77,8 +77,8 @@ spec:
         #     claimName: transmission-iscsi
         #     readOnly: false
         - name: wireguard
-          secret:
-            secretName: wireguard-secret
+          configMap:
+            name: wireguard-config
             items:
               - key: tunnel.conf
                 path: tunnel.conf
