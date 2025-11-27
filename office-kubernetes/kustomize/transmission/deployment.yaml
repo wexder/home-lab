@@ -33,7 +33,15 @@ spec:
               readOnly: false
             - mountPath: /workdir/tunnel.conf
               subPath: tunnel.conf
-              name: wireguard
+              name: wireguard-conf
+              readOnly: false
+        - name: debug
+          image: busybox:latest
+          imagePullPolicy: IfNotPresent
+          command: ['ls', '/config/wg_confs']
+          volumeMounts:
+            - name: wg-conf-target
+              mountPath: /config/wg_confs
               readOnly: false
       containers:
         - name: wireguard
@@ -76,7 +84,7 @@ spec:
         #   persistentVolumeClaim:
         #     claimName: transmission-iscsi
         #     readOnly: false
-        - name: wireguard
+        - name: wireguard-conf
           configMap:
             name: wireguard-config
             items:
