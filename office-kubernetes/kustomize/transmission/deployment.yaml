@@ -22,7 +22,7 @@ spec:
       #   fsGroupChangePolicy: "OnRootMismatch"
       containers:
         - name: wireguard
-          image: cmulk/wireguard-docker:latest
+          image: ghostserverd/wireguard:latest
           imagePullPolicy: IfNotPresent
           securityContext:
             privileged: true
