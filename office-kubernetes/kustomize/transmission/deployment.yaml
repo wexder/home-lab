@@ -43,10 +43,10 @@ spec:
             - containerPort: 9091
             - containerPort: 51413
           volumeMounts:
-            - mountPath: /config
-              name: transmission-config
-              subPath: transmission
-              readonly: false
+            # - mountPath: /config
+            #   name: transmission-config
+            #   subPath: transmission
+            #   readonly: false
             - mountPath: /downloads
               name: transmission-downloads
               readonly: false
@@ -56,10 +56,10 @@ spec:
             server: 192.168.240.112
             path: /mnt/main_pool/private/downloads
             readOnly: false
-        - name: transmission-config
-          persistentVolumeClaim:
-            claimName: transmission-iscsi
-            readOnly: false
+        # - name: transmission-config
+        #   persistentVolumeClaim:
+        #     claimName: transmission-iscsi
+        #     readOnly: false
         - name: wireguard
           secret:
             secretName: wireguard-secret
