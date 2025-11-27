@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: transmission
+  labels:
+    app: solverr
+spec:
+  ports:
+    - port: 80
+      name: http
+      targetPort: 9091
+      protocol: TCP
+  selector:
+    app: transmission

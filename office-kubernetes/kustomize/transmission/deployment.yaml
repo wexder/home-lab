@@ -1,0 +1,68 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: transmission
+  labels:
+    app: transmission
+spec:
+  replicas: 1
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      app: transmission
+  template:
+    metadata:
+      labels:
+        app: transmission
+    spec:
+      # securityContext:
+      #   runAsUser: 568
+      #   runAsGroup: 568
+      #   fsGroup: 568
+      #   fsGroupChangePolicy: "OnRootMismatch"
+      containers:
+        - name: wireguard
+          image: ghcr.io/linuxserver/wireguard
+          imagePullPolicy: IfNotPresent
+          securityContext:
+            privileged: true
+            capabilities:
+              add:
+                - NET_ADMIN
+                - SYS_MODULE
+            allowPrivilegeEscalation: true
+            readOnlyRootFilesystem: false
+          volumeMounts:
+            - mountPath: /config/wg_confs/tunnel.conf
+              subPath: tunnel.conf
+              name: wireguard
+              readOnly: false
+        - name: transmission
+          image: ghcr.io/k8s-at-home/transmission:latest
+          ports:
+            - containerPort: 9091
+            - containerPort: 51413
+          volumeMounts:
+            - mountPath: /config
+              name: transmission-config
+              subPath: transmission
+              readonly: false
+            - mountPath: /downloads
+              name: transmission-downloads
+              readonly: false
+      volumes:
+        - name: transmission-downloads
+          nfs:
+            server: 192.168.240.112
+            path: /mnt/main_pool/private/downloads
+            readOnly: false
+        - name: transmission-config
+          persistentVolumeClaim:
+            claimName: transmission-iscsi
+            readOnly: false
+        - name: wireguard
+          secret:
+            secretName: wireguard-secret
+            items:
+              - key: tunnel.conf
+                path: tunnel.conf
