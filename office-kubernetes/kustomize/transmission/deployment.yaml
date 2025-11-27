@@ -20,6 +20,21 @@ spec:
       #   runAsGroup: 568
       #   fsGroup: 568
       #   fsGroupChangePolicy: "OnRootMismatch"
+      initContainers:
+        - name: wireguard
+          image: stephenc/envsub:latest
+          imagePullPolicy: IfNotPresent
+          envFrom:
+            - secretRef:
+                name: wireguard-secret
+          volumeMounts:
+            - name: wg-conf-target
+              mountPath: /processed
+              readOnly: false
+            - mountPath: /workdir/tunnel.conf
+              subPath: tunnel.conf
+              name: wireguard
+              readOnly: false
       containers:
         - name: wireguard
           image: ghcr.io/linuxserver/wireguard
@@ -33,10 +48,9 @@ spec:
             allowPrivilegeEscalation: true
             readOnlyRootFilesystem: false
           volumeMounts:
-            - mountPath: /config/wg_confs/tunnel.conf
-              subPath: tunnel.conf
-              name: wireguard
-              readOnly: false
+            - mountPath: /config/wg_confs
+              name: wg-conf-target
+              readOnly: true
         - name: transmission
           image: ghcr.io/k8s-at-home/transmission:latest
           ports:
@@ -51,6 +65,8 @@ spec:
               name: transmission-downloads
               readonly: false
       volumes:
+        - name: wg-conf-target
+          emptyDir: {}
         - name: transmission-downloads
           nfs:
             server: 192.168.240.112
