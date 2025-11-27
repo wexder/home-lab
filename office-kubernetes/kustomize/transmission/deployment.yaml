@@ -33,7 +33,7 @@ spec:
             allowPrivilegeEscalation: true
             readOnlyRootFilesystem: false
           volumeMounts:
-            - mountPath: /etc/wireguard/tunnel.conf
+            - mountPath: /config/wg_confs/tunnel.conf
               subPath: tunnel.conf
               name: wireguard
               readOnly: false
