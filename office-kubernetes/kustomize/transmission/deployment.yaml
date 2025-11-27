@@ -22,7 +22,7 @@ spec:
       #   fsGroupChangePolicy: "OnRootMismatch"
       containers:
         - name: wireguard
-          image: ghostserverd/wireguard:latest
+          image: ghcr.io/linuxserver/wireguard
           imagePullPolicy: IfNotPresent
           securityContext:
             privileged: true
