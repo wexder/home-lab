@@ -36,18 +36,10 @@ spec:
               subPath: tunnel.conf
               name: wireguard-conf
               readOnly: false
-        - name: debug
-          image: busybox:latest
-          imagePullPolicy: IfNotPresent
-          command: ['ls', '-la', '/config/wg_confs']
-          volumeMounts:
-            - name: wg-conf-target
-              mountPath: /config/wg_confs
-              readOnly: false
-      containers:
         - name: wireguard
           image: ghcr.io/linuxserver/wireguard
           imagePullPolicy: IfNotPresent
+          restartPolicy: Always
           securityContext:
             privileged: true
             capabilities:
@@ -60,6 +52,7 @@ spec:
             - mountPath: /config/wg_confs
               name: wg-conf-target
               readOnly: true
+      containers:
         - name: transmission
           image: ghcr.io/k8s-at-home/transmission:latest
           ports:
