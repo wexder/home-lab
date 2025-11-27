@@ -22,8 +22,9 @@ spec:
       #   fsGroupChangePolicy: "OnRootMismatch"
       initContainers:
         - name: envsub
-          image: stephenc/envsub:latest
+          image: bhgedigital/envsubst:latest
           imagePullPolicy: IfNotPresent
+          command: ['sh', '-c', 'cat /workdir/tunnel.conf | envsubst > /processed/tunnel.conf']
           envFrom:
             - secretRef:
                 name: wireguard-secret
@@ -38,7 +39,7 @@ spec:
         - name: debug
           image: busybox:latest
           imagePullPolicy: IfNotPresent
-          command: ['ls', '/config/wg_confs']
+          command: ['ls', '-la', '/config/wg_confs']
           volumeMounts:
             - name: wg-conf-target
               mountPath: /config/wg_confs
