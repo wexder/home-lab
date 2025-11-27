@@ -21,7 +21,7 @@ spec:
       #   fsGroup: 568
       #   fsGroupChangePolicy: "OnRootMismatch"
       initContainers:
-        - name: wireguard
+        - name: envsub
           image: stephenc/envsub:latest
           imagePullPolicy: IfNotPresent
           envFrom:
