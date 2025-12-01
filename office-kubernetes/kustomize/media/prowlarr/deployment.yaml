@@ -61,12 +61,10 @@ spec:
               name: config-xml
               readonly: true
           readinessProbe:
-            initialDelaySeconds: 10
             httpGet:
               path: /
               port: http
           livenessProbe:
-            initialDelaySeconds: 10
             httpGet:
               path: /
               port: http
