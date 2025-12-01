@@ -76,3 +76,13 @@ spec:
             - mountPath: /config/
               name: tmp-config
               readonly: false
+          readinessProbe:
+            initialDelaySeconds: 10
+            httpGet:
+              path: /
+              port: http
+          livenessProbe:
+            initialDelaySeconds: 10
+            httpGet:
+              path: /
+              port: http
