@@ -27,7 +27,7 @@ machine:
           - 8.8.8.8
     install:
         disk: /dev/sda # The disk used for installations.
-        image: ghcr.io/siderolabs/installer:v1.5.3 # Allows for supplying the image used to perform the installation.
+        image: ghcr.io/siderolabs/installer:v1.7.5 # Allows for supplying the image used to perform the installation.
         wipe: false # Indicates if the installation disk should be wiped at installation time.
         extensions:
           - image: ghcr.io/siderolabs/iscsi-tools:v0.1.4@sha256:3ab305068aa28513b26ab3c5b1f2937dbe3f63b9c50abe290287cc58eb454bb9
