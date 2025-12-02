@@ -15,11 +15,11 @@ spec:
       labels:
         app: transmission
     spec:
-      # securityContext:
-      #   runAsUser: 568
-      #   runAsGroup: 568
-      #   fsGroup: 568
-      #   fsGroupChangePolicy: "OnRootMismatch"
+      securityContext:
+        runAsUser: 568
+        runAsGroup: 568
+        fsGroup: 568
+        fsGroupChangePolicy: "OnRootMismatch"
       initContainers:
         - name: envsub
           image: bhgedigital/envsubst:latest
@@ -59,10 +59,10 @@ spec:
             - containerPort: 9091
             - containerPort: 51413
           volumeMounts:
-            # - mountPath: /config
-            #   name: transmission-config
-            #   subPath: transmission
-            #   readonly: false
+            - mountPath: /config
+              name: transmission-config
+              subPath: transmission
+              readonly: false
             - mountPath: /downloads
               name: transmission-downloads
               readonly: false
@@ -74,10 +74,10 @@ spec:
             server: 192.168.240.112
             path: /mnt/main_pool/private/downloads
             readOnly: false
-        # - name: transmission-config
-        #   persistentVolumeClaim:
-        #     claimName: transmission-iscsi
-        #     readOnly: false
+        - name: transmission-config
+          persistentVolumeClaim:
+            claimName: transmission-iscsi
+            readOnly: false
         - name: wireguard-conf
           configMap:
             name: wireguard-config
