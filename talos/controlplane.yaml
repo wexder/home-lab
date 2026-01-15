@@ -30,7 +30,7 @@ machine:
         image: ghcr.io/siderolabs/installer:v1.5.3 # Allows for supplying the image used to perform the installation.
         wipe: false # Indicates if the installation disk should be wiped at installation time.
         extensions:
-          - image: ghcr.io/siderolabs/iscsi-tools:v0.1.4@sha256:3ab305068aa28513b26ab3c5b1f2937dbe3f63b9c50abe290287cc58eb454bb9
+          - image: ghcr.io/siderolabs/iscsi-tools:v0.1.5@sha256:4934ab9844b622187d07f83cef5d80174dbc8db0585376d3ea764d5ea00ea9ed
           # - image: docker.io/reitermarkus/qemu-guest-agent:8.0.2 
     registries: {}
     features:
