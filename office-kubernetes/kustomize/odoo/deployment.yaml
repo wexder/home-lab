@@ -25,7 +25,10 @@ spec:
             claimName: odoo-iscsi
       containers:
         - name: odoo
-          image: odoo:latest
+          image: odoo:19.0
+          args:
+            - --db-filter
+            - odoo
           envFrom:
             - secretRef:
                 name: odoo-secret
