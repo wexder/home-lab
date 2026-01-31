@@ -6,4 +6,5 @@ resources:
   - image-catalog.yaml
   - namespace.yaml
   - main.yaml
+  - route.yaml
   - databases
