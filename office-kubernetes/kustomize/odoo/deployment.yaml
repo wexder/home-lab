@@ -27,14 +27,10 @@ spec:
         - name: odoo
           image: odoo:19.0
           args:
-            - --db-filter
-            - odoo
             - --http-interface
             - 0.0.0.0
             - --http-port
             - "8069"
-            - -i
-            - base
           envFrom:
             - secretRef:
                 name: odoo-secret
