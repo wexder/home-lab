@@ -1,9 +1,7 @@
 #Prod like set up with CloudNativePG and nginx-ingress
 image:
   repository: n8nio/n8n
-  tag: 1.81.4
-imagePullSecrets:
-  - name: 8gears-registry-n8n
+  tag: latest
 
 main:
   config:
