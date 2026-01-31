@@ -27,6 +27,9 @@ spec:
         - name: odoo
           image: odoo:19.0
           args:
+            - --db-filter
+            - odoo
+            - --no-database-list
             - --http-interface
             - 0.0.0.0
             - --http-port
