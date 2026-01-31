@@ -23,11 +23,6 @@ spec:
         - name: glance-config
           configMap:
             name: glance-config
-            items:
-            - key: config/glance.yaml
-              path: glance.yaml
-            - key: config/home.yaml
-              path: home.yaml
       containers:
         - name: glance
           image: glanceapp/glance:latest
