@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: odoo
+  labels:
+    app: odoo
+spec:
+  replicas: 1
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      app: odoo
+  template:
+    metadata:
+      labels:
+        app: odoo
+    spec:
+      securityContext:
+        runAsUser: 3000
+        runAsGroup: 3000
+        fsGroup: 3000
+      volumes:
+        - name: odoo-data
+          persistentVolumeClaim:
+            claimName: odoo-iscsi
+      containers:
+        - name: odoo
+          image: odoo:latest
+          envFrom:
+            - secretRef:
+                name: odoo-secret
+          ports:
+            - containerPort: 8069
+          volumeMounts:
+            - mountPath: /var/lib/odoo
+              name: odoo-data
+              readonly: true
