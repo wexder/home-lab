@@ -9,6 +9,7 @@ spec:
   description: home-lab
   sourceRepos:
   - 'https://github.com/wexder/home-lab.git'
+  - 'https://8gears.container-registry.com/library/n8n'
   destinations:
   - namespace: '*'
     server: '*'
