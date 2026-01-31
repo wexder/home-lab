@@ -55,6 +55,12 @@ spec:
       login: true
       passwordSecret:
         name: prowlarr-postgres-user
+    - name: n8n
+      ensure: present
+      createdb: false
+      login: true
+      passwordSecret:
+        name: n8n-postgres-user
     services:
       additional:
         - selectorType: rw

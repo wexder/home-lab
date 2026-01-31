@@ -1,0 +1,9 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Database
+metadata:
+  name: psql-n8n-logs
+spec:
+  name: n8n
+  owner: n8n
+  cluster:
+    name: main-psql

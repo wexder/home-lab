@@ -13,3 +13,5 @@ resources:
 
   - prowlarr.yaml
   - prowlarr-secret.yaml
+
+  - n8n.yaml
