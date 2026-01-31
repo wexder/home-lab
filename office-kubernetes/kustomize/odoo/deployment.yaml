@@ -29,6 +29,10 @@ spec:
           args:
             - --db-filter
             - odoo
+            - --http-interface
+            - 0.0.0.0
+            - --http-port
+            - "8069"
           envFrom:
             - secretRef:
                 name: odoo-secret
