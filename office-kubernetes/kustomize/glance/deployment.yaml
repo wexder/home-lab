@@ -20,6 +20,8 @@ spec:
         runAsGroup: 3000
         fsGroup: 3000
       volumes:
+        - name: glance-assets
+          emptyDir: {}
         - name: glance-config
           configMap:
             name: glance-config
@@ -37,4 +39,7 @@ spec:
           volumeMounts:
             - mountPath: /app/config
               name: glance-config
+              readonly: true
+            - mountPath: /app/assets
+              name: glance-assets
               readonly: false
