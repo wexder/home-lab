@@ -9,5 +9,5 @@ spec:
       protocol: TCP
       port: 5432
       allowedRoutes:
-        kinds:
-        - kind: TCPRoute
+        namespaces:
+          from: All
