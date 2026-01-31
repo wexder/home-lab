@@ -21,14 +21,16 @@
             - url: https://ishadeed.com/feed.xml
               title: Ahmad Shadeed
 
-        - type: twitch-channels
-          channels:
-            - theprimeagen
-            - j_blow
-            - giantwaffle
-            - cohhcarnage
-            - christitustech
-            - EJ_SA
+        - type: monitor
+          cache: 1m
+          title: Services
+          sites:
+            - title: Jellyfin
+              url: https://jellyfin.k8s.local-k8s.tech
+              icon: /assets/jellyfin-logo.png
+            - title: Immich
+              url: https://immich.k8s.local-k8s.tech
+              icon: /assets/immich-logo.png
 
     - size: full
       widgets:
