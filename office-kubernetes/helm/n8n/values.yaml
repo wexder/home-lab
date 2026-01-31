@@ -1,0 +1,55 @@
+#Prod like set up with CloudNativePG and nginx-ingress
+image:
+  repository: n8nio/n8n
+  tag: 1.81.4
+imagePullSecrets:
+  - name: 8gears-registry-n8n
+
+main:
+  config:
+    db:
+      type: postgresdb
+      postgresdb:
+        host: main-psql-rw.postgres.svc.cluster.local
+        user: n8n
+#        password: password is read from cnpg db-app secretKeyRef
+        pool:
+          size: 10
+        ssl:
+          enabled: false
+
+  extraEnv:
+    DB_POSTGRESDB_PASSWORD:
+      valueFrom:
+        secretKeyRef:
+          name: n8n-secret
+          key: password
+    N8N_ENCRYPTION_KEY:
+      valueFrom:
+        secretKeyRef:
+          name: n8n-secret
+          key: key
+
+  # Mount the CNPG CA Cert into N8N container
+  # extraVolumeMounts:
+  #   - name: db-ca-cert
+  #     mountPath: /home/ssl/certs/postgresql
+  #     readOnly: true
+
+  # extraVolumes:
+  #   - name: db-ca-cert
+  #     secret:
+  #       secretName: db-ca
+  #       items:
+  #         - key: ca.crt
+  #           path: ca.crt
+
+  resources: {}
+  # resources:
+  #   limits:
+  #     memory: 2048Mi
+  #   requests:
+  #     memory: 512Mi
+
+ingress:
+  enabled: false
