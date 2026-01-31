@@ -10,3 +10,8 @@ resources:
 - service.yaml
 - route.yaml
 - odoo-secret.yaml
+
+configMapGenerator:
+  - name: odoo-config
+    files:
+      - config/odoo.conf

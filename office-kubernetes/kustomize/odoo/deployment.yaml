@@ -23,6 +23,12 @@ spec:
         - name: odoo-data
           persistentVolumeClaim:
             claimName: odoo-iscsi
+        - name: odoo-config
+          configMap:
+            name: odoo-config
+            items:
+            - key: odoo.conf
+              path: odoo.conf
       containers:
         - name: odoo
           image: odoo:19.0
@@ -47,6 +53,10 @@ spec:
           ports:
             - containerPort: 8069
           volumeMounts:
+            - mountPath: /etc/odoo/odoo.conf
+              subPath: odoo.conf
+              name: odoo-config
+              readonly: true
             - mountPath: /var/lib/odoo
               name: odoo-data
               readonly: true
