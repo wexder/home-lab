@@ -16,3 +16,6 @@ resources:
 
   - n8n.yaml
   - n8n-secret.yaml
+
+  - odoo.yaml
+  - odoo-secret.yaml

@@ -61,6 +61,12 @@ spec:
       login: true
       passwordSecret:
         name: n8n-postgres-user
+    - name: odoo
+      ensure: present
+      createdb: false
+      login: true
+      passwordSecret:
+        name: odoo-postgres-user
     services:
       additional:
         - selectorType: rw
