@@ -59,7 +59,7 @@
     - size: small
       widgets:
         - type: weather
-          location: Pardubice, Czech Republic
+          location: Pardubice
           units: metric
           hour-format: 24h
 
