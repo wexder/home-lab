@@ -8,7 +8,7 @@ n8n:
       db:
         type: postgresdb
         postgresdb:
-          host: main-psql-rw.postgres.svc.cluster.local
+          host: main-psql-pool.postgres.svc.cluster.local
           user: n8n
   #        password: password is read from cnpg db-app secretKeyRef
           pool:
