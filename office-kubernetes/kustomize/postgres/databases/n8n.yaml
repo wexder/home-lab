@@ -1,7 +1,7 @@
 apiVersion: postgresql.cnpg.io/v1
 kind: Database
 metadata:
-  name: psql-n8n-logs
+  name: psql-n8n
 spec:
   name: n8n
   owner: n8n
