@@ -5,3 +5,9 @@ namespace: glance
 
 resources:
 - namespace.yaml
+
+configMapGenerator:
+  - name: glance-config
+    files:
+      - config/glance.yaml
+      - config/home.yaml

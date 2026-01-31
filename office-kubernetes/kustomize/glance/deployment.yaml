@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: glance
+  labels:
+    app: glance
+spec:
+  replicas: 1
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      app: glance
+  template:
+    metadata:
+      labels:
+        app: glance
+    spec:
+      securityContext:
+        runAsUser: 3000
+        runAsGroup: 3000
+        fsGroup: 3000
+      volumes:
+        - name: glance-config
+          persistentVolumeClaim:
+            claimName: glance-iscsi
+        - name: glance-config
+          configMap:
+            name: glance-config
+            items:
+            - key: config/glance.yaml
+              path: glance.yaml
+            - key: config/home.yaml
+              path: home.yaml
+      containers:
+        - name: glance
+          image: glanceapp/glance:latest
+          command:   
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+            - mountPath: /app/config
+              name: glance-config
+              readonly: false
