@@ -27,10 +27,10 @@
           sites:
             - title: Jellyfin
               url: https://jellyfin.k8s.local-k8s.tech
-              icon: /assets/jellyfin-logo.png
+              icon: di:jellyfin
             - title: Immich
               url: https://immich.k8s.local-k8s.tech
-              icon: /assets/immich-logo.png
+              icon: di:immich
 
     - size: full
       widgets:
