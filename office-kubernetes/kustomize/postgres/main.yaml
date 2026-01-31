@@ -55,6 +55,14 @@ spec:
       login: true
       passwordSecret:
         name: prowlarr-postgres-user
+    services:
+      additional:
+        - selectorType: rw
+          serviceTemplate:
+            metadata:
+              name: "postgres-lb"
+            spec:
+              type: LoadBalancer
 ---
 apiVersion: postgresql.cnpg.io/v1
 kind: Pooler
