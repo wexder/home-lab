@@ -1,0 +1,15 @@
+netbox:
+  superuser:
+    existingSecret: netbox-secret
+  externalDatabase:
+    host: main-psql-pool.postgres.svc.cluster.local
+    port: 5432
+    user: netbox
+    passwordSecret: netbox-secret
+  persistence:
+    enabled: true
+    existingClaim: netbox-iscsi
+  httpRoute:
+    enabled: true
+    hostnames:
+      - "netbox.k8s.local-k8s.tech"
