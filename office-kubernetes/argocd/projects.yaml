@@ -10,6 +10,7 @@ spec:
   sourceRepos:
   - 'https://github.com/wexder/home-lab.git'
   - '8gears.container-registry.com/library/n8n'
+  - 'ghcr.io/netbox-community/netbox-chart/netbox'
   destinations:
   - namespace: '*'
     server: '*'
