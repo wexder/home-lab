@@ -14,7 +14,7 @@ netbox:
     host: main-psql-pool.postgres.svc.cluster.local
     port: 5432
     user: netbox
-    passwordSecret: netbox-secret
+    existingSecretName: netbox-secret
   persistence:
     enabled: true
     existingClaim: netbox-iscsi
