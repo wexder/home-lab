@@ -67,6 +67,12 @@ spec:
       login: true
       passwordSecret:
         name: odoo-postgres-user
+    - name: netbox
+      ensure: present
+      createdb: false
+      login: true
+      passwordSecret:
+        name: netbox-postgres-user
     services:
       additional:
         - selectorType: rw

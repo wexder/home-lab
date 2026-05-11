@@ -19,3 +19,6 @@ resources:
 
   - odoo.yaml
   - odoo-secret.yaml
+
+  - netbox.yaml
+  - netbox-secret.yaml
