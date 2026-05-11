@@ -3,6 +3,13 @@ netbox:
     existingSecret: netbox-secret
   postgresql:
     enabled: false
+  valkey:
+    primary:
+      persistence:
+        enabled: false
+    replica:
+      persistence:
+        enabled: false
   externalDatabase:
     host: main-psql-pool.postgres.svc.cluster.local
     port: 5432
