@@ -1,6 +1,8 @@
 netbox:
   superuser:
     existingSecret: netbox-secret
+  postgresql:
+    enabled: false
   externalDatabase:
     host: main-psql-pool.postgres.svc.cluster.local
     port: 5432
