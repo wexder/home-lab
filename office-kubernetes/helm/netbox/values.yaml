@@ -20,5 +20,8 @@ netbox:
     existingClaim: netbox-iscsi
   httpRoute:
     enabled: true
+    parentRefs:
+    - name: web
+      namespace: gateway-system
     hostnames:
       - "netbox.k8s.local-k8s.tech"
