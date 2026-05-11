@@ -6,4 +6,4 @@ version: 1.0.0
 dependencies:
 - name: netbox
   version: "8.2.10"
-  repository: "oci://ghcr.io/netbox-community/netbox-chart/netbox"
+  repository: "oci://ghcr.io/netbox-community/netbox-chart"
