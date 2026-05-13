@@ -25,3 +25,5 @@ netbox:
       namespace: gateway-system
     hostnames:
       - "netbox.k8s.local-k8s.tech"
+  plugins:
+    - name: netbox-docker-plugin
