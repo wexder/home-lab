@@ -1,4 +1,9 @@
 netbox:
+  image:
+  registry: ghcr.io
+  repository: wexder/netbox-homelab-image
+  pullPolicy: IfNotPresent
+  tag: "075dc30"
   superuser:
     existingSecret: netbox-secret
   postgresql:
@@ -25,3 +30,5 @@ netbox:
       namespace: gateway-system
     hostnames:
       - "netbox.k8s.local-k8s.tech"
+  plugins:
+    - netbox_docker_plugin
