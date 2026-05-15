@@ -1,9 +1,9 @@
 netbox:
   image:
-  registry: ghcr.io
-  repository: wexder/netbox-homelab-image
-  pullPolicy: IfNotPresent
-  tag: "075dc30"
+    registry: ghcr.io
+    repository: wexder/netbox-homelab-image
+    pullPolicy: IfNotPresent
+    tag: "075dc30"
   superuser:
     existingSecret: netbox-secret
   postgresql:
