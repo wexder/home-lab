@@ -1,13 +1,14 @@
-# Number of operator replicas
-replicaCount: 2
+valkey-operator:
+  # Number of operator replicas
+  replicaCount: 2
 
-resources:
-  limits:
-    cpu: 500m
-    memory: 128Mi
-  requests:
-    cpu: 10m
-    memory: 64Mi
+  resources:
+    limits:
+      cpu: 500m
+      memory: 128Mi
+    requests:
+      cpu: 10m
+      memory: 64Mi
 
-metrics:
-  enabled: false
+  metrics:
+    enabled: false
