@@ -23,4 +23,4 @@ spec:
         allow: ["@read", "@write", "@connection"]
         deny: ["@admin", "@dangerous"]
       keys:
-        readWrite: ["github:*"]
+        readWrite: ["*"]
