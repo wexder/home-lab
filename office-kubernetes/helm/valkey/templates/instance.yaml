@@ -3,7 +3,7 @@ kind: ValkeyCluster
 metadata:
   name: valkey-cluster
 spec:
-  shards: 0
+  shards: 1
   replicas: 1
   users:
     - name: root
