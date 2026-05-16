@@ -1,0 +1,26 @@
+apiVersion: valkey.io/v1alpha1
+kind: ValkeyCluster
+metadata:
+  name: valkey-cluster
+spec:
+  shards: 3
+  replicas: 1
+  users:
+    - name: root
+      enabled: true
+      passwordSecret:
+        name: valkey-cluster-users
+        keys: [root]
+      commands:
+        allow: ["@admin"]
+    - name: github
+      enabled: true
+      passwordSecret:
+        name: valkey-cluster-users
+        keys:
+          - github
+      commands:
+        allow: ["@read", "@write", "@connection"]
+        deny: ["@admin", "@dangerous"]
+      keys:
+        readWrite: ["github:*"]
