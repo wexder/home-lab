@@ -20,7 +20,7 @@ spec:
         keys:
           - github
       commands:
-        allow: ["@read", "@write", "@connection"]
+        allow: ["@all"]
         deny: ["@admin", "@dangerous"]
       keys:
         readWrite: ["*"]
