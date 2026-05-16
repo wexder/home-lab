@@ -4,7 +4,7 @@ metadata:
   name: valkey-cluster
 spec:
   shards: 1
-  replicas: 1
+  replicas: 0
   users:
     - name: root
       enabled: true
