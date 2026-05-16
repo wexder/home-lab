@@ -1,0 +1,9 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Database
+metadata:
+  name: psql-gitlab
+spec:
+  name: gitlab
+  owner: gitlab
+  cluster:
+    name: main-psql

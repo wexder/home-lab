@@ -73,6 +73,12 @@ spec:
       login: true
       passwordSecret:
         name: netbox-postgres-user
+    - name: gitlab
+      ensure: present
+      createdb: false
+      login: true
+      passwordSecret:
+        name: gitlab-postgres-user
     services:
       additional:
         - selectorType: rw
