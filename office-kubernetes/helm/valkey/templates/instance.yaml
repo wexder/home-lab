@@ -20,4 +20,7 @@ spec:
         keys:
           - github
       commands:
-        allow: ["@admin"]
+        allow:
+          - "@read"
+          - "@write"
+          - "@transaction"
