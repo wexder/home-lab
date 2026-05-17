@@ -24,3 +24,6 @@ spec:
           - "@read"
           - "@write"
           - "@transaction"
+      keys:
+        allow:
+          - "*"
