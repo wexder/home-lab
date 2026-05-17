@@ -7,3 +7,6 @@ dependencies:
 - name: valkey-operator
   version: 0.1.1
   repository: https://valkey.io/valkey-helm/
+- name: valkey
+  version: 0.9.4
+  repository: https://valkey.io/valkey-helm/
