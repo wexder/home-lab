@@ -22,6 +22,8 @@ spec:
           storage: 50Gi
       storageClassName: freenas-iscsi-csi
   postgresql:
+    parameters:
+      max_connections: "500"
     shared_preload_libraries:
       - "vchord.so"
   #   extensions:
