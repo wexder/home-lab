@@ -25,5 +25,8 @@ spec:
           - "@write"
           - "@transaction"
           - "@dangerous"
+          - "@connection"
+          - "@scripting"
+          - "@set"
       keys:
         readWrite: ["*"]
