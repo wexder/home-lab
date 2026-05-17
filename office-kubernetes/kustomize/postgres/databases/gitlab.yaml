@@ -5,6 +5,5 @@ metadata:
 spec:
   name: gitlab
   owner: gitlab
-  ensure: absent
   cluster:
     name: main-psql
