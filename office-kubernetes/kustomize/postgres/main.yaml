@@ -79,6 +79,12 @@ spec:
       login: true
       passwordSecret:
         name: gitlab-postgres-user
+    - name: keycloak
+      ensure: present
+      createdb: false
+      login: true
+      passwordSecret:
+        name: keycloak-postgres-user
     services:
       additional:
         - selectorType: rw

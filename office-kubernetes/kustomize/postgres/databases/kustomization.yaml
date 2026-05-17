@@ -25,3 +25,6 @@ resources:
 
   - gitlab.yaml
   - gitlab-secret.yaml
+
+  - keycloak.yaml
+  - keycloak-secret.yaml

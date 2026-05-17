@@ -1,0 +1,9 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Database
+metadata:
+  name: psql-keycloak
+spec:
+  name: keycloak
+  owner: keycloak
+  cluster:
+    name: main-psql
