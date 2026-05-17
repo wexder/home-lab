@@ -23,7 +23,7 @@ resources:
   - netbox.yaml
   - netbox-secret.yaml
 
-  - gitlab.yaml
+  # - gitlab.yaml
   - gitlab-secret.yaml
 
   - keycloak.yaml
