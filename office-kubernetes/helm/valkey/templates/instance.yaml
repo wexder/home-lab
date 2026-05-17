@@ -5,6 +5,10 @@ metadata:
 spec:
   shards: 1
   replicas: 0
+  persistence:
+    size: 10Gi
+    storageClassName: freenas-iscsi-csi
+    reclaimPolicy: Retain
   users:
     - name: root
       enabled: true
