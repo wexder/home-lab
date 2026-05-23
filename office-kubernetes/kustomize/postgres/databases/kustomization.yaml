@@ -28,3 +28,6 @@ resources:
 
   - keycloak.yaml
   - keycloak-secret.yaml
+
+  - teleport.yaml
+  - teleport-secret.yaml

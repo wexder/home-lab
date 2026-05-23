@@ -1,0 +1,9 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Database
+metadata:
+  name: psql-teleport
+spec:
+  name: teleport
+  owner: teleport
+  cluster:
+    name: main-psql

@@ -87,6 +87,12 @@ spec:
       login: true
       passwordSecret:
         name: keycloak-postgres-user
+    - name: teleport
+      ensure: present
+      createdb: false
+      login: true
+      passwordSecret:
+        name: teleport-postgres-user
     services:
       additional:
         - selectorType: rw
