@@ -37,11 +37,15 @@ spec:
               name: wireguard-conf
               readOnly: false
         - name: wireguard
-          image: ghcr.io/linuxserver/wireguard
+          image: ghcr.io/linuxserver/wireguard:1.0.20250521-r1-ls101
           imagePullPolicy: IfNotPresent
           restartPolicy: Always
+          env:
+            - name: S6_YES_I_WANT_A_WORLD_WRITABLE_RUN_BECAUSE_KUBERNETES
+              value: "1"
           securityContext:
             privileged: true
+            runAsUser: 0
             capabilities:
               add:
                 - NET_ADMIN
