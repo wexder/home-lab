@@ -5,5 +5,5 @@ type: application
 version: 1.0.0
 dependencies:
 - name: openeverest
-  version: "2.0.0-dev.1"
+  version: "1.15.2"
   repository: "https://openeverest.github.io/helm-charts/"
