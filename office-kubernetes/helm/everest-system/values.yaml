@@ -1,0 +1,5 @@
+openeverest:
+  dbNamespace:
+    enabled: true
+  upgrade:
+    preflightChecks: false
