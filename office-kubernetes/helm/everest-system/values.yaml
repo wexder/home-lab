@@ -2,4 +2,4 @@ openeverest:
   dbNamespace:
     enabled: false
   upgrade:
-    preflightChecks: true
+    preflightChecks: false
