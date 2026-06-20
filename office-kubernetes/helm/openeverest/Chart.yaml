@@ -1,0 +1,9 @@
+apiVersion: v2
+name: openeverest
+description: A Helm chart for Kubernetes
+type: application
+version: 1.0.0
+dependencies:
+- name: openeverest
+  version: "2.0.0-dev.1"
+  repository: "https://openeverest.github.io/helm-charts/"
