@@ -6,7 +6,6 @@ kind: Secret
 metadata:
   creationTimestamp: "2026-06-21T12:27:16Z"
   name: garage-admin-token
-  namespace: default
   resourceVersion: "91797240"
   uid: c8ab0ef5-ba8a-44de-9490-8d0663f8fd53
   annotations:
