@@ -10,12 +10,14 @@ spec:
     replicas: 1
     metadata:
       size: 10Gi
-      storageClassName: nfs
+      storageClassName: freenas-iscsi-csi
     data:
       size: 100Gi
       storageClassName: freenas-iscsi-csi
   gateway:
     replicas: 2
+    metadata:
+      storageClassName: freenas-iscsi-csi
   network:
     rpcBindPort: 3901
     service:
