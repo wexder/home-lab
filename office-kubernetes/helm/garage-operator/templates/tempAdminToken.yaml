@@ -10,5 +10,5 @@ metadata:
   resourceVersion: "91797240"
   uid: c8ab0ef5-ba8a-44de-9490-8d0663f8fd53
   annotations:
-    argocd.argoproj.io/sync-options: ServerSideApply=false
+    argocd.argoproj.io/sync-options: ServerSideApply=true
 type: Opaque
