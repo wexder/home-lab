@@ -54,7 +54,7 @@ ps-db:
 
   orchestrator:
     enabled: true
-    size: 1
+    size: 2
 
   pmm:
     enabled: false
