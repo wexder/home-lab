@@ -47,7 +47,7 @@ ps-db:
       enabled: false
 
   orchestrator:
-    enabled: false
+    enabled: true
 
   pmm:
     enabled: false
