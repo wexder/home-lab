@@ -2,7 +2,7 @@ ps-db:
   unsafeFlags:
     mysqlSize: true
     orchestrator: false
-    orchestratorSize: false
+    orchestratorSize: true
     proxy: false
     proxySize: true
   mysql:
