@@ -1,4 +1,10 @@
 ps-db:
+  unsafeFlags:
+    mysqlSize: true
+    orchestrator: false
+    orchestratorSize: false
+    proxy: false
+    proxySize: true
   mysql:
     clusterType: async
     size: 1
@@ -48,6 +54,7 @@ ps-db:
 
   orchestrator:
     enabled: true
+    size: 1
 
   pmm:
     enabled: false
