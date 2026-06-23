@@ -1,0 +1,2 @@
+ps-operator:
+  watchAllNamespaces: true
