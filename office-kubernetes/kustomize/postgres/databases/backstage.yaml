@@ -1,0 +1,9 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Database
+metadata:
+  name: psql-backstage
+spec:
+  name: backstage
+  owner: backstage
+  cluster:
+    name: main-psql

@@ -94,6 +94,13 @@ spec:
       login: true
       passwordSecret:
         name: teleport-postgres-user
+    - name: backstage
+      ensure: present
+      createdb: false
+      replication: true
+      login: true
+      passwordSecret:
+        name: backstage-postgres-user
     services:
       additional:
         - selectorType: rw

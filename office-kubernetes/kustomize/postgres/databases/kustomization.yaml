@@ -31,3 +31,6 @@ resources:
 
   - teleport.yaml
   - teleport-secret.yaml
+
+  - backstage.yaml
+  - backstage-secret.yaml
