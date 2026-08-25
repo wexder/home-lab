@@ -224,17 +224,51 @@ backstage:
     appConfig:
       app:
         baseUrl: https://backstage.k8s.local-k8s.tech
+        title: Backstage
+        packages: all
+
       backend:
         baseUrl: https://backstage.k8s.local-k8s.tech
         listen:
           port: 7007
+
         database:
           client: pg
+
+          # Do NOT let Backstage create databases.
+          ensureExists: false
+
+          # Explicit for clarity; this is the normal/default mode.
+          pluginDivisionMode: database
+
+          # Shared PostgreSQL server connection settings.
           connection:
             host: ${POSTGRES_HOST}
             port: ${POSTGRES_PORT}
             user: ${POSTGRES_USER}
             password: ${POSTGRES_PASSWORD}
+
+          # Map Backstage plugin IDs to the databases
+          # that have already been provisioned.
+          plugin:
+            catalog:
+              connection:
+                database: backstage_catalog
+
+            auth:
+              connection:
+                database: backstage_auth
+
+            scaffolder:
+              connection:
+                database: backstage_scaffolder
+
+            search:
+              connection:
+                database: backstage_search
+
+  postgresql:
+    enabled: false
 
     # -- Affinity for pod assignment
     # <br /> Ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity

@@ -1,9 +1,193 @@
+# backstage_plugin_app
+# backstage_plugin_auth
+# backstage_plugin_catalog
+# backstage_plugin_kubernetes
+# backstage_plugin_mcp-actions
+# backstage_plugin_notifications
+# backstage_plugin_permission
+# backstage_plugin_proxy
+# backstage_plugin_scaffolder
+# backstage_plugin_search
+# backstage_plugin_signals
+# backstage_plugin_techdocs
+# backstage_plugin_user-settings
+
 apiVersion: postgresql.cnpg.io/v1
 kind: Database
 metadata:
   name: psql-backstage
 spec:
   name: backstage
+  owner: backstage
+  cluster:
+    name: main-psql
+---
+apiVersion: postgresql.cnpg.io/v1
+kind: Database
+metadata:
+  name: psql-backstage-catalog
+spec:
+  name: backstage_catalog
+  owner: backstage
+  cluster:
+    name: main-psql
+---
+apiVersion: postgresql.cnpg.io/v1
+kind: Database
+metadata:
+  name: psql-backstage-auth
+spec:
+  name: backstage_auth
+  owner: backstage
+  cluster:
+    name: main-psql
+---
+apiVersion: postgresql.cnpg.io/v1
+kind: Database
+metadata:
+  name: psql-backstage-scaffolder
+spec:
+  name: backstage_scaffolder
+  owner: backstage
+  cluster:
+    name: main-psql
+---
+apiVersion: postgresql.cnpg.io/v1
+kind: Database
+metadata:
+  name: psql-backstage-search
+spec:
+  name: backstage_search
+  owner: backstage
+  cluster:
+    name: main-psql
+---
+apiVersion: postgresql.cnpg.io/v1
+kind: Database
+metadata:
+  name: psql-backstage-plugin-app
+spec:
+  name: backstage_plugin_app
+  owner: backstage
+  cluster:
+    name: main-psql
+---
+apiVersion: postgresql.cnpg.io/v1
+kind: Database
+metadata:
+  name: psql-backstage-plugin-auth
+spec:
+  name: backstage_plugin_auth
+  owner: backstage
+  cluster:
+    name: main-psql
+---
+apiVersion: postgresql.cnpg.io/v1
+kind: Database
+metadata:
+  name: psql-backstage-plugin-catalog
+spec:
+  name: backstage_plugin_catalog
+  owner: backstage
+  cluster:
+    name: main-psql
+---
+apiVersion: postgresql.cnpg.io/v1
+kind: Database
+metadata:
+  name: psql-backstage-plugin-kubernetes
+spec:
+  name: backstage_plugin_kubernetes
+  owner: backstage
+  cluster:
+    name: main-psql
+---
+apiVersion: postgresql.cnpg.io/v1
+kind: Database
+metadata:
+  name: psql-backstage-plugin-mcp-actions
+spec:
+  name: backstage_plugin_mcp-actions
+  owner: backstage
+  cluster:
+    name: main-psql
+---
+apiVersion: postgresql.cnpg.io/v1
+kind: Database
+metadata:
+  name: psql-backstage-plugin-notifications
+spec:
+  name: backstage_plugin_notifications
+  owner: backstage
+  cluster:
+    name: main-psql
+---
+apiVersion: postgresql.cnpg.io/v1
+kind: Database
+metadata:
+  name: psql-backstage-plugin-permission
+spec:
+  name: backstage_plugin_permission
+  owner: backstage
+  cluster:
+    name: main-psql
+---
+apiVersion: postgresql.cnpg.io/v1
+kind: Database
+metadata:
+  name: psql-backstage-plugin-proxy
+spec:
+  name: backstage_plugin_proxy
+  owner: backstage
+  cluster:
+    name: main-psql
+---
+apiVersion: postgresql.cnpg.io/v1
+kind: Database
+metadata:
+  name: psql-backstage-plugin-scaffolder
+spec:
+  name: backstage_plugin_scaffolder
+  owner: backstage
+  cluster:
+    name: main-psql
+---
+apiVersion: postgresql.cnpg.io/v1
+kind: Database
+metadata:
+  name: psql-backstage-plugin-search
+spec:
+  name: backstage_plugin_search
+  owner: backstage
+  cluster:
+    name: main-psql
+---
+apiVersion: postgresql.cnpg.io/v1
+kind: Database
+metadata:
+  name: psql-backstage-plugin-signals
+spec:
+  name: backstage_plugin_signals
+  owner: backstage
+  cluster:
+    name: main-psql
+---
+apiVersion: postgresql.cnpg.io/v1
+kind: Database
+metadata:
+  name: psql-backstage-plugin-techdocs
+spec:
+  name: backstage_plugin_techdocs
+  owner: backstage
+  cluster:
+    name: main-psql
+--- 
+apiVersion: postgresql.cnpg.io/v1
+kind: Database
+metadata:
+  name: psql-backstage-plugin-user-settings
+spec:
+  name: backstage_plugin_user-settings
   owner: backstage
   cluster:
     name: main-psql
