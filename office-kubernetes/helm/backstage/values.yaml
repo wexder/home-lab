@@ -227,6 +227,11 @@ backstage:
         title: Backstage
         packages: all
 
+      auth:
+        providers:
+          guest:
+            dangerouslyAllowOutsideDevelopment: true
+
       backend:
         baseUrl: https://backstage.k8s.local-k8s.tech
         listen:
