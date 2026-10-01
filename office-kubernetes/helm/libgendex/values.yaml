@@ -1,0 +1,14 @@
+libgendex:
+  persistence:
+    data:
+      enabled: true
+      storageClass: freenas-iscsi-csi
+      accessModes: [ReadWriteOnce]
+      size: 30Gi
+      retain: true
+    library:
+      nfs:
+        enabled: true
+        server: "192.168.240.112"
+        path: "/mnt/main_pool/private/media/ebooks"
+        readOnly: false
