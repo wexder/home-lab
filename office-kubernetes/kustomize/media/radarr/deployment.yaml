@@ -80,6 +80,10 @@ spec:
             requests:
               cpu: 100m
               memory: 512Mi
+            # A memory limit exempts the pod from the Talos 1.12 userspace OOM controller
+            # (it only ranks cgroups without memory.max) and keeps NFS page cache reclaimed in-cgroup.
+            limits:
+              memory: 2Gi
           # /ping is the lightweight unauthenticated health endpoint of the *arr apps.
           # Generous startup/liveness so slow NFS imports or DB migrations don't get SIGKILLed (exit 137).
           startupProbe:

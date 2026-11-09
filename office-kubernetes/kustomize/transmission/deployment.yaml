@@ -25,6 +25,9 @@ spec:
           image: bhgedigital/envsubst:latest
           imagePullPolicy: IfNotPresent
           command: ['sh', '-c', 'cat /workdir/tunnel.conf | envsubst > /processed/tunnel.conf']
+          resources:
+            limits:
+              memory: 64Mi
           envFrom:
             - secretRef:
                 name: wireguard-secret
@@ -56,6 +59,8 @@ spec:
             requests:
               cpu: 10m
               memory: 32Mi
+            limits:
+              memory: 128Mi
           volumeMounts:
             - mountPath: /config/wg_confs
               name: wg-conf-target
@@ -74,6 +79,10 @@ spec:
             requests:
               cpu: 100m
               memory: 256Mi
+            # Every container (incl. init) needs a limit for the pod cgroup to get memory.max,
+            # which exempts it from the Talos userspace OOM controller.
+            limits:
+              memory: 1Gi
           volumeMounts:
             - mountPath: /config
               name: transmission-config
