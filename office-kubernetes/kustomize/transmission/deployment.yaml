@@ -52,6 +52,10 @@ spec:
                 - SYS_MODULE
             allowPrivilegeEscalation: true
             readOnlyRootFilesystem: false
+          resources:
+            requests:
+              cpu: 10m
+              memory: 32Mi
           volumeMounts:
             - mountPath: /config/wg_confs
               name: wg-conf-target
@@ -59,9 +63,17 @@ spec:
       containers:
         - name: transmission
           image: ghcr.io/k8s-at-home/transmission:latest
+          env:
+            # 0 = prefer unencrypted, 1 = prefer encrypted, 2 = require encrypted peers
+            - name: TRANSMISSION_ENCRYPTION
+              value: "2"
           ports:
             - containerPort: 9091
             - containerPort: 51413
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
           volumeMounts:
             - mountPath: /config
               name: transmission-config

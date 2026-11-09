@@ -49,10 +49,24 @@ spec:
         - containerPort: 7359
           name: discovery-udp
           protocol: UDP      
+        resources:
+          requests:
+            cpu: 250m
+            memory: 1Gi
+        startupProbe:
+          httpGet:
+            path: /health
+            port: http-tcp
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 30
         readinessProbe:
-            httpGet:
-              path: /health
-              port: http-tcp
+          httpGet:
+            path: /health
+            port: http-tcp
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 3
         volumeMounts:
         - mountPath: /config
           name: nfs-jellyfin-config
